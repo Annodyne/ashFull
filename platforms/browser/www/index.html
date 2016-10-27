@@ -1,77 +1,97 @@
-<!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <meta name="description" content="">
+        <meta name="author" content="">
+    
+        <!-- BEGIN: Metadata -->
+		<title>3FX Ashe</title>
+		<meta name="description" content="3FX Video Wall Panel">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,
+width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		    <meta name="msapplication-tap-highlight" content="no" />
+		    <meta name="format-detection" content="telephone=no" />
 
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+        <!-- END: Metadata -->
 
-    http://www.apache.org/licenses/LICENSE-2.0
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/site.css">
+		<link rel="stylesheet" href="css/ashe.css">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>  
+		
+		<script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/jqueryMobileCustom.js"></script>
+		<script src="js/modernizr.min.js"></script>
+		<script src="js/site.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+		  ga('create', 'UA-77295748-1', 'auto');
+		  ga('send', 'pageview');
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Please Work... Please?</title>
-</head>
+		</script>
+		<script src="js/analyticsShenanigans.js" ></script>
 
-<body>
-    <div class="app">
-        <h1>Lets see if videos play!</h1>
-		<h2>mp4</h2>
-		<h3>in tag source</h3>
-        <video src="/vids/cMet.mp4" controls></video>
-		<h3>actual source tags</h3>
-		<video controls>
-			 <source src="/vids/cMet.mp4" type="video/mp4">
-		</video>
-		<h2>ogv</h2>
-		<h3>in tag source</h3>
-        <video src="/vids/cMet.ogv" controls></video>
-		<h3>actual source tags</h3>
-		<video controls>
-			 <source src="/vids/cMet.ogv" type="video/ogg">
-		</video>
-		<h2>webm</h2>
-		<h3>in tag source</h3>
-        <video src="/vids/cMet.webm" controls></video>
-		<h3>actual source tags</h3>
-		<video controls>
-			 <source src="/vids/cMet.webm" type="video/webm">
-		</video>
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
-</body>
 
+    </head>
+    <body>
+
+		<div class="pages drop-shadow">
+			<section class="home visible"></section>
+			<article class="pg pg-discover" data-page="discover"></article>
+			<article class="pg pg-portfolio" data-page="portfolio"></article>
+			<article class="pg pg-develop" data-page="develop"></article>
+			<article class="pg pg-develop-home" data-page="develop-home"></article>
+			<article class="pg pg-study-home-a" data-page="study-home-a"></article>
+				<article class="pg pg-disease-state-a" data-page="disease-state-a"></article>
+				<article class="pg pg-rationale-a" data-page="rationale-a"></article>
+				<article class="pg pg-study-design-a1" data-page="study-design-a1"></article>
+			<article class="pg pg-study-home-b" data-page="study-home-b"></article>
+
+
+			<section class="mod mod-video"></section>
+			<!-- <article class="mod mod-web-view"></article> -->
+
+			<!--TODO: Add Timeout Styles-->
+			<div class="timer-warning">
+				<div class="timer-warning-wrapper">
+					<h2>Need More <br>Time?</h2>
+				    <div class="timer-button-container">
+						<div class="continue-button"><img src="images/yes_btn.png"></div>
+			        </div>
+		        </div>
+			</div> 
+		</div>
+					
+		<img class="modal-close" src="images/close-btn.png" alt="Close">
+		
+		<!-- 		
+		<div class="modal-close" style="width: 90%; height: 100%; margin-left: 10%; position: absolute; display: block; border: 1px solid blue;"></div> 
+		-->
+		
+		<div id="modal-dialog" class="modal-container" title="" style="display:none;">
+		    <iframe id="modal-frame" width="100%" height="100%" sandbox="allow-same-origin"></iframe>
+		</div>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			app.initialize();
+		</script>
+    </body>
 </html>

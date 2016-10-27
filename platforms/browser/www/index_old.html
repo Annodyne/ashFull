@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <meta name="description" content="">
+        <meta name="author" content="">
+    
+        <!-- BEGIN: Metadata -->
+		<title>3FX Video Wall Panel</title>
+		<meta name="description" content="3FX Video Wall Panel">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- END: Metadata -->
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<link rel="stylesheet" href="css/site.css">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		
+		<script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/jqueryMobileCustom.js"></script>
+		<script src="js/modernizr.min.js"></script>
+		<script src="js/site.js" ></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-77295748-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+		<script src="js/analyticsShenanigans.js" ></script>
+
+
+    </head>
+    <body>
+
+		<div class="pages drop-shadow">
+			<div class="start-screen">
+				<!-- SCREEN 1 -->
+				<video class="start-screen-video" src="video/MONITOR_ONE.mp4" autoplay loop></video>
+				<div class="video-still" style="background: url('images/MONITOR_ONE.jpg');"></div>
+				
+				<!-- SCREEN 2 
+				<video class="start-screen-video" src="video/MONITOR_TWO.mp4" autoplay loop ></video>
+				<div class="video-still" style="background: url('images/MONITOR_TWO.jpg');"></div>
+				 -->
+				<!-- SCREEN 3 
+				<video class="start-screen-video" src="video/MONITOR_THREE.mp4" autoplay loop></video>
+				<div class="video-still" style="background: url('images/MONITOR_THREE.jpg');"></div>
+				-->
+
+				<div class="logo-text-content fadeOut">
+					<img src="images/incyte-startscreen-logo.png" >
+					<h6>Touch here to start</h6>
+				</div>
+			</div>
+			
+			<section class="home visible"></section>
+			<article class="pg pg-portfolio" data-page="portfolio"></article>
+			<article class="pg pg-abstract" data-page="abstract"></article>
+			<section class="mod mod-video"></section>
+			<!-- <article class="mod mod-web-view"></article> -->
+
+			<!--TODO: Add Timeout Styles-->
+			<div class="timer-warning">
+				<div class="timer-warning-wrapper">
+					<h2>Need More <br>Time?</h2>
+				    <div class="timer-button-container">
+						<div class="continue-button"><img src="images/yes_btn.png"></div>
+			        </div>
+		        </div>
+			</div> 
+		</div>
+					
+		<img class="modal-close" src="images/close-btn.png" alt="Close">
+		
+		<!-- 		
+		<div class="modal-close" style="width: 90%; height: 100%; margin-left: 10%; position: absolute; display: block; border: 1px solid blue;"></div> 
+		-->
+		
+		<div id="modal-dialog" class="modal-container" title="" style="display:none;">
+		    <iframe id="modal-frame" width="100%" height="100%" sandbox="allow-same-origin"></iframe>
+		</div>
+
+    </body>
+</html>
