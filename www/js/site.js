@@ -244,9 +244,11 @@ $(function () {
 	})();
 	
 	// hidden reset button
-	$('.pages').on('click', '.hidden-reset-btn', function () {
+	$('.pages').on('click', '.home-btn', function () {
 		sessEnd();
-		window.location.reload(true);
+		setTimeout(function() {
+			window.location.reload(true);
+		}, 500);
 	});
 
 	//load up animation click handlers
@@ -335,7 +337,7 @@ $(function () {
 
 		$(this).find('span').children('img').addClass('on');
 		setTimeout(function() {
-        	$("#video_pop").html('<div><img class="video-pop" style="background-color: #464646;" src="images/incyte-home-btn.png" alt="HOME" title="HOME"><img class="play-pause-btn" src="images/pause-btn.png"><img class="replay-btn" src="images/replay-btn.png"></div><video autoplay id="the_Video" data-videoname="'+ name +'" width="100%" height="100%"><source src="' + url + '" type="video/mp4" /></video>').css('display', 'block');
+        	$("#video_pop").html('<div><img class="home-btn" src="images/incyte-home-btn.png" alt="HOME" title="HOME"><img class="play-pause-btn" src="images/pause-btn.png"><img class="replay-btn" src="images/replay-btn.png"></div><video autoplay id="the_Video" data-videoname="'+ name +'" width="100%" height="100%"><source src="' + url + '" type="video/mp4" /></video>').css('display', 'block');
 			ThreeFXanalytics.VideoTracking();
 		}, 1000);
 
@@ -371,7 +373,7 @@ $(function () {
     /* FADE OUT VIDEO PLAYER HOME BTN */
     $('.pages').on('click', ' .video-pop', function () {
     	$('.carousel').carousel(0); 
-    	$('#video_pop').fadeOut();
+    	//$('#video_pop').fadeOut();
     	if ( $('#carousel-home div.carousel-caption > div span img').hasClass('on') ) {
     		$('#carousel-home div.carousel-caption > div span img').removeClass('on');
     	}

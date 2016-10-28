@@ -318,7 +318,7 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
     top: 0;
     left: 0;
 /*    padding: 50px 20px 20px 50px; */
-    z-index: 9999999999;
+    z-index: 999998;
 }
 #video_pop .video-pop, 
 #video_pop .home-btn, 
@@ -435,10 +435,12 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
     background-size: cover;
 }*/
 .develop-home,
-.study-design-a1-bg {
+.study-design-a1-bg,
+.portfolio-view {
     background: url('../images/ashe-2016-home-bg.jpg') no-repeat center center;
     background-position: cover;
 }
+
 #portfolio-only .portfolio-view {
     background: url('../images/portfolio-only-bg.jpg') no-repeat;
     width: 1920px;
@@ -689,7 +691,7 @@ div.progress {
     box-shadow: none;
     margin: 0 0 8px;
     position: relative;
-    height: 31px;
+    height: 28px;
     width: 100%;
 }
 div.progress-bar {
@@ -937,41 +939,42 @@ div.progress-bar.on:after {
     padding-left: 10px;
 }
 .targeted-therapies-container, .immuno-therapies-container, .non-oncology-container, .partnered-container {
-    margin: 10px 0 0 15px;
+    margin: 0px 0 0 15px;
 }
 .targeted-therapies-container {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 #portfolio-only .targeted-therapies-container {
-    margin-top: 50px;
+    margin-top: 35px;
 }
+
 .targeted-therapies-container div.col-xs-2 {
     background: rgb(199,85,26); /* Old browsers */
     background: -moz-linear-gradient(left,  rgba(199,85,26,1) 0%, rgba(223,102,34,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left,  rgba(199,85,26,1) 0%,rgba(223,102,34,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  rgba(199,85,26,1) 0%,rgba(223,102,34,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    height: 381px;
+    height: 388px;
 }
 .immuno-therapies-container div.col-xs-2 {
     background: rgb(28,19,94); /* Old browsers */
     background: -moz-linear-gradient(left,  rgba(28,19,94,1) 0%, rgba(53,55,147,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left,  rgba(28,19,94,1) 0%,rgba(53,55,147,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  rgba(28,19,94,1) 0%,rgba(53,55,147,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    height: 187px;
+    height: 172px;
 }
 .non-oncology-container div.col-xs-2 {
     background: rgb(101,3,68); /* Old browsers */
     background: -moz-linear-gradient(left,  rgba(101,3,68,1) 0%, rgba(150,31,103,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left,  rgba(101,3,68,1) 0%,rgba(150,31,103,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  rgba(101,3,68,1) 0%,rgba(150,31,103,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    height: 31px;
+    height: 28px;
 }
 .partnered-container div.col-xs-2 {
     background: rgb(0, 134, 188); /* Old browsers */
     background: -moz-linear-gradient(left,  rgba(0, 134, 188, 1) 0%, rgba(0, 168, 232, 1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left,  rgba(0, 134, 188, 1) 0%,rgba(0, 168, 232, 1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  rgba(0, 134, 188, 1) 0%,rgba(0, 168, 232, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    height: 109px;
+    height: 100px;
 }
 
 .portfolio-view .col-xs-2 h3 {
@@ -983,10 +986,11 @@ div.progress-bar.on:after {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    padding-top: 5px;
 }
 
 .portfolio-top-nav {
-    margin-top: -105px;
+    margin-top: -115px;
     position: absolute;
     right: 60px;
 }
@@ -1074,34 +1078,34 @@ div.progress-bar.on:after {
 
 .divider-line-one {
     border-right: 1px solid #c0c1c0;
-    height: 800px;
+    height: 745px;
     position: absolute;
     right: 236px;
-    top: 178px;
-}
+/*    top: 178px;
+*/}
     #portfolio-only .divider-line-one {
         height: 194px; 
         right: 452px;
-        top: 68px;
-    }
+/*        top: 68px;
+*/    }
     .divider-line-one-bottom {
         border-right: 1px solid #c0c1c0; 
         height: 458px;
         position: absolute; 
         right: 236px;
-        top: 520px;
-    }
+/*        top: 520px;
+*/    }
     #portfolio-only .divider-line-one-bottom {
         right: 452px;
-        top: 393px;
-    }
+/*        top: 393px;
+*/    }
 .divider-line-two {
     border-right: 1px solid #c0c1c0;
-    height: 800px;
+    height: 745px;
     position: absolute;
     right: 375px;
-    top: 178px;
-}
+/*    top: 178px;
+*/}
      #portfolio-only .divider-line-two {
         top: 88px;
         height: 174px; 
@@ -1112,24 +1116,24 @@ div.progress-bar.on:after {
         height: 458px;
         position: absolute; 
         right: 375px;
-        top: 520px;
-    }
+/*        top: 520px;
+*/    }
     #portfolio-only .divider-line-two-bottom {
         right: 598px;
-        top: 393px;
-    }
+/*        top: 393px;
+*/    }
 .divider-line-three {
     border-right: 1px solid #c0c1c0;
-    height: 800px;
+    height: 745px;
     position: absolute;
     right: 684px;
-    top: 178px;
-}
+/*    top: 178px;
+*/}
     #portfolio-only .divider-line-three {
         height: 865px;
         right: 908px;
-        top: 68px;
-    }
+/*        top: 68px;
+*/    }
 
 .footnotes {
     color: #000;
@@ -1138,7 +1142,7 @@ div.progress-bar.on:after {
 
 .footnotesSS {
     color: #000;
-    margin-top: 18px;
+    margin-top: 6px;
     margin-left: -10px;
 }
 
@@ -1370,17 +1374,17 @@ p.abstract-more-details-toggle {
     opacity: 1;
 }
 .data-content-html {
-    background: #fff;
-    color: #ff6600;
-    padding: 35px;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    border: 3px solid #ff6600;
-    height: auto;
-    width: 1060px;
-    left: 200px;
+        background: #fff;
+        color: #ff6600;
+        padding: 35px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translate(-50%, -50%);
+        height: auto;
+        width: 1060px;
+        border-radius: 20px;
 }
 #portfolio-only .data-content-html {
     top: 50%;
@@ -1548,7 +1552,7 @@ div#modal-dialog, div#modal-dialog2 {
 .modal-close, .modal-close2, .popover-close {
     display: none;
     left: 0;
-    margin: 50px;
+    /*margin: 50px;*/
     top: 0;
     position: absolute;
     z-index: 999999999;

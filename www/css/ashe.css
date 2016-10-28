@@ -50,6 +50,10 @@ body {
 /*    width: 100%;
 */}
 
+.blue-text {
+  color: #006699;
+}
+
 /* START SCREEN */
 .start-screen div.container {
     position: absolute;
@@ -91,6 +95,15 @@ div.start-screen div.container div.row div {
     border-bottom-right-radius: 20px;
 }
 
+
+/* PORTFOLIO */
+.portfolio-wrapper {
+  background: rgba(255, 255, 255, .85);
+  border-radius: 20px;
+  margin: 10px 42px;
+  padding: 15px;
+  position: relative;
+}
 
 
 /* DISCOVER */
@@ -422,10 +435,14 @@ DEVELOP
     .develop-home {
       color: #11689b;
     }
-    .develop-home h1 {
+    .develop-home h1,
+    .portfolio-view h1 {
       font-size: 40px;
       padding-top: 65px;      
-     text-transform: uppercase;
+      text-transform: uppercase;
+    }
+    .portfolio-view h1 {
+      padding-top: 40px;      
     }
     .develop-home .well {
       border-radius: 20px;
@@ -593,3 +610,20 @@ DEVELOP
 .sd-main .sd-main-content::-webkit-scrollbar { 
     display: none;  // Safari and Chrome
 }*/
+
+
+.portofolio-purple, .portofolio-purple a {
+  color: rgb(28,19,94);
+}
+.portofolio-redish, .portofolio-redish a {
+  color: rgb(101,3,68);
+}
+.portofolio-blue, .portofolio-blue a {
+  color: rgb(0, 134, 188);
+}
+
+
+&lt;span class='portofolio-blue'&gt; 
+
+
+      &lt;/span&gt;"
