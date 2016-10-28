@@ -422,7 +422,7 @@ $(function () {
     			// this opens nav; stops video
 				
 				$('#carousel-home').animate({height:'374px'}, 1000).css('background', 'none');
-				$('.carousel-indicators, .white-overlay').fadeIn();
+				$('.carousel-indicators, .white-overlay, .embed-responsive img').fadeIn();
 				$('.video-on').fadeOut(1000);
 				$('.discover-text').delay(200).fadeIn();
 				console.log('opened ham');
@@ -430,6 +430,7 @@ $(function () {
 			} else {
 				// closes nav; starts video
 				$('#carousel-home').animate({height:'85px'}, 1000).css('background', 'rgba(255, 255, 255, .75');
+				$('.embed-responsive img ').fadeOut();
 				$('.discover-text, .carousel-indicators, .white-overlay').fadeOut();
 				$('.video-on').fadeIn(1000);
 				$('.discover-play-pause-btn').trigger('click');
@@ -437,40 +438,94 @@ $(function () {
 			}
 
 	  	});
-/*
-		$('.pages').on('click', '.discover-rewind-btn', function() {
-			var video = document.getElementById('discover-screen-video');
-			var pBar = document.getElementById('progressbar');
-			video.addEventListener('timeupdate', function() {
-				//video.pause();
-			  	var percent = Math.floor((100 / video.duration) * video.currentTime);
-			  	pBar.value = percent - 20;
-			  	pBar.getElementsByTagName('span')[0].innerHTML = percent - 20;
-  				//video.play();
-			}, false);
-		});
-*/
+
 	    /* VIDEO */
 		$('.pages').on('click', '.discover-play-pause-btn', function() {
-			//alert('yes');
-			$('video#discover-screen-video').get(0).play();
-			$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png');	
 
-  			$('.pages').on('click', '.discover-play-pause-btn.paused', function() {
-				$('video#discover-screen-video').get(0).pause();
-				$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png');
-	  		});
+			//alert('yes');
+			$('video#discover-screen-video').get(0).pause();
+			$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
+
+	  			$('.pages').on('click', '.discover-play-pause-btn.paused', function() {
+					$('video#discover-screen-video').get(0).play();
+					$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
+		  		});
+
+
+
+			  	$('.pages').on('click', '.discover-rewind-btn', function() {
+				//console.log('yes');
+				//console.log(video);
+					
+					video.pause();
+					//console.log(video.currentTime);
+					if (video.currentTime > 0) {
+						console.log('high');
+						console.log("before" + video.currentTime);
+						video.currentTime = (video.currentTime - 30);
+						console.log("after" + video.currentTime);
+					} 
+						setTimeout(function() {
+							video.play();
+						}, 250);
+					// if (video.currentTime <= 4) {
+					// 	console.log('low');
+					// 	video.currentTime = 0;
+					// 	setTimeout(function() {
+					// 		video.play();
+					// 	}, 250);
+					// } 
+					return false;	
+				});
 
   			var video = document.getElementById('discover-screen-video');
 			var pBar = document.getElementById('progressbar');
 			video.addEventListener('timeupdate', function() {
-			  var percent = Math.floor((100 / video.duration) * video.currentTime);
-			  pBar.value = percent;
-			  pBar.getElementsByTagName('span')[0].innerHTML = percent;
+			var percent = Math.floor((100 / video.duration) * video.currentTime);
+
+			  	pBar.value = percent;
+			  	pBar.getElementsByTagName('span')[0].innerHTML = percent;
 			}, false);
+
+			// $('.pages').on('click', '.discover-rewind-btn', function() {
+			// 	console.log('yes');
+			// 	var video = document.getElementById('discover-screen-video');
+			// 	var pBar = document.getElementById('progressbar');
+			// 	video.addEventListener('timeupdate', function() {
+					
+			// 		if (video.currentTime >= 30) {
+			// 			video.pause();
+			// 			video.currentTime = 0;
+			// 			video.play();
+			// 		} else {
+			// 			video.pause();
+			// 			video.currentTime = currentTime - 30;
+			// 			video.play();
+			// 		}
+			// 	  	var percent = Math.floor((100 / video.duration) * video.currentTime);
+			// 	  	pBar.value = percent;
+			// 	  	pBar.getElementsByTagName('span')[0].innerHTML = percent;
+	  // 				//video.play();
+			// 	}, false);
+			// });
 
   		});
 
+
+
+/*
+
+  		$('.pages').on('click', '.play-pause-btn', function() {
+				$('video#the_Video').get(0).pause();
+				$('.play-pause-btn').attr('src', 'images/play-btn.png').addClass('paused');	
+
+	  			$('.pages').on('click', '.play-pause-btn.paused', function() {
+					$('video#the_Video').get(0).play();
+					$('.play-pause-btn').attr('src', 'images/pause-btn.png').removeClass('paused');
+		  		});
+  		});
+
+*/
 		// whe tap screen to start clicked, trigger clicks on hamburger and play button to close nav and start video
   		$('.pages').on('click', '.discover-text', function() {
   			triggerClickHamAndPlayPauseBtn();
@@ -498,12 +553,27 @@ $(function () {
 	  	// }, 200);
 
 
+function navColorChange(navItem) {
+	$('.sd-main .col-xs-12').addClass('bg-blue').not(navItem).removeClass('bg-blue');
+}
 
-	  	$('.pages').on('click', '.study-design-nav', function() {
-	  			$('.sd-main-content.one').fadeOut();
-	  			$('.sd-main-content.two').fadeIn().removeClass('hidden');
+function scrollTo(id) {
+	$('.sd-main-content').animate( {scrollTop: $(id).offset().top}, 2000 );	
+}
+
+	  	$('.pages').on('click', '.primary-objectives-nav', function() {
+			navColorChange('.primary-objectives-nav');
+			scrollTo('#po');
 	  	});
 
+	  	$('.pages').on('click', '.study-design-nav', function() {
+			navColorChange('.study-design-nav');
+			scrollTo('#sd');
+		});
 
+	  	$('.pages').on('click', '.criteria-nav', function() {
+			navColorChange('.criteria-nav');
+			scrollTo('#kiec');
+	  	});
 
 }); 

@@ -619,6 +619,7 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
     width: 0;
     height: 0;
     opacity: 0;
+    -webkit-transform: rotate(30deg);
     transform: rotate(30deg);
     background: rgba(255, 255, 255, 0.13);
     background: linear-gradient(
@@ -908,7 +909,7 @@ div.progress-bar.on:after {
     font-size: 17px;
     line-height: 25px;
     margin-top: 4px;
-    width: 150px;
+    width: 170px;
 }
 .targeted-therapies-container li:nth-child(2), 
 .immuno-therapies-container li:nth-child(2), 
