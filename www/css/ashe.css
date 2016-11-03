@@ -25,6 +25,7 @@ body {
 .pages {
     max-width: 1920px;
     min-width: 768px;
+    min-height: 768px;
     max-height: 1080px;
     overflow: hidden;
     position: relative;
@@ -54,6 +55,27 @@ body {
   color: #006699;
 }
 
+.liaison-box {
+  position: absolute;
+  bottom: 6%;
+  left: 0;
+  right: 0;
+  padding: 0 2%;
+}
+
+.incyte-ref {
+        padding-left: 45px;
+}
+.incyte-ref h6 {
+        margin-top: 0;
+        padding-top: 10px;
+        position: absolute;
+}
+
+.tiny-text {
+  font-size: 15px;
+}
+
 /* START SCREEN */
 .start-screen div.container {
     position: absolute;
@@ -63,9 +85,16 @@ body {
     transform: translate(-50%, -50%);
 }
 
+div.start-screen .col-xs-6.text-center {
+  width: 49%;
+}
 div.start-screen div.container div.row div {
     background: rgba(255, 255, 255, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    /*border: 2px solid rgba(255, 255, 255, 0.3);*/
+    margin: 1px 1px 0 0;
+}
+div.start-screen div.container div.row div:nth-child(3) {
+    border: 0;
 }
 div.start-screen div.container div.row div:hover {
     background: rgba(255, 255, 255, 0.25);
@@ -132,8 +161,8 @@ video#discover-screen-video {
 
 .discover-view h1 {
     color: #006699;
-    font-weight: 700;
-    position: absolute;
+/*    font-weight: 700;
+*/    position: absolute;
     top: 40%;    
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -185,7 +214,12 @@ video#discover-screen-video {
             top: 20px;
             z-index: 9999999;
     }
-        #nav-toggle,#nav-toggle2 { cursor: pointer; padding: 10px 35px 16px 0px; }
+        #nav-toggle,#nav-toggle2 {         
+          cursor: pointer;
+        padding: 0px 35px 0px 0px;
+        display: inline-block;
+        top: 10px;
+         }
         #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after,
         #nav-toggle2 span, #nav-toggle2 span:before, #nav-toggle2 span:after {
           cursor: pointer;
@@ -261,7 +295,7 @@ video#discover-screen-video {
         border-radius: 9px;
         width: 80%;
         vertical-align: top;
-          margin-top: 10px;
+          margin-top: 16px;
       }
 
 
@@ -402,7 +436,13 @@ video#discover-screen-video {
     color: #006699;
 }
 
-
+.goback-btn {
+        z-index: 9998;
+        cursor: pointer;
+        position: absolute;
+        top: 3px;
+        left: 115px;
+}
 /*********************
 DEVELOP
 *********************/
@@ -412,7 +452,7 @@ DEVELOP
 }
 
 .develop-view .container {
-  background: rgba(255, 255, 255, .85);
+  background: rgba(255, 255, 255, .6);
   border-radius: 20px;
   color: #006699;
   padding: 5%;
@@ -486,13 +526,14 @@ DEVELOP
     .disease-state-a .container-fluid.absolute-bottom {
       font-size: 20px;
       position: absolute;
-        bottom: 30px;
+        bottom: 15px;
       text-transform: uppercase;
       width: 100%;  
     }
     .disease-state-a p.well {
       background: rgba(255, 255, 255, 0.75);
       border-radius: 20px;
+      color: rgba(32, 120, 160, .85);
       padding: 35px;
     }
     .disease-state-a p.well.bg-blue,
@@ -519,6 +560,11 @@ DEVELOP
         position: absolute;
           bottom: 25%;
           right: 5%;
+            width: 45%;
+}
+
+.pop-up-div ol {
+  padding-left: 12px;
 }
 
 .container-fluid.sd-main {
@@ -600,8 +646,8 @@ DEVELOP
 .sd-main .sd-main-content {
     overflow: hidden;
     overflow-y: scroll;
-    max-height: 502px;
-    margin: 50px 0;
+    max-height: 472px;
+    margin: 50px 0 80px;
 }
 /*.sd-main .sd-main-content {
     -ms-overflow-style: none;  // IE 10+
@@ -623,7 +669,146 @@ DEVELOP
 }
 
 
-&lt;span class='portofolio-blue'&gt; 
+.scroll-wrapper {
+          max-height: 500px;
+}
+
+/* new portfolio css */
+.portfolio-top-nav {
+        font: 700 14px Helvetica, Arial, sans-serif;
+        position: absolute;
+        top: -25px;
+}
+
+.portfolio-top-nav.one {
+        left: 39%;
+}
+.portfolio-top-nav.two {
+        left: 50%;
+}
+.portfolio-top-nav.three {
+        left: 75%;
+}
+.portfolio-top-nav.four {
+        left: 87%;
+}
 
 
-      &lt;/span&gt;"
+
+/* PORTFOLIO POP-UP UPDATES */
+.data-link-wrapper {
+  display: inline-block;
+  overflow-y: auto;
+  vertical-align: top;
+  width: 40%;
+  max-height: 478px;
+  padding-right: 10px;
+}
+
+.data-video-wrapper {
+  display: inline-block;
+  float: right;
+  width: 58%;
+}
+/*.data-video-wrapper.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}*/
+
+.data-video-wrapper video {
+  width: 100%;
+}
+
+
+/* IPAD STYLES */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+  .targeted-therapies-container {
+      margin-top: 15px;
+  }
+
+  div.progress {
+      height: 23px;
+      margin: 0 0 4px;
+  }
+  .targeted-therapies-container div.col-xs-2 {
+      height: 293px;
+  }
+  .immuno-therapies-container div.col-xs-2 {
+      height: 131px;
+  }
+  .non-oncology-container div.col-xs-2 {
+      height: 23px;
+  }
+  .partnered-container div.col-xs-2 {
+      height: 77px;
+  }
+  .portfolio-view .col-xs-2 h3 {
+      font-size: 18px;
+  }
+  .targeted-therapies-container li, .immuno-therapies-container li, .non-oncology-container li, .partnered-container li {
+        font-size: 15px;
+        line-height: 18px;
+        margin-top: 4px;
+        width: 170px;
+  }
+  .ipadH3 {
+    font-size: 20px;
+  }
+  .iPad-tiny-text {
+    font-size: 11px;
+      line-height: 12px;
+  }
+  .portfolio-top-nav {
+        font: 700 11px Helvetica, Arial, sans-serif;
+        top: -20px;
+  }
+    .portfolio-top-nav.two {
+          left: 49%;
+  }
+  .portfolio-top-nav.three {
+          left: 74%;
+  }
+  .portfolio-top-nav.four {
+        left: 86%;
+  }
+  .divider-line-one, .divider-line-two, .divider-line-three {
+        height: 565px;
+  }
+  div.progress-bar:after
+   {
+        border-width: 12px !important;
+  }
+  .disease-state-a .container-fluid.absolute-bottom {
+    font-size: 14px;
+    bottom: -17px;
+  }
+  .container-fluid.sd-main {
+    margin: 0;
+  }
+  .container-fluid.sd-main h2 {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .container-fluid.sd-main .col-xs-12 {
+    min-height: 185px;
+  }
+  .container-fluid.sd-main .col-xs-9 {
+    max-height: 557px;
+    width: 73%;
+  }
+  .sd-main .sd-main-content {
+    max-height: 427px;
+  }
+  .col-xs-9.primary-obj .liaison-box {
+        padding: 0 14%;
+  }
+}

@@ -78,41 +78,45 @@ function ClearPages ()
 		$('.modal-close').hide();
 		$('.modal-close2').hide();
 		$('button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only.ui-dialog-titlebar-close').trigger('click');
-			//$(".home").load("page-snippets/study-design-a1.html", function(){
 			$(".home").load("page-snippets/home.html", function(){
+			//$(".home").load("page-snippets/portfolio-v2.html", function(){
+			//$(".home").load("page-snippets/portfolio.html", function(){
+			//$(".home").load("page-snippets/develop.html", function(){
+			//$(".home").load("page-snippets/study-design-a1.html", function(){
 				$(".pg-discover").load("page-snippets/discover.html", function(){
-					$(".pg-develop").load("page-snippets/develop.html", function(){
-						$(".pg-develop-home").load("page-snippets/develop-home.html", function(){
-							$(".pg-study-home-a").load("page-snippets/study-home-a.html", function(){
-							$(".pg-study-home-b").load("page-snippets/study-home-b.html", function(){
-								$(".pg-disease-state-a").load("page-snippets/disease-state-a.html", function(){
-								$(".pg-rationale-a").load("page-snippets/rationale-a.html", function(){
-								$(".pg-study-design-a1").load("page-snippets/study-design-a1.html", function(){
-
-
-
-									$(".pg-portfolio").load("page-snippets/portfolio.html",function(){
-									// $(".side-nav").load("page-snippets/navigation.html", function(){
-									// 	$(".pg-abstract .side-nav .abstract, .pg-portfolio .side-nav .portfolio").addClass("active");
-									// 	$(".pg-abstract .side-nav .abstract img").attr("src", "images/3fx_echo_video_kiosk_ui_v1.png");
-									// 	$(".pg-portfolio .side-nav .portfolio img").attr("src", "images/incyte-nav-2-portfolio-active-symbol.png");
-									// 	ThreeFXanalytics.Init();
-									// 	ThreeFXanalytics.Tracking();
-									// });
+					$(".pg-portfolio").load("page-snippets/portfolio.html",function(){
+						$(".pg-develop").load("page-snippets/develop.html", function(){
+							$(".pg-develop-home").load("page-snippets/develop-home.html", function(){
+									$(".pg-study-home-a").load("page-snippets/study-home-a.html", function(){
+									$(".pg-disease-state-a").load("page-snippets/disease-state-a.html", function(){
+									$(".pg-rationale-a").load("page-snippets/rationale-a.html", function(){
+									$(".pg-study-design-a1").load("page-snippets/study-design-a1.html", function(){
+										$(".pg-study-home-b").load("page-snippets/study-home-b.html", function(){
+											$(".pg-disease-state-b").load("page-snippets/disease-state-b.html", function(){
+											$(".pg-rationale-b").load("page-snippets/rationale-b.html", function(){
+											$(".pg-study-design-b1").load("page-snippets/study-design-b1.html", function() {
+											// $(".side-nav").load("page-snippets/navigation.html", function(){
+											// 	$(".pg-abstract .side-nav .abstract, .pg-portfolio .side-nav .portfolio").addClass("active");
+											// 	$(".pg-abstract .side-nav .abstract img").attr("src", "images/3fx_echo_video_kiosk_ui_v1.png");
+											// 	$(".pg-portfolio .side-nav .portfolio img").attr("src", "images/incyte-nav-2-portfolio-active-symbol.png");
+											// 	ThreeFXanalytics.Init();
+											// 	ThreeFXanalytics.Tracking();
+											// });
+											});
+											});
+											});
+										});
 									});
-								});
-
-							});
-							});
-							});
+									});
+									});
 							});
 						});
 					});
 				});
-			}).addClass('visible');
+			});
+		}).addClass('visible');
 	})();
 }
-
 
 //page animation functions
 var pageAnimating = false;
@@ -165,22 +169,23 @@ scroll = function(direction, target){
 		}
 		//setTimeout(function(){ scroll(direction, target); }, 100);
 	
-},
-loadAbstract = function(abstractNum){
-	if(abstractSwapping){
-		return;
-	}
-	abstractSwapping = true;
-	$('.abstract-wrapper').addClass('loadout');
-	setTimeout(function(){
-		$('.abstract-wrapper').load('page-snippets/abstracts/abstract-'+abstractNum+'.html', function(){
-			$('.abstract-wrapper').removeClass('loadout').css('width', '1200px');
-			$('.abstract-view .abstract-scroller').css('display', 'inline-block');
-			abstractSwapping=false;
-		});
+}
+// ,
+// loadAbstract = function(abstractNum){
+// 	if(abstractSwapping){
+// 		return;
+// 	}
+// 	abstractSwapping = true;
+// 	$('.abstract-wrapper').addClass('loadout');
+// 	setTimeout(function(){
+// 		$('.abstract-wrapper').load('page-snippets/abstracts/abstract-'+abstractNum+'.html', function(){
+// 			$('.abstract-wrapper').removeClass('loadout').css('width', '1200px');
+// 			$('.abstract-view .abstract-scroller').css('display', 'inline-block');
+// 			abstractSwapping=false;
+// 		});
 		
-	},300)
-};
+// 	},300)
+// };
 
 $(function () {
 
@@ -232,6 +237,38 @@ $(function () {
 					$('div.progress-bar.width81').css('width', '0%');
 					$('div.progress-bar.width97').css('width', '0%');
 					$('div.progress-bar').removeClass('on');
+				}
+				if(intentPage == "disease-state-a"){
+					setTimeout(function(){
+						$('video#disease-state-video').get(0).play();
+					},550);
+				}else{
+						$('video#disease-state-video').get(0).pause();
+						$('video#disease-state-video').get(0).currentTime = 0;
+				}
+				if(intentPage == "rationale-a"){
+					setTimeout(function(){
+						$('video#rationale-a-video').get(0).play();
+					},550);
+				}else{
+						$('video#rationale-a-video').get(0).pause();
+						$('video#rationale-a-video').get(0).currentTime = 0;
+				}
+				if(intentPage == "disease-state-b"){
+					setTimeout(function(){
+						$('video#disease-state-b-video').get(0).play();
+					},550);
+				}else{
+						$('video#disease-state-b-video').get(0).pause();
+						$('video#disease-state-b-video').get(0).currentTime = 0;
+				}
+				if(intentPage == "rationale-b"){
+					setTimeout(function(){
+						$('video#rationale-b-video').get(0).play();
+					},550);
+				}else{
+						$('video#rationale-b-video').get(0).pause();
+						$('video#rationale-b-video').get(0).currentTime = 0;
 				}
 			}
 		);
@@ -290,11 +327,14 @@ $(function () {
 
     /* MODAL POP-UP */
     $('.pages').on('click', '.modal-show', function () {
+    	var winW = $(window).width();
+		var winH = $(window).height();
+
         $('#modal-frame').attr('src', $(this).attr('href'));
     	$('.modal-close').show();
 		$('#modal-dialog').dialog({
-            width: 1324,
-            height: 915,
+            width: winW,
+            height: winH,
             modal: true,
             show: {
 	            effect: 'fade',
@@ -385,16 +425,26 @@ $(function () {
     	$('.abstract-more-details-toggle span').toggleClass('on');
     });
 
+    // $('.pages').on('click', '.progress-bar.width97.stopClick', function() {
+    // 	return false;
+    // });
+
     // Portfolio page pop-up
     $('.pages').on('click', '.progress-bar', function () {
 			var content = $(this).attr('data-content');
 			//alert(content);
 			$('.data-content-html').html(content);
-			$('.popover-bg, .popover-close').fadeIn();
+			if ( !$(this).hasClass('stopClick') ) {
+				$('.popover-bg, .popover-close').fadeIn();
+			}
 		});
     $('.pages').on('click', '.popover-close', function () {
+    	$('video').attr('src', '');
     	$('.popover-bg, .popover-close').fadeOut();
+
     });
+
+
 
 
 
@@ -442,6 +492,60 @@ $(function () {
 	  	});
 
 	    /* VIDEO */
+
+	    function videoBarProgress(videoID, progressBarId) {
+	      	var video = document.getElementById(videoID);
+			var pBar = document.getElementById(progressBarId);
+			// var vidCurrentTime = video.currentTime;
+
+			video.addEventListener('timeupdate', function() {
+				var vidCurrentTime = video.currentTime;
+				var percent = Math.floor((100 / video.duration) * vidCurrentTime);
+			  	pBar.value = percent;
+			  	pBar.getElementsByTagName('span')[0].innerHTML = percent;
+
+	  			$('.pages').on('click', '.discover-rewind-btn', function() {
+	  				if (vidCurrentTime > 5) {
+	  					console.log('>30b ' + vidCurrentTime)
+	  					video.pause();
+	  					vidCurrentTime -= 5;
+	  					console.log(vidCurrentTime);
+	  					//video.play();
+	  				}
+	  			});
+
+
+
+			}, false);
+
+				// var vidCurrentTime = video.currentTime;
+				// //console.log(video.currentTime);
+
+				// $('.pages').on('click', '.discover-rewind-btn', function() {
+				// 	console.log('yes');
+				// 	if (vidCurrentTime > 30) {
+				// 		console.log('>30');
+				// 	} else {
+				// 		time = 0;
+				// 	}
+				// });
+		}
+
+		// function playPause(id, playPauseBtnClass) {
+		// 	$('.pages').on('click', playPauseBtnClass, function() {
+
+		// 	//alert('yes');
+		// 	$('video' + id).get(0).pause();
+		// 	$(playPauseBtnClass).attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
+
+	 //  			$('.pages').on('click', playPauseBtnClass + '.paused', function() {
+		// 			$('video' + id).get(0).play();
+		// 			$(playPauseBtnClass).attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
+		//   		});
+	 //  		});
+		// }
+
+/* discover video */
 		$('.pages').on('click', '.discover-play-pause-btn', function() {
 
 			//alert('yes');
@@ -453,41 +557,40 @@ $(function () {
 					$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
 		  		});
 
-
-
-			  	$('.pages').on('click', '.discover-rewind-btn', function() {
-				//console.log('yes');
-				//console.log(video);
+			 //  	$('.pages').on('click', '.discover-rewind-btn', function() {
+				// //console.log('yes');
+				// //console.log(video);
 					
-					video.pause();
-					//console.log(video.currentTime);
-					if (video.currentTime > 0) {
-						console.log('high');
-						console.log("before" + video.currentTime);
-						video.currentTime = (video.currentTime - 30);
-						console.log("after" + video.currentTime);
-					} 
-						setTimeout(function() {
-							video.play();
-						}, 250);
-					// if (video.currentTime <= 4) {
-					// 	console.log('low');
-					// 	video.currentTime = 0;
-					// 	setTimeout(function() {
-					// 		video.play();
-					// 	}, 250);
-					// } 
-					return false;	
-				});
+				// 	video.pause();
+				// 	//console.log(video.currentTime);
+				// 	if (video.currentTime > 0) {
+				// 		console.log('high');
+				// 		console.log("before" + video.currentTime);
+				// 		video.currentTime = (video.currentTime - 30);
+				// 		console.log("after" + video.currentTime);
+				// 	} 
+				// 		setTimeout(function() {
+				// 			video.play();
+				// 		}, 250);
+				// 	// if (video.currentTime <= 4) {
+				// 	// 	console.log('low');
+				// 	// 	video.currentTime = 0;
+				// 	// 	setTimeout(function() {
+				// 	// 		video.play();
+				// 	// 	}, 250);
+				// 	// } 
+				// 	return false;	
+				// });
 
-  			var video = document.getElementById('discover-screen-video');
-			var pBar = document.getElementById('progressbar');
-			video.addEventListener('timeupdate', function() {
-			var percent = Math.floor((100 / video.duration) * video.currentTime);
+			videoBarProgress('discover-screen-video', 'progressbar');
+  	// 		var video = document.getElementById('discover-screen-video');
+			// var pBar = document.getElementById('progressbar');
+			// video.addEventListener('timeupdate', function() {
+			// var percent = Math.floor((100 / video.duration) * video.currentTime);
 
-			  	pBar.value = percent;
-			  	pBar.getElementsByTagName('span')[0].innerHTML = percent;
-			}, false);
+			//   	pBar.value = percent;
+			//   	pBar.getElementsByTagName('span')[0].innerHTML = percent;
+			// }, false);
 
 			// $('.pages').on('click', '.discover-rewind-btn', function() {
 			// 	console.log('yes');
@@ -515,6 +618,74 @@ $(function () {
 
 
 
+/* disease-state-a video */
+		setTimeout(function() {
+			videoBarProgress('disease-state-video', 'progressbar2');
+		}, 500);
+
+
+	    /* VIDEO */
+		$('.pages').on('click', '.disease-state-play-pause-btn', function() {
+
+			//alert('yes');
+			$('video#disease-state-video').get(0).pause();
+			$('.disease-state-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
+
+	  			$('.pages').on('click', '.disease-state-play-pause-btn.paused', function() {
+					$('video#disease-state-video').get(0).play();
+					$('.disease-state-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
+		  		});
+
+			 //  	$('.pages').on('click', '.disease-state-rewind-btn', function() {
+				// //console.log('yes');
+				// //console.log(video);
+					
+				// 	video.pause();
+				// 	//console.log(video.currentTime);
+				// 	if (video.currentTime > 0) {
+				// 		console.log('high');
+				// 		console.log("before" + video.currentTime);
+				// 		video.currentTime = (video.currentTime - 30);
+				// 		console.log("after" + video.currentTime);
+				// 	} 
+				// 		setTimeout(function() {
+				// 			video.play();
+				// 		}, 250);
+				// 	// if (video.currentTime <= 4) {
+				// 	// 	console.log('low');
+				// 	// 	video.currentTime = 0;
+				// 	// 	setTimeout(function() {
+				// 	// 		video.play();
+				// 	// 	}, 250);
+				// 	// } 
+				// 	return false;	
+				// });
+
+			videoBarProgress('disease-state-video', 'progressbar2');
+
+			// $('.pages').on('click', '.discover-rewind-btn', function() {
+			// 	console.log('yes');
+			// 	var video = document.getElementById('discover-screen-video');
+			// 	var pBar = document.getElementById('progressbar');
+			// 	video.addEventListener('timeupdate', function() {
+					
+			// 		if (video.currentTime >= 30) {
+			// 			video.pause();
+			// 			video.currentTime = 0;
+			// 			video.play();
+			// 		} else {
+			// 			video.pause();
+			// 			video.currentTime = currentTime - 30;
+			// 			video.play();
+			// 		}
+			// 	  	var percent = Math.floor((100 / video.duration) * video.currentTime);
+			// 	  	pBar.value = percent;
+			// 	  	pBar.getElementsByTagName('span')[0].innerHTML = percent;
+	  // 				//video.play();
+			// 	}, false);
+			// });
+
+  		});
 /*
 
   		$('.pages').on('click', '.play-pause-btn', function() {
@@ -528,12 +699,68 @@ $(function () {
   		});
 
 */
+/* rational-a-video controls */
+		setTimeout(function() {
+			videoBarProgress('rationale-a-video', 'progressbar3');
+		}, 500);
+
+		$('.pages').on('click', '.rationale-a-play-pause-btn', function() {
+
+			//alert('yes');
+			$('video#rationale-a-video').get(0).pause();
+			$('.rationale-a-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
+
+	  			$('.pages').on('click', '.rationale-a-play-pause-btn.paused', function() {
+					$('video#rationale-a-video').get(0).play();
+					$('.rationale-a-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
+		  		});
+
+			videoBarProgress('rationale-a-video', 'progressbar3');
+  		});
+
+/* disease-state-b */
+		setTimeout(function() {
+			videoBarProgress('disease-state-b-video', 'progressbar4');
+		}, 500);
+
+		$('.pages').on('click', '.disease-state-b-play-pause-btn', function() {
+
+			//alert('yes');
+			$('video#disease-state-b-video').get(0).pause();
+			$('.disease-state-b-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
+
+	  			$('.pages').on('click', '.disease-state-b-play-pause-btn.paused', function() {
+					$('video#disease-state-b-video').get(0).play();
+					$('.disease-state-b-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
+		  		});
+
+			videoBarProgress('disease-state-video', 'progressbar4');
+			});
+
+/* rational-a-video controls */
+		setTimeout(function() {
+			videoBarProgress('rationale-b-video', 'progressbar5');
+		}, 500);
+
+		$('.pages').on('click', '.rationale-b-play-pause-btn', function() {
+
+			//alert('yes');
+			$('video#rationale-b-video').get(0).pause();
+			$('.rationale-b-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
+
+	  			$('.pages').on('click', '.rationale-b-play-pause-btn.paused', function() {
+					$('video#rationale-b-video').get(0).play();
+					$('.rationale-b-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
+		  		});
+
+			videoBarProgress('rationale-b-video', 'progressbar5');
+  		});
+
+
 		// whe tap screen to start clicked, trigger clicks on hamburger and play button to close nav and start video
   		$('.pages').on('click', '.discover-text', function() {
   			triggerClickHamAndPlayPauseBtn();
   		});
-
-
 
 
   		/* popup for more information book thing */
@@ -547,35 +774,100 @@ $(function () {
   		});
 
 
-  		// get height of nav on study-design page and set box nex to it the same height
-  		// setTimeout(function() {
-	  	// 	var getHeight = $('.study-design-a1-bg .sd-main div.col-xs-3').outerHeight();
-	  	// 	console.log(getHeight);
-	  	// 	$('.study-design-a1-bg .sd-main div.col-xs-9').css('height', getHeight);
-	  	// }, 200);
-
-
+// functionality on study-design pages
 function navColorChange(navItem) {
 	$('.sd-main .col-xs-12').addClass('bg-blue').not(navItem).removeClass('bg-blue');
 }
 
-function scrollTo(id) {
-	$('.sd-main-content').animate( {scrollTop: $(id).offset().top}, 2000 );	
+function scrollToF(id) {
+	$('.sd-main-content').animate( {scrollTop: $(id).position().top }, 500 );	
+	//var currentPos = $(id).position().top;
+	//console.log(currentPos);
 }
 
 	  	$('.pages').on('click', '.primary-objectives-nav', function() {
 			navColorChange('.primary-objectives-nav');
-			scrollTo('#po');
+			scrollToF('#po');
 	  	});
 
 	  	$('.pages').on('click', '.study-design-nav', function() {
 			navColorChange('.study-design-nav');
-			scrollTo('#sd');
+			scrollToF('#sd');
 		});
 
 	  	$('.pages').on('click', '.criteria-nav', function() {
 			navColorChange('.criteria-nav');
-			scrollTo('#kiec');
+			scrollToF('#kiec');
 	  	});
+
+	  	/* scroll within box via chevrons*/
+	  	$('.pages').on('click', '.chevron-top', function() {
+		  $(".sd-main-content").animate({ scrollTop: '-=100px' }, 600);
+			  // if ( $('.sd-main-content').scrollTop() == 0) {
+			  // 	console.log('zero');
+			  // 	$('.sd-main .chevron-container.top .chevron-top').hide();
+			  // } else {
+			  // 	$('.sd-main .chevron-container.top .chevron-top').show();
+			  // }
+		});
+		$('.pages').on('click', '.chevron-btm', function() {
+		  $(".sd-main-content").animate({ scrollTop: '+=100px' }, 600);
+	  		//   if ( $('.sd-main-content').scrollTop() == 0) {
+			  // 	console.log('zero');
+			  // 	$('.sd-main .chevron-container.top .chevron-top').hide();
+			  // } else {
+			  // 	$('.sd-main .chevron-container.top .chevron-top').show();
+			  // }
+		});
+
+		setTimeout(function() {
+			$.fn.inView = function(){
+			    if(!this.length) return false;
+			    var rect = this.get(0).getBoundingClientRect();
+
+			    return (
+			        rect.top >= 0 &&
+			        rect.left >= 0 &&
+			        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+			        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			    );
+			};
+			$('.sd-main-content').on('scroll', function(){ 
+			    if( $('#po').inView() ) {
+					navColorChange('.primary-objectives-nav');
+			    }
+			    if( $('#sd').inView() ) {
+					navColorChange('.study-design-nav');
+			    }
+			    if( $('#kiec').inView() ) {
+			        navColorChange('.criteria-nav');
+			    }
+			    if( $('#poB').inView() ) {
+					navColorChange('.primary-objectives-nav');
+			    }
+			    if( $('#sdB').inView() ) {
+					navColorChange('.study-design-nav');
+			    }
+			    if( $('#kiecB').inView() ) {
+			        navColorChange('.criteria-nav');
+			    }
+			});
+		}, 500);
+
+
+// setTimeout(function() {
+// 	var vidElem = document.getElementById("controls");
+
+//     vidElem.addEventListener('timeupdate', videoTimeUpdateHandler, false);
+
+//     function videoTimeUpdateHandler(e)
+//     {
+//         vidElem.setAttribute("controls","controls");
+//     }
+// }, 1250);
+		// /* portfolio video fullscreen functionality */
+		// $('.pages').on('click', '.fullscreen-btn', function() {
+		// 	$('.data-content-html, .data-video-wrapper').addClass('fullscreen');
+		// });
 
 }); 

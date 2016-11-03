@@ -29,7 +29,7 @@
 	<div class="video-still" style="background: url('images/MONITOR_ONE.jpg');"></div> -->
 
 
-
+        
 <div id="carousel-home" class="carousel slide" data-ride="carousel" data-interval="false">
 	<!-- Ham nav toggle -->
 	<a id="nav-toggle" class="active" href="#"><span></span></a>
@@ -161,7 +161,7 @@
  -->
 
 <script>
-  $(document).ready(function() {  
+  $(function() {  
   		 $("#carousel-home").swiperight(function() {  
     		  $(this).carousel('prev');  
 	    		});  
@@ -169,4 +169,28 @@
 		      $(this).carousel('next');  
 	   });  
 	});  
+
+	// $(function () {
+	//   $('#carousel-home').carousel({
+	//     interval: 10000
+	//   })
+	//   $('.carousel .item').each(function () {
+	//     var next = $(this).next();
+	//     if (!next.length) {
+	//       next = $(this).siblings(':first');
+	//     }
+	//     cloneItem(next,$(this));
+	//     if (next.next().length > 0) {
+	//       cloneItem(next.next(),$(this));
+	//     } else {
+	//       cloneItem($(this).siblings(':first'),$(this));
+	//     }
+	//   });
+	  
+	// });
+
+	// function cloneItem($item,$target) {
+	// 	$clone = $item.children(':first-child').clone();
+	//   $clone.appendTo($target);
+	// }
 </script>
