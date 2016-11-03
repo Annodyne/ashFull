@@ -79,7 +79,7 @@ function ClearPages ()
 		$('.modal-close2').hide();
 		$('button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only.ui-dialog-titlebar-close').trigger('click');
 			$(".home").load("page-snippets/home.html", function(){
-			//$(".home").load("page-snippets/portfolio-v2.html", function(){
+			//$(".home").load("page-snippets/discover.html", function(){
 			//$(".home").load("page-snippets/portfolio.html", function(){
 			//$(".home").load("page-snippets/develop.html", function(){
 			//$(".home").load("page-snippets/study-design-a1.html", function(){
@@ -169,6 +169,21 @@ scroll = function(direction, target){
 		}
 		//setTimeout(function(){ scroll(direction, target); }, 100);
 	
+}
+
+
+function scrollInView() {
+	$.fn.inView = function(){
+	    if(!this.length) return false;
+	    var rect = this.get(0).getBoundingClientRect();
+
+	    return (
+	        rect.top >= 0 &&
+	        rect.left >= 0 &&
+	        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+	        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+	    );
+	};
 }
 // ,
 // loadAbstract = function(abstractNum){
@@ -269,6 +284,60 @@ $(function () {
 				}else{
 						$('video#rationale-b-video').get(0).pause();
 						$('video#rationale-b-video').get(0).currentTime = 0;
+				}
+				if (intentPage == "study-design-a1") {
+						setTimeout(function() {
+							scrollInView();
+							// $.fn.inView = function(){
+							//     if(!this.length) return false;
+							//     var rect = this.get(0).getBoundingClientRect();
+
+							//     return (
+							//         rect.top >= 0 &&
+							//         rect.left >= 0 &&
+							//         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+							//         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+							//     );
+							// };
+							$('.sd-main-content').on('scroll', function(){ 
+							    if( $('#po').inView() ) {
+									navColorChange('.primary-objectives-nav');
+							    }
+							    if( $('#sd').inView() ) {
+									navColorChange('.study-design-nav');
+							    }
+							    if( $('#kiec').inView() ) {
+							        navColorChange('.criteria-nav');
+							    }
+							});
+						}, 500);
+				}
+				if (intentPage == "study-design-b1") {
+						setTimeout(function() {
+							scrollInView();
+							// $.fn.inView = function(){
+							//     if(!this.length) return false;
+							//     var rect = this.get(0).getBoundingClientRect();
+
+							//     return (
+							//         rect.top >= 0 &&
+							//         rect.left >= 0 &&
+							//         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+							//         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+							//     );
+							// };
+							$('.sd-main-content').on('scroll', function(){ 
+							    if( $('#poB').inView() ) {
+									navColorChange('.primary-objectives-nav');
+							    }
+							    if( $('#sdB').inView() ) {
+									navColorChange('.study-design-nav');
+							    }
+							    if( $('#kiecB').inView() ) {
+							        navColorChange('.criteria-nav');
+							    }
+							});
+						}, 500);
 				}
 			}
 		);
@@ -491,6 +560,16 @@ $(function () {
 
 	  	});
 
+
+
+		// whe tap screen to start clicked, trigger clicks on hamburger and play button to close nav and start video
+  		$('.pages').on('click', '.discover-text', function() {
+  			triggerClickHamAndPlayPauseBtn();
+  		});
+
+
+
+
 	    /* VIDEO */
 
 	    function videoBarProgress(videoID, progressBarId) {
@@ -499,51 +578,15 @@ $(function () {
 			// var vidCurrentTime = video.currentTime;
 
 			video.addEventListener('timeupdate', function() {
-				var vidCurrentTime = video.currentTime;
-				var percent = Math.floor((100 / video.duration) * vidCurrentTime);
+
+				var percent = Math.floor((100 / video.duration) * video.currentTime);
 			  	pBar.value = percent;
 			  	pBar.getElementsByTagName('span')[0].innerHTML = percent;
 
-	  			$('.pages').on('click', '.discover-rewind-btn', function() {
-	  				if (vidCurrentTime > 5) {
-	  					console.log('>30b ' + vidCurrentTime)
-	  					video.pause();
-	  					vidCurrentTime -= 5;
-	  					console.log(vidCurrentTime);
-	  					//video.play();
-	  				}
-	  			});
-
-
-
 			}, false);
-
-				// var vidCurrentTime = video.currentTime;
-				// //console.log(video.currentTime);
-
-				// $('.pages').on('click', '.discover-rewind-btn', function() {
-				// 	console.log('yes');
-				// 	if (vidCurrentTime > 30) {
-				// 		console.log('>30');
-				// 	} else {
-				// 		time = 0;
-				// 	}
-				// });
 		}
 
-		// function playPause(id, playPauseBtnClass) {
-		// 	$('.pages').on('click', playPauseBtnClass, function() {
 
-		// 	//alert('yes');
-		// 	$('video' + id).get(0).pause();
-		// 	$(playPauseBtnClass).attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
-
-	 //  			$('.pages').on('click', playPauseBtnClass + '.paused', function() {
-		// 			$('video' + id).get(0).play();
-		// 			$(playPauseBtnClass).attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
-		//   		});
-	 //  		});
-		// }
 
 /* discover video */
 		$('.pages').on('click', '.discover-play-pause-btn', function() {
@@ -557,72 +600,15 @@ $(function () {
 					$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
 		  		});
 
-			 //  	$('.pages').on('click', '.discover-rewind-btn', function() {
-				// //console.log('yes');
-				// //console.log(video);
-					
-				// 	video.pause();
-				// 	//console.log(video.currentTime);
-				// 	if (video.currentTime > 0) {
-				// 		console.log('high');
-				// 		console.log("before" + video.currentTime);
-				// 		video.currentTime = (video.currentTime - 30);
-				// 		console.log("after" + video.currentTime);
-				// 	} 
-				// 		setTimeout(function() {
-				// 			video.play();
-				// 		}, 250);
-				// 	// if (video.currentTime <= 4) {
-				// 	// 	console.log('low');
-				// 	// 	video.currentTime = 0;
-				// 	// 	setTimeout(function() {
-				// 	// 		video.play();
-				// 	// 	}, 250);
-				// 	// } 
-				// 	return false;	
-				// });
-
 			videoBarProgress('discover-screen-video', 'progressbar');
-  	// 		var video = document.getElementById('discover-screen-video');
-			// var pBar = document.getElementById('progressbar');
-			// video.addEventListener('timeupdate', function() {
-			// var percent = Math.floor((100 / video.duration) * video.currentTime);
-
-			//   	pBar.value = percent;
-			//   	pBar.getElementsByTagName('span')[0].innerHTML = percent;
-			// }, false);
-
-			// $('.pages').on('click', '.discover-rewind-btn', function() {
-			// 	console.log('yes');
-			// 	var video = document.getElementById('discover-screen-video');
-			// 	var pBar = document.getElementById('progressbar');
-			// 	video.addEventListener('timeupdate', function() {
-					
-			// 		if (video.currentTime >= 30) {
-			// 			video.pause();
-			// 			video.currentTime = 0;
-			// 			video.play();
-			// 		} else {
-			// 			video.pause();
-			// 			video.currentTime = currentTime - 30;
-			// 			video.play();
-			// 		}
-			// 	  	var percent = Math.floor((100 / video.duration) * video.currentTime);
-			// 	  	pBar.value = percent;
-			// 	  	pBar.getElementsByTagName('span')[0].innerHTML = percent;
-	  // 				//video.play();
-			// 	}, false);
-			// });
 
   		});
-
 
 
 /* disease-state-a video */
 		setTimeout(function() {
 			videoBarProgress('disease-state-video', 'progressbar2');
 		}, 500);
-
 
 	    /* VIDEO */
 		$('.pages').on('click', '.disease-state-play-pause-btn', function() {
@@ -636,69 +622,10 @@ $(function () {
 					$('.disease-state-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
 		  		});
 
-			 //  	$('.pages').on('click', '.disease-state-rewind-btn', function() {
-				// //console.log('yes');
-				// //console.log(video);
-					
-				// 	video.pause();
-				// 	//console.log(video.currentTime);
-				// 	if (video.currentTime > 0) {
-				// 		console.log('high');
-				// 		console.log("before" + video.currentTime);
-				// 		video.currentTime = (video.currentTime - 30);
-				// 		console.log("after" + video.currentTime);
-				// 	} 
-				// 		setTimeout(function() {
-				// 			video.play();
-				// 		}, 250);
-				// 	// if (video.currentTime <= 4) {
-				// 	// 	console.log('low');
-				// 	// 	video.currentTime = 0;
-				// 	// 	setTimeout(function() {
-				// 	// 		video.play();
-				// 	// 	}, 250);
-				// 	// } 
-				// 	return false;	
-				// });
-
 			videoBarProgress('disease-state-video', 'progressbar2');
 
-			// $('.pages').on('click', '.discover-rewind-btn', function() {
-			// 	console.log('yes');
-			// 	var video = document.getElementById('discover-screen-video');
-			// 	var pBar = document.getElementById('progressbar');
-			// 	video.addEventListener('timeupdate', function() {
-					
-			// 		if (video.currentTime >= 30) {
-			// 			video.pause();
-			// 			video.currentTime = 0;
-			// 			video.play();
-			// 		} else {
-			// 			video.pause();
-			// 			video.currentTime = currentTime - 30;
-			// 			video.play();
-			// 		}
-			// 	  	var percent = Math.floor((100 / video.duration) * video.currentTime);
-			// 	  	pBar.value = percent;
-			// 	  	pBar.getElementsByTagName('span')[0].innerHTML = percent;
-	  // 				//video.play();
-			// 	}, false);
-			// });
-
-  		});
-/*
-
-  		$('.pages').on('click', '.play-pause-btn', function() {
-				$('video#the_Video').get(0).pause();
-				$('.play-pause-btn').attr('src', 'images/play-btn.png').addClass('paused');	
-
-	  			$('.pages').on('click', '.play-pause-btn.paused', function() {
-					$('video#the_Video').get(0).play();
-					$('.play-pause-btn').attr('src', 'images/pause-btn.png').removeClass('paused');
-		  		});
   		});
 
-*/
 /* rational-a-video controls */
 		setTimeout(function() {
 			videoBarProgress('rationale-a-video', 'progressbar3');
@@ -754,12 +681,6 @@ $(function () {
 		  		});
 
 			videoBarProgress('rationale-b-video', 'progressbar5');
-  		});
-
-
-		// whe tap screen to start clicked, trigger clicks on hamburger and play button to close nav and start video
-  		$('.pages').on('click', '.discover-text', function() {
-  			triggerClickHamAndPlayPauseBtn();
   		});
 
 
@@ -820,39 +741,7 @@ function scrollToF(id) {
 			  // }
 		});
 
-		setTimeout(function() {
-			$.fn.inView = function(){
-			    if(!this.length) return false;
-			    var rect = this.get(0).getBoundingClientRect();
 
-			    return (
-			        rect.top >= 0 &&
-			        rect.left >= 0 &&
-			        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-			        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-			    );
-			};
-			$('.sd-main-content').on('scroll', function(){ 
-			    if( $('#po').inView() ) {
-					navColorChange('.primary-objectives-nav');
-			    }
-			    if( $('#sd').inView() ) {
-					navColorChange('.study-design-nav');
-			    }
-			    if( $('#kiec').inView() ) {
-			        navColorChange('.criteria-nav');
-			    }
-			    if( $('#poB').inView() ) {
-					navColorChange('.primary-objectives-nav');
-			    }
-			    if( $('#sdB').inView() ) {
-					navColorChange('.study-design-nav');
-			    }
-			    if( $('#kiecB').inView() ) {
-			        navColorChange('.criteria-nav');
-			    }
-			});
-		}, 500);
 
 
 // setTimeout(function() {
