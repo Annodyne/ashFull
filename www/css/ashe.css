@@ -724,6 +724,23 @@ DEVELOP
   width: 100%;
 }
 
+/* SURFACE */
+@media (max-width: 1440px) {
+  .container-fluid.sd-main h2 {
+    margin-bottom: 9px;
+  }  
+
+  .container-fluid.sd-main .col-xs-9 {
+    max-height: 530px;
+  }
+  .sd-main .sd-main-content {
+    max-height: 400px;
+  }
+  .container-fluid.sd-main .col-xs-12 {
+     min-height: 176px;
+  }
+}
+
 
 /* IPAD STYLES */
 @media only screen 
