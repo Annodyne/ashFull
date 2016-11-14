@@ -635,6 +635,12 @@ DEVELOP
             width: 45%;
 }
 
+.pop-up-div.studydesign {
+        bottom: 15%;
+        right: 9%;
+        z-index: 9999999998;
+}
+
 .pop-up-div ol {
   padding-left: 12px;
 }
