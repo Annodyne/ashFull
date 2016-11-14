@@ -350,11 +350,11 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
 #video_pop .play-pause-btn,
 #video_pop .replay-btn
  {
-    margin: 50px 0 50px 50px;
-    position: relative; 
+/*    margin: 50px 0 50px 50px;
+*/    position: relative; 
     z-index: 999999; 
-    width: 100px;
-    height: 100px;
+/*    width: 100px;
+    height: 100px;*/
 }
 .video-pop,
 .home-btn {
@@ -364,8 +364,15 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
     top: 0;
     left: 0;
 }
+
 #video_pop .play-pause-btn,
 #video_pop .replay-btn { margin-left: 10px; }
+
+#video_pop img.vp-close-btn {
+    padding: 50px;
+    position: relative;
+z-index: 999999999;
+}
 
 .tap-text {
     display: inline-block;
@@ -510,12 +517,54 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
             -webkit-animation-timing-function: linear;
             animation-timing-function: linear;
         }
-/*.carousel {
-    top: -35px;    
-    margin-left: -30px;
-    margin-right: -30px;
-}*/
-#carousel-home div.carousel-caption > div {
+
+
+
+#carousel-home .item > div
+ {
+        height: 200px;
+        background: #333;
+        margin: 0 1%;
+        width: 18%;
+        border-radius: 20px;
+        border: 2px solid #333;
+}
+#carousel-home .item > div:hover
+ {
+        border: 2px solid #006699;
+}
+#carousel-home .item > div.doc1 {
+        background: url('../images/discover.png') no-repeat center center;
+        background-size: 172%;
+}
+#carousel-home .item > div.doc3 {
+        background: url('../images/innovation.png') no-repeat center center;
+        background-size: 172%;
+}
+#carousel-home .item > div.doc4 {
+        background: url('../images/pivotal_science.png') no-repeat center center;
+        background-size: 172%;
+}
+#carousel-home .item > div.doc2 {
+        background: url('../images/portfolio.png') no-repeat center center;
+        background-size: 172%;
+}
+#carousel-home .item > div.doc1 a,
+#carousel-home .item > div.doc2 a,
+#carousel-home .item > div.doc3 a,
+#carousel-home .item > div.doc4 a {
+    min-height: 200px; 
+    width: 100%; 
+    display: block;
+}
+
+.carousel {
+    overflow: hidden;
+}
+.carousel-inner {
+    width: 118%;
+}
+/*#carousel-home .carousel-inner > div {
     background: #333333;
     border-radius: 10px;
     display: inline-block;
@@ -527,17 +576,17 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
 }
 #carousel-home div.carousel-caption > div:hover {
     border: 2px solid #006699;
-}
-#carousel-home div.carousel-caption > div span img  {
+}*/
+/*#carousel-home div.carousel-caption > div span img  {
     margin-top: 15px;    
     max-height: 200px;
 /*    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);*/
-}
-#carousel-home div.carousel-caption > div p  {
-    float: right;
+}*/
+/*#carousel-home div.carousel-caption > div p  {
+    float: right;*/
 /*    position: absolute;
     left: 50%;
     top: 50%;
@@ -560,7 +609,7 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
 #carousel-home .right-screen div.carousel-caption > div {
     width: 33%;
 }*/
-
+/*
 #carousel-home div.carousel-caption > div span {
     -webkit-animation-name: spin;
     animation-name: spin;
@@ -571,7 +620,7 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
     display: block;
-}
+}*/
 
 @-webkit-keyframes rubberBand {
     0% {
@@ -603,14 +652,14 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
     }
 }
 
-#carousel-home div.carousel-caption > div span img.on {
+/*#carousel-home div.carousel-caption > div span img.on {
     -webkit-animation-duration: .75s;
     animation-duration: .75s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
-}
+}*/
 
 
 /*.carousel-inner {
@@ -670,12 +719,22 @@ div.responsiveness-button { background: url('../images/pg-4-button-pink-off.png'
     opacity: 0;
 }
 
+.carousel-controls-wrapper {
+        position: absolute;
+        top: -28px;
+        left: -78px;
+}
+
 .left.carousel-control img {
     background-image: none;
-    left: 0;
+    position: absolute;
+    top: 0;
+    right: 15px;
 }
 .right.carousel-control img {
-        right: 0;
+        position: absolute;
+        top: 0;
+        left: 15px;
 }
 
 @-webkit-keyframes spin {
@@ -763,10 +822,10 @@ div.progress-bar:after {
     content: "";
     position: absolute;
     top: 0;
-    left: 57%;
+    left: 62%;
     height: 0;
     width: 0;
-    border-width: 15px;
+    border-width: 14px;
     border-style: solid;
     border-color: #DF6622;
     border-top-color: transparent;
@@ -782,10 +841,10 @@ div.progress-bar.chg-color:after {
     content: "";
     position: absolute;
     top: 0;
-    left: 57%;
+    left: 62%;
     height: 0;
     width: 0;
-    border-width: 15px;
+    border-width: 14px;
     border-style: solid;
     border-color: #712a00;
     border-top-color: transparent;
@@ -801,10 +860,10 @@ div.progress-bar.chg-colorNew:after {
     content: "";
     position: absolute;
     top: 0;
-    left: 57%;
+    left: 62%;
     height: 0;
     width: 0;
-    border-width: 15px;
+    border-width: 14px;
     border-style: solid;
     border-color: #fa8d29;
     border-top-color: transparent;
@@ -820,10 +879,10 @@ div.progress-bar.chg-colorNew:after {
     content: "";
     position: absolute;
     top: 0;
-    left: 57%;
+    left: 62%;
     height: 0;
     width: 0;
-    border-width: 15px;
+    border-width: 14px;
     border-style: solid;
     border-color: #353793;
     border-top-color: transparent;
@@ -839,10 +898,10 @@ div.progress-bar.chg-colorNew:after {
     content: "";
     position: absolute;
     top: 0;
-    left: 57%;
+    left: 62%;
     height: 0;
     width: 0;
-    border-width: 15px;
+    border-width: 14px;
     border-style: solid;
     border-color: #961F67;
     border-top-color: transparent;
@@ -858,10 +917,10 @@ div.progress-bar.chg-color2:after {
     content: "";
     position: absolute;
     top: 0;
-    left: 57%;
+    left: 62%;
     height: 0;
     width: 0;
-    border-width: 15px;
+    border-width: 14px;
     border-style: solid;
     border-color: #4D0030;
     border-top-color: transparent;
@@ -877,10 +936,10 @@ div.progress-bar.partnered-color:after {
     content: "";
     position: absolute;
     top: 0;
-    left: 57%;
+    left: 62%;
     height: 0;
     width: 0;
-    border-width: 15px;
+    border-width: 14px;
     border-style: solid;
     border-color: #00a8e8;
     border-top-color: transparent;
@@ -893,28 +952,28 @@ div.progress-bar.partnered-color:after {
     transition: transform 0.15s ease-out;
 }
 div.progress-bar.width34:after {
-    left: 34% !important;
+    left: 38% !important;
 }
 div.progress-bar.width42-2:after {
-    left: 42% !important;
+    left: 48% !important;
 }
 div.progress-bar.width42:after {
-    left: 47% !important;
+    left: 52% !important;
 }
 div.progress-bar.width54:after {
-    left: 54% !important;
+    left: 58% !important;
 }
 div.progress-bar.width66:after {
-    left: 66% !important;
-}
-div.progress-bar.width69:after {
-    left: 69% !important;
-}
-div.progress-bar.width72:after {
     left: 72% !important;
 }
+div.progress-bar.width69:after {
+    left: 74% !important;
+}
+div.progress-bar.width72:after {
+    left: 76% !important;
+}
 div.progress-bar.width81:after {
-    left: 81% !important;
+    left: 85% !important;
 }
 div.progress-bar.width97:after {
     left: 97% !important;
@@ -1117,13 +1176,13 @@ div.progress-bar.on:after {
 
 .divider-line-one {
 border-right: 1px solid #c0c1c0;
-        height: 745px;
+    height: 712px;
         position: absolute;
-        left: 81%;
+        left: 85%;
         /* top: 178px; */
-        margin-left: 10px;
-        margin-top: -25px;
-}
+        margin-left: 15px;
+/*        margin-top: -25px;
+*/}
     #portfolio-only .divider-line-one {
         height: 194px; 
         right: 452px;
@@ -1142,12 +1201,12 @@ border-right: 1px solid #c0c1c0;
 */    }
 .divider-line-two {
     border-right: 1px solid #c0c1c0;
-    height: 745px;
+    height: 712px;
     position: absolute;
-    left: 70%;
-    margin-left: 10px;
-    margin-top: -25px;
-
+    left: 74%;
+    margin-left: 16px;
+/*    margin-top: -25px;
+*/
 /*    top: 178px;
 */}
      #portfolio-only .divider-line-two {
@@ -1168,12 +1227,12 @@ border-right: 1px solid #c0c1c0;
 */    }
 .divider-line-three {
     border-right: 1px solid #c0c1c0;
-    height: 745px;
+    height: 712px;    
     position: absolute;
-    left: 47%;
+    left: 51%;
     margin-left: 10px;
-    margin-top: -25px;
-
+/*    margin-top: -25px;
+*/
 /*    top: 178px;
 */}
     #portfolio-only .divider-line-three {

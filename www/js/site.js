@@ -81,6 +81,7 @@ function ClearPages ()
 			$(".home").load("page-snippets/home.html", function(){
 			//$(".home").load("page-snippets/discover.html", function(){
 			//$(".home").load("page-snippets/portfolio.html", function(){
+			//$(".home").load("page-snippets/portfolio-v2.html", function(){
 			//$(".home").load("page-snippets/develop.html", function(){
 			//$(".home").load("page-snippets/study-design-a1.html", function(){
 				$(".pg-discover").load("page-snippets/discover.html", function(){
@@ -171,7 +172,69 @@ scroll = function(direction, target){
 	
 }
 
+/**********************
+***** ASHE ************
+**********************/
+/* DISCOVER SCREEN */
+	function resetVideo() {
+		var video = $('video#discover-screen-video').get(0);
+			video.pause();
+			video.currentTime = 0;
+	}
 
+/* BASIC VIDEO CONTROLS */
+function basicVidControl(vid, vidBtn) {
+	$('.pages').on('click', vidBtn, function() {
+
+		if ( $(vidBtn).hasClass('paused') ) {
+			$(vid).get(0).play();
+			$(vidBtn).attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
+		} else {
+			$(vid).get(0).pause();
+			$(vidBtn).attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
+		}
+
+		videoBarProgress('rationale-b-video', 'progressbar5');
+	});
+}
+
+/* VIDEO progress */
+function videoBarProgress(videoID, progressBarId) {
+	setTimeout(function() {
+	  	var video = document.getElementById(videoID);
+		var pBar = document.getElementById(progressBarId);
+
+		if (video) {
+		video.addEventListener('timeupdate', function() {
+			var percent = Math.floor((100 / video.duration) * video.currentTime);
+		  	pBar.value = percent;
+		  	pBar.getElementsByTagName('span')[0].innerHTML = percent;
+
+		}, false);
+
+		$('.pages').on('click', 
+				'.discover-rewind-btn, .disease-state-rewind-btn, .disease-state-rewind-btn, .rewind-btn, .discover-pu-rewind-btn', 
+				function() {
+				if ( video.currentTime <= 30 ) {
+					video.currentTime = 0;
+				} else {
+					video.currentTime -= 30;
+				}
+			});
+		}
+	}, 250);
+}
+
+/* video end function */
+	function vidEnded(vid, vidBtn) {
+		$(vid).on('ended',function(){
+	     	//console.log('Video has ended!');
+			$(vidBtn).attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');
+			resetVideo();
+	    });
+	}
+
+/* scroll into view function for develop */
 function scrollInView() {
 	$.fn.inView = function(){
 	    if(!this.length) return false;
@@ -185,22 +248,6 @@ function scrollInView() {
 	    );
 	};
 }
-// ,
-// loadAbstract = function(abstractNum){
-// 	if(abstractSwapping){
-// 		return;
-// 	}
-// 	abstractSwapping = true;
-// 	$('.abstract-wrapper').addClass('loadout');
-// 	setTimeout(function(){
-// 		$('.abstract-wrapper').load('page-snippets/abstracts/abstract-'+abstractNum+'.html', function(){
-// 			$('.abstract-wrapper').removeClass('loadout').css('width', '1200px');
-// 			$('.abstract-view .abstract-scroller').css('display', 'inline-block');
-// 			abstractSwapping=false;
-// 		});
-		
-// 	},300)
-// };
 
 $(function () {
 
@@ -225,15 +272,15 @@ $(function () {
 				if(intentPage == "portfolio"){
 					setTimeout(function(){
 						/* PORTFOLIO ANIMATIONS */
-						$('div.progress-bar').css('width', '57%');
-						$('div.progress-bar.width34').css('width', '34%');
-						$('div.progress-bar.width42-2').css('width', '42%');
-						$('div.progress-bar.width42').css('width', '47%');
-						$('div.progress-bar.width54').css('width', '54%');
-						$('div.progress-bar.width66').css('width', '66%');
-						$('div.progress-bar.width69').css('width', '69%');
-						$('div.progress-bar.width72').css('width', '72%');
-						$('div.progress-bar.width81').css('width', '81%');
+						$('div.progress-bar').css('width', '62%');
+						$('div.progress-bar.width34').css('width', '38%');
+						$('div.progress-bar.width42-2').css('width', '48%');
+						$('div.progress-bar.width42').css('width', '52%');
+						$('div.progress-bar.width54').css('width', '58%');
+						$('div.progress-bar.width66').css('width', '72%');
+						$('div.progress-bar.width69').css('width', '74%');
+						$('div.progress-bar.width72').css('width', '76%');
+						$('div.progress-bar.width81').css('width', '85%');
 						$('div.progress-bar.width97').css('width', '97%');
 						setTimeout(function () {
 							$('div.progress-bar').addClass('on');
@@ -288,17 +335,6 @@ $(function () {
 				if (intentPage == "study-design-a1") {
 						setTimeout(function() {
 							scrollInView();
-							// $.fn.inView = function(){
-							//     if(!this.length) return false;
-							//     var rect = this.get(0).getBoundingClientRect();
-
-							//     return (
-							//         rect.top >= 0 &&
-							//         rect.left >= 0 &&
-							//         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-							//         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-							//     );
-							// };
 							$('.sd-main-content').on('scroll', function(){ 
 							    if( $('#po').inView() ) {
 									navColorChange('.primary-objectives-nav');
@@ -315,29 +351,28 @@ $(function () {
 				if (intentPage == "study-design-b1") {
 						setTimeout(function() {
 							scrollInView();
-							// $.fn.inView = function(){
-							//     if(!this.length) return false;
-							//     var rect = this.get(0).getBoundingClientRect();
-
-							//     return (
-							//         rect.top >= 0 &&
-							//         rect.left >= 0 &&
-							//         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-							//         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-							//     );
-							// };
 							$('.sd-main-content').on('scroll', function(){ 
 							    if( $('#poB').inView() ) {
 									navColorChange('.primary-objectives-nav');
 							    }
+						    
 							    if( $('#sdB').inView() ) {
 									navColorChange('.study-design-nav');
 							    }
-							    if( $('#kiecB').inView() ) {
-							        navColorChange('.criteria-nav');
-							    }
+							    if( !$('#sdB').inView() && !$('#poB').inView() ) {
+							        navColorChange('.criteria-nav.b');
+							    }	
 							});
 						}, 500);
+				}
+				if (intentPage !== "home") {
+					setTimeout(function() {
+						$('.pop-up-div').hide();
+  						$('.popup-btn').attr('src', 'images/ashe-incyte-popup-btn.png').removeClass('on');
+					});
+				}
+				if (intentPage == 'discover') {
+					$('.timer-warning').css('display', 'none !important');
 				}
 			}
 		);
@@ -357,31 +392,6 @@ $(function () {
 		}, 500);
 	});
 
-	//load up animation click handlers
-	(function(){
-		$(document).on(
-			"click",
-			'.abstract-nav .btn',
-			function(){
-				if($(this).hasClass('active')||abstractSwapping){
-					return;
-				}
-				$(".abstract-nav .btn.active").removeClass('active');
-				$(this).addClass('active');
-				loadAbstract($(this).attr("data-abstract"));
-				$('.abstract-wrapper').hide().animate({ scrollTop: 0 }, 1).show();
-			}
-		);
-	})();
-	
-	(function(){
-	$(document).on('mousedown', '.abstract-view .scrollup, .abstract-view .scrolldown', function(){
-				var dir = $(this).attr('data-scrolldir'),
-					tar = $('.abstract-wrapper');
-					scroll(dir, tar);
-			});
-	})();
-
 	// Time-out continue button
 	$(".continue-button").click(function () {
 		$(".timer-warning").css("display", "none");
@@ -390,9 +400,9 @@ $(function () {
 	});
 	
 	/* FADE OUT START SCREEN */
-	$('.start-screen').on('click', function() {
-		$(this).fadeOut('slow');
-	});
+	// $('.start-screen').on('click', function() {
+	// 	$(this).fadeOut('slow');
+	// });
 
     /* MODAL POP-UP */
     $('.pages').on('click', '.modal-show', function () {
@@ -438,7 +448,7 @@ $(function () {
 		$('.popover-close').trigger('click');
 	});
 
-    //$(".pages").on('click', '.video', function () {
+
     $(".pages").on('click', '.video', function () {
     	//alert(1);
         var url = this.href,
@@ -446,9 +456,60 @@ $(function () {
 
 		$(this).find('span').children('img').addClass('on');
 		setTimeout(function() {
-        	$("#video_pop").html('<div><img class="home-btn" src="images/incyte-home-btn.png" alt="HOME" title="HOME"><img class="play-pause-btn" src="images/pause-btn.png"><img class="replay-btn" src="images/replay-btn.png"></div><video autoplay id="the_Video" data-videoname="'+ name +'" width="100%" height="100%"><source src="' + url + '" type="video/mp4" /></video>').css('display', 'block');
-			ThreeFXanalytics.VideoTracking();
+        	$("#video_pop").html(
+
+        	'<div><img class="vp-close-btn" src="images/ashe-incyte-popup-btn-x.png" style="padding: 50px;" alt="Close" title="Close"></div>' +
+    		'<video autoplay id="the_Video" data-videoname="'+ name +'" width="100%" height="100%"><source src="' + url + '" type="video/mp4" /></video>' +
+
+			'<div class="video-on-discover col-xs-12">' +
+				'<div class="col-xs-1 text-right"><img class="discover-pu-play-pause-btn paused" src="images/ashe-incyte-pause-btn.png"></div>' +
+
+				'<div class="col-xs-1 text-center"><img class="discover-pu-rewind-btn" src="images/ashe-incyte-rewind-btn.png"></div>' +
+				'<div class="col-xs-10"><progress id="progressbar6" max="100" value="0">' +
+					'<div class="progressbar2">' +
+				        '<span style="width: 100%;"></span>' +
+				    '</div>' +
+			    '</progress></div>' +
+		    '</div>').css('display', 'block');
+
+					/* discover pop-up controls */
+					setTimeout(function() {
+						videoBarProgress('the_Video', 'progressbar6');
+					}, 500);
+
+					// setTimeout(function() {
+					// 	basicVidControl('video#the_Video', '.discover-pu-play-pause-btn');
+					// }, 500);
+					setTimeout(function() {
+							$('.pages').on('click', '.discover-pu-play-pause-btn', function() {
+
+								if ( $('.discover-pu-play-pause-btn').hasClass('paused') ) {
+									$('video#the_Video').get(0).play();
+									$('.discover-pu-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png');
+								} else {
+									$('video#the_Video').get(0).pause();
+									$('.discover-pu-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png');	
+								}
+
+								videoBarProgress('the_Video', 'progressbar6');
+							});
+					}, 250);
+
+					setTimeout(function() {
+			  			vidEnded('video#the_Video', '.discover-pu-play-pause-btn');
+						$('video#the_Video').on('ended', function() {
+							$('.vp-close-btn').trigger('click');
+						});
+			  		}, 500);
+			//ThreeFXanalytics.VideoTracking();
 		}, 1000);
+
+
+		$('.pages').on('click', '#video_pop img.vp-close-btn', function() {
+			$('#the_Video').get(0).pause();
+			$('#the_Video').get(0).currentTime = 0;
+			$('#video_pop').fadeOut();
+		});
 
 		// Video controls
   		$('.pages').on('click', '.play-pause-btn', function() {
@@ -461,15 +522,14 @@ $(function () {
 		  		});
   		});
 
-  		setTimeout(function() {
-			$('video#the_Video').on('ended', function() {
-				$('.home-btn').trigger('click');
-			});
-		}, 5000);
+  // 		setTimeout(function() {
+		// 	$('video#the_Video').on('ended', function() {
+		// 		$('.home-btn').trigger('click');
+		// 	});
+		// }, 5000);
 
   		// force restart if replay button in top nav clicked
   		$('.pages').on('click', '.replay-btn', function() {
-				//$('.playpause').fadeOut();
   				$('video#the_Video').load();
 				$('.play-pause-btn').attr('src', 'images/pause-btn.png');	
 				$('.play-pause-btn').show();
@@ -480,23 +540,14 @@ $(function () {
     });
 
     /* FADE OUT VIDEO PLAYER HOME BTN */
-    $('.pages').on('click', ' .video-pop', function () {
-    	$('.carousel').carousel(0); 
-    	//$('#video_pop').fadeOut();
-    	if ( $('#carousel-home div.carousel-caption > div span img').hasClass('on') ) {
-    		$('#carousel-home div.carousel-caption > div span img').removeClass('on');
-    	}
-    });
-
-    // Abstract More details
-    $('.pages').on('click', '.abstract-more-details-toggle', function () {
-    	$('.abstract-more-details ol').slideToggle();
-    	$('.abstract-more-details-toggle span').toggleClass('on');
-    });
-
-    // $('.pages').on('click', '.progress-bar.width97.stopClick', function() {
-    // 	return false;
+    // $('.pages').on('click', '.video-pop', function () {
+    // 	$('.carousel').carousel(0); 
+    // 	//$('#video_pop').fadeOut();
+    // 	if ( $('#carousel-home div.carousel-caption > div span img').hasClass('on') ) {
+    // 		$('#carousel-home div.carousel-caption > div span img').removeClass('on');
+    // 	}
     // });
+
 
     // Portfolio page pop-up
     $('.pages').on('click', '.progress-bar', function () {
@@ -510,195 +561,129 @@ $(function () {
     $('.pages').on('click', '.popover-close', function () {
     	$('video').attr('src', '');
     	$('.popover-bg, .popover-close').fadeOut();
-
     });
 
+ 	// img over video to play port videos
+	$('.pages').on('click', '.data-video-wrapper img', function() {
+	   $('.data-video-wrapper .data-video-overlay').fadeOut();
+	   $('.data-video-wrapper video').get(0).play();
+	   $('.data-video-wrapper video').attr('controls', 'true');
+	});
 
 
-
-
-/**********************
-***** ASHE ************
-**********************/
-/* DISCOVER SCREEN */
-
-	// trigger click on Ham and PlayPauseBtn
-	function triggerClickHamAndPlayPauseBtn() {
-			$('#nav-toggle, .discover-play-pause-btn').trigger('click');
-				$('video#discover-screen-video').get(0).play();
-	}
-
-	function resetVideo() {
-		var video = $('video#discover-screen-video').get(0);
-			video.pause();
-			video.currentTime = 0;
-	}
 
 		/* NAV */
 	    $(".pages").on("click", '#nav-toggle', function() {
-
-    		$(this).toggleClass( "active" );
-
-    		if ( $(this).hasClass('active') ) {
-    			// this opens nav; stops video
-				
-				$('#carousel-home').animate({height:'374px'}, 1000).css('background', 'none');
-				$('.carousel-indicators, .white-overlay, .embed-responsive img').fadeIn();
-				$('.video-on').fadeOut(1000);
-				$('.discover-text').delay(200).fadeIn();
-				console.log('opened ham');
-				resetVideo();
-			} else {
-				// closes nav; starts video
+    		//$(this).toggleClass( "active" );
+    		if ( $('#nav-toggle').hasClass('active') ) {
+    			// this opens nav; play
 				$('#carousel-home').animate({height:'85px'}, 1000).css('background', 'rgba(255, 255, 255, .75');
-				$('.embed-responsive img ').fadeOut();
-				$('.discover-text, .carousel-indicators, .white-overlay').fadeOut();
+				$('.carousel-control, .white-overlay').fadeOut();
 				$('.video-on').fadeIn(1000);
-				$('.discover-play-pause-btn').trigger('click');
-				//$('#nav-toggle').addClass('active');
+				$('.discover-text').delay(200).fadeOut();
+				$('.discover-play-pause-btn').click().attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
+				$('video#discover-screen-video').get(0).play();
+				$('#nav-toggle').removeClass('active').css('visibility', 'visible');
+				$('.embed-responsive.embed-responsive-16by9.ss').fadeOut();
+			} else {
+				resetVideo();
+				$('#carousel-home').animate({height:'314px'}, 1000).css('background', 'none');
+				$('.discover-text, .carousel-control, .white-overlay,.embed-responsive.embed-responsive-16by9.ss').fadeIn();
+				$('.video-on').fadeOut(500);
+				$('#nav-toggle').addClass('active').css('visibility', 'hidden');;
+				$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');
 			}
-
 	  	});
-
-
 
 		// whe tap screen to start clicked, trigger clicks on hamburger and play button to close nav and start video
   		$('.pages').on('click', '.discover-text', function() {
-  			triggerClickHamAndPlayPauseBtn();
+  			$('#nav-toggle').click();
   		});
-
-
-
-
-	    /* VIDEO */
-
-	    function videoBarProgress(videoID, progressBarId) {
-	      	var video = document.getElementById(videoID);
-			var pBar = document.getElementById(progressBarId);
-			// var vidCurrentTime = video.currentTime;
-
-			video.addEventListener('timeupdate', function() {
-
-				var percent = Math.floor((100 / video.duration) * video.currentTime);
-			  	pBar.value = percent;
-			  	pBar.getElementsByTagName('span')[0].innerHTML = percent;
-
-			}, false);
-		}
-
 
 
 /* discover video */
 		$('.pages').on('click', '.discover-play-pause-btn', function() {
-
-			//alert('yes');
 			$('video#discover-screen-video').get(0).pause();
 			$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
+ 		});
+		$('.pages').on('click', '.discover-play-pause-btn.paused', function() {
+			$('video#discover-screen-video').get(0).play();
+			$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
+		});
 
-	  			$('.pages').on('click', '.discover-play-pause-btn.paused', function() {
-					$('video#discover-screen-video').get(0).play();
-					$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
-		  		});
+		videoBarProgress('discover-screen-video', 'progressbar');
 
-			videoBarProgress('discover-screen-video', 'progressbar');
-
-  		});
+		setInterval(function() {
+  			if ( $('#progressbar').val() >= 99 ) {
+  				$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');
+				$('#nav-toggle').trigger('click');
+  			}
+  		}, 2000);
 
 
 /* disease-state-a video */
 		setTimeout(function() {
 			videoBarProgress('disease-state-video', 'progressbar2');
 		}, 500);
-
-	    /* VIDEO */
-		$('.pages').on('click', '.disease-state-play-pause-btn', function() {
-
-			//alert('yes');
-			$('video#disease-state-video').get(0).pause();
-			$('.disease-state-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
-
-	  			$('.pages').on('click', '.disease-state-play-pause-btn.paused', function() {
-					$('video#disease-state-video').get(0).play();
-					$('.disease-state-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
-		  		});
-
-			videoBarProgress('disease-state-video', 'progressbar2');
-
-  		});
-
+		basicVidControl('video#disease-state-video', '.disease-state-play-pause-btn');
+		setTimeout(function() {
+  			vidEnded('video#disease-state-video', '.disease-state-play-pause-btn');
+  		}, 500);
 /* rational-a-video controls */
 		setTimeout(function() {
 			videoBarProgress('rationale-a-video', 'progressbar3');
 		}, 500);
-
-		$('.pages').on('click', '.rationale-a-play-pause-btn', function() {
-
-			//alert('yes');
-			$('video#rationale-a-video').get(0).pause();
-			$('.rationale-a-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
-
-	  			$('.pages').on('click', '.rationale-a-play-pause-btn.paused', function() {
-					$('video#rationale-a-video').get(0).play();
-					$('.rationale-a-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
-		  		});
-
-			videoBarProgress('rationale-a-video', 'progressbar3');
-  		});
-
+		basicVidControl('video#rationale-a-video', '.rationale-a-play-pause-btn');
+		setTimeout(function() {
+  			vidEnded('video#rationale-a-video', '.rationale-a-play-pause-btn');
+  		}, 500);
 /* disease-state-b */
 		setTimeout(function() {
 			videoBarProgress('disease-state-b-video', 'progressbar4');
 		}, 500);
-
-		$('.pages').on('click', '.disease-state-b-play-pause-btn', function() {
-
-			//alert('yes');
-			$('video#disease-state-b-video').get(0).pause();
-			$('.disease-state-b-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
-
-	  			$('.pages').on('click', '.disease-state-b-play-pause-btn.paused', function() {
-					$('video#disease-state-b-video').get(0).play();
-					$('.disease-state-b-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
-		  		});
-
-			videoBarProgress('disease-state-video', 'progressbar4');
-			});
-
-/* rational-a-video controls */
+		basicVidControl('video#disease-state-b-video', '.disease-state-b-play-pause-btn');
+		setTimeout(function() {
+  			vidEnded('video#disease-state-b-video', '.disease-state-b-play-pause-btn');
+  		}, 500);
+/* rational-b-video controls */
 		setTimeout(function() {
 			videoBarProgress('rationale-b-video', 'progressbar5');
 		}, 500);
-
-		$('.pages').on('click', '.rationale-b-play-pause-btn', function() {
-
-			//alert('yes');
-			$('video#rationale-b-video').get(0).pause();
-			$('.rationale-b-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');	
-
-	  			$('.pages').on('click', '.rationale-b-play-pause-btn.paused', function() {
-					$('video#rationale-b-video').get(0).play();
-					$('.rationale-b-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
-		  		});
-
-			videoBarProgress('rationale-b-video', 'progressbar5');
-  		});
+		basicVidControl('video#rationale-b-video', '.rationale-b-play-pause-btn');
+		setTimeout(function() {
+  			vidEnded('video#rationale-b-video', '.rationale-b-play-pause-btn');
+  		}, 500);
 
 
-  		/* popup for more information book thing */
-  		$('.pages').on('click', '.popup-btn', function() {
-  			$('.pop-up-div').fadeIn();
-  			$('.popup-btn').attr('src', 'images/ashe-incyte-popup-btn-x.png').addClass('on');
-  		});
-  		$('.pages').on('click', '.popup-btn.on', function() {
-  			$('.pop-up-div').fadeOut();
-  			$('.popup-btn').attr('src', 'images/ashe-incyte-popup-btn.png').removeClass('on');
-  		});
+/* discover pop-up controls */
+		setTimeout(function() {
+			videoBarProgress('the_Video', 'progressbar6');
+		}, 500);
+		basicVidControl('video#the_Video', '.discover-pu-play-pause-btn');
+		setTimeout(function() {
+  			vidEnded('video#the_Video', '.discover-pu-play-pause-btn');
+  		}, 500);
+
+
+
+
+
+/* popup for more information book thing */
+$('.pages').on('click', '.popup-btn', function() {
+	$('.pop-up-div').fadeIn();
+	$('.popup-btn').attr('src', 'images/ashe-incyte-popup-btn-x.png').addClass('on');
+});
+$('.pages').on('click', '.popup-btn.on', function() {
+	$('.pop-up-div').fadeOut();
+	$('.popup-btn').attr('src', 'images/ashe-incyte-popup-btn.png').removeClass('on');
+});
 
 
 // functionality on study-design pages
 function navColorChange(navItem) {
 	$('.sd-main .col-xs-12').addClass('bg-blue').not(navItem).removeClass('bg-blue');
 }
+
 
 function scrollToF(id) {
 	$('.sd-main-content').animate( {scrollTop: $(id).position().top }, 500 );	
@@ -724,39 +709,12 @@ function scrollToF(id) {
 	  	/* scroll within box via chevrons*/
 	  	$('.pages').on('click', '.chevron-top', function() {
 		  $(".sd-main-content").animate({ scrollTop: '-=100px' }, 600);
-			  // if ( $('.sd-main-content').scrollTop() == 0) {
-			  // 	console.log('zero');
-			  // 	$('.sd-main .chevron-container.top .chevron-top').hide();
-			  // } else {
-			  // 	$('.sd-main .chevron-container.top .chevron-top').show();
-			  // }
+
 		});
 		$('.pages').on('click', '.chevron-btm', function() {
 		  $(".sd-main-content").animate({ scrollTop: '+=100px' }, 600);
-	  		//   if ( $('.sd-main-content').scrollTop() == 0) {
-			  // 	console.log('zero');
-			  // 	$('.sd-main .chevron-container.top .chevron-top').hide();
-			  // } else {
-			  // 	$('.sd-main .chevron-container.top .chevron-top').show();
-			  // }
+
 		});
 
-
-
-
-// setTimeout(function() {
-// 	var vidElem = document.getElementById("controls");
-
-//     vidElem.addEventListener('timeupdate', videoTimeUpdateHandler, false);
-
-//     function videoTimeUpdateHandler(e)
-//     {
-//         vidElem.setAttribute("controls","controls");
-//     }
-// }, 1250);
-		// /* portfolio video fullscreen functionality */
-		// $('.pages').on('click', '.fullscreen-btn', function() {
-		// 	$('.data-content-html, .data-video-wrapper').addClass('fullscreen');
-		// });
 
 }); 
