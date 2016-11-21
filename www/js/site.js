@@ -10,6 +10,8 @@ var sess_navNotifSeconds = 60; //60 *CHANGE BACK
 var sess_intervalID;
 var sess_lastActivity; 
 
+
+
 function initSession()
 {  
 	sessClearInterval();
@@ -83,7 +85,7 @@ function ClearPages ()
 			//$(".home").load("page-snippets/portfolio.html", function(){
 			//$(".home").load("page-snippets/portfolio-v2.html", function(){
 			//$(".home").load("page-snippets/develop.html", function(){
-			//$(".home").load("page-snippets/study-design-a1.html", function(){
+			//$(".home").load("page-snippets/study-design-b1.html", function(){
 				$(".pg-discover").load("page-snippets/discover.html", function(){
 					$(".pg-portfolio").load("page-snippets/portfolio.html",function(){
 						$(".pg-develop").load("page-snippets/develop.html", function(){
@@ -234,6 +236,19 @@ function videoBarProgress(videoID, progressBarId) {
 	    });
 	}
 
+
+// functionality on study-design pages
+function navColorChange(navItem) {
+	$('.sd-main .col-xs-12').addClass('bg-blue').not(navItem).removeClass('bg-blue');
+}
+
+
+function scrollToF(id) {
+	$('.sd-main-content').animate( {scrollTop: $(id).position().top }, 500 );	
+	//var currentPos = $(id).position().top;
+	//console.log(currentPos);
+}
+
 /* scroll into view function for develop */
 function scrollInView() {
 	$.fn.inView = function(){
@@ -333,6 +348,32 @@ $(function () {
 						$('video#rationale-b-video').get(0).currentTime = 0;
 				}
 				if (intentPage == "study-design-a1") {
+
+					  	$('.pages').on('click', '.primary-objectives-nav', function() {
+							//navColorChange('.primary-objectives-nav');
+							scrollToF('#po');
+					  	});
+
+					  	$('.pages').on('click', '.study-design-nav', function() {
+							//navColorChange('.study-design-nav');
+							scrollToF('#sd');
+						});
+
+					  	$('.pages').on('click', '.criteria-nav', function() {
+							//navColorChange('.criteria-nav');
+							scrollToF('#kiec');
+					  	});
+
+
+					 //  	/* scroll within box via chevrons*/
+					  	$('.pages').on('click', '.chevron-top', function() {
+						  $(".sd-main-content").animate({ scrollTop: '-=100px' }, 600);
+						});
+						$('.pages').on('click', '.chevron-btm', function() {
+						  $(".sd-main-content").animate({ scrollTop: '+=100px' }, 600);
+						});
+
+
 						setTimeout(function() {
 							scrollInView();
 							$('.sd-main-content').on('scroll', function(){ 
@@ -342,7 +383,8 @@ $(function () {
 							    if( $('#sd').inView() ) {
 									navColorChange('.study-design-nav');
 							    }
-							    if( $('#kiec').inView() ) {
+							    if( !$('#sd').inView() && !$('#po').inView() ) {
+							   	//if( $('#kiec').inView() ) {
 							        navColorChange('.criteria-nav');
 							    }
 							});
@@ -350,12 +392,37 @@ $(function () {
 				}
 				if (intentPage == "study-design-b1") {
 						setTimeout(function() {
+
+					  	$('.pages').on('click', '.primary-objectives-nav', function() {
+							//navColorChange('.primary-objectives-nav');
+							scrollToF('#poB');
+					  	});
+
+					  	$('.pages').on('click', '.study-design-nav', function() {
+							//navColorChange('.study-design-nav');
+							scrollToF('#sdB');
+						});
+
+					  	$('.pages').on('click', '.criteria-nav', function() {
+							//navColorChange('.criteria-nav');
+							scrollToF('#kiecB');
+					  	});
+
+
+					 //  	/* scroll within box via chevrons*/
+					  	$('.pages').on('click', '.chevron-top', function() {
+						  $(".sd-main-content").animate({ scrollTop: '-=100px' }, 600);
+						});
+						$('.pages').on('click', '.chevron-btm', function() {
+						  $(".sd-main-content").animate({ scrollTop: '+=100px' }, 600);
+						});
+ 
+
 							scrollInView();
 							$('.sd-main-content').on('scroll', function(){ 
-							    if( $('#poB').inView() ) {
+								if( $('#poB').inView() ) {
 									navColorChange('.primary-objectives-nav');
 							    }
-						    
 							    if( $('#sdB').inView() ) {
 									navColorChange('.study-design-nav');
 							    }
@@ -677,44 +744,6 @@ $('.pages').on('click', '.popup-btn.on', function() {
 	$('.pop-up-div').fadeOut();
 	$('.popup-btn').attr('src', 'images/ashe-incyte-popup-btn.png').removeClass('on');
 });
-
-
-// functionality on study-design pages
-function navColorChange(navItem) {
-	$('.sd-main .col-xs-12').addClass('bg-blue').not(navItem).removeClass('bg-blue');
-}
-
-
-function scrollToF(id) {
-	$('.sd-main-content').animate( {scrollTop: $(id).position().top }, 500 );	
-	//var currentPos = $(id).position().top;
-	//console.log(currentPos);
-}
-
-	  	$('.pages').on('click', '.primary-objectives-nav', function() {
-			navColorChange('.primary-objectives-nav');
-			scrollToF('#po');
-	  	});
-
-	  	$('.pages').on('click', '.study-design-nav', function() {
-			navColorChange('.study-design-nav');
-			scrollToF('#sd');
-		});
-
-	  	$('.pages').on('click', '.criteria-nav', function() {
-			navColorChange('.criteria-nav');
-			scrollToF('#kiec');
-	  	});
-
-	  	/* scroll within box via chevrons*/
-	  	$('.pages').on('click', '.chevron-top', function() {
-		  $(".sd-main-content").animate({ scrollTop: '-=100px' }, 600);
-
-		});
-		$('.pages').on('click', '.chevron-btm', function() {
-		  $(".sd-main-content").animate({ scrollTop: '+=100px' }, 600);
-
-		});
 
 
 }); 

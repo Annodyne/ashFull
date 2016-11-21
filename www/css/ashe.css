@@ -57,14 +57,24 @@ body {
 
 .liaison-box {
   position: absolute;
-  bottom: 6%;
+  bottom: 7%;
   left: 0;
   right: 0;
   padding: 0px 4%;
 }
 
 .liaison-box h6 {
-  font-size: 19px;
+  font-size: 18px;
+}
+.liaison-box p {
+  font-size: 18px !important; 
+  margin: 0 !important;
+}
+.study-design-a1-bg .liaison-box h6,
+.study-design-a1-bg .liaison-box p {
+      font-size: 11px !important;
+      line-height: normal;
+      margin-bottom: 5px;
 }
 
 .incyte-ref {
@@ -80,6 +90,9 @@ body {
   font-size: 15px;
 }
 
+br.hideDTshowBelowSurface {
+  display: none;
+}
 /* START SCREEN */
 .start-screen div.container {
     position: absolute;
@@ -137,6 +150,7 @@ div.start-screen div.container div.row div {
         top: 50%;
         left: 505;
         left: 50%;
+        -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         z-index: 99999999999999;
 }
@@ -146,6 +160,13 @@ div.start-screen div.container div.row div {
 /*        background: rgba(0, 0, 0, 1);
 */        position: absolute;
 }
+.data-content-html p.vid-note {
+    color: #000;
+    font-size: 12px;
+    line-height: normal;
+    margin-bottom: 0;
+    padding-bottom: 0;
+} 
 
 /* PORTFOLIO */
 .portfolio-wrapper {
@@ -155,7 +176,6 @@ div.start-screen div.container div.row div {
   padding: 15px;
   position: relative;
 }
-
 
 /* DISCOVER */
 .embed-responsive {
@@ -613,7 +633,8 @@ DEVELOP
       background: rgba(32, 120, 160, .85);
       border: none;
       color: #fff;
-    }
+      transition: 1s all ease-in-out;    
+}
 
 #my-popover {
     left: -169px!important;
@@ -653,6 +674,7 @@ DEVELOP
   font-size: 25px;
   margin-bottom: 50px;
 }
+
 
 .sd-main h4 {
   width: 100%
@@ -798,103 +820,131 @@ li.last {
   float: right;
   width: 58%;
 }
-/*.data-video-wrapper.fullscreen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-}*/
 
 .data-video-wrapper video {
   width: 100%;
 }
-
-/* SURFACE */
-@media (max-width: 1440px) {
-  /* LANDSCAPE:
-  Windows Surface Pro*/
-  .container-fluid.sd-main h2 {
-    margin-bottom: 9px;
-  }  
-
-  .container-fluid.sd-main .col-xs-9 {
-    max-height: 530px;
-  }
-  .sd-main .sd-main-content {
-    max-height: 384px;
-  }
-  .liaison-box h6 {
-        font-size: 16px;
+.footnotesSS p.tiny-text {
+  font-size: 10px; 
+  margin: 5px 0 0;
 }
-  .container-fluid.sd-main .col-xs-12 {
-     min-height: 176px;
-  }
 
-  /* PORTFOLIO */
-    .targeted-therapies-container {
-      margin-top: 15px;
-  }
+              /* SURFACE */
+@media (max-width : 1440px) {            
+                .liaison-box {
+                  bottom: 6%;
+                }
 
-  div.progress {
-      height: 23px;
-      margin: 0 0 4px;
-  }
-  .targeted-therapies-container div.col-xs-2 {
-      height: 293px;
-  }
-  .immuno-therapies-container div.col-xs-2 {
-      height: 131px;
-  }
-  .non-oncology-container div.col-xs-2 {
-      height: 23px;
-  }
-  .partnered-container div.col-xs-2 {
-      height: 77px;
-  }
-  .portfolio-view .col-xs-2 h3 {
-      font-size: 18px;
-  }
-  .targeted-therapies-container li, .immuno-therapies-container li, .non-oncology-container li, .partnered-container li {
-        font-size: 15px;
-        line-height: 18px;
-        margin-top: 4px;
-        width: 170px;
-  }
-  .ipadH3 {
-    font-size: 20px;
-  }
-  .iPad-tiny-text {
-    font-size: 11px;
-      line-height: 12px;
-  }
-  .portfolio-top-nav {
-        font: 700 11px Helvetica, Arial, sans-serif;
-        top: -20px;
-  }
-.portfolio-top-nav.two {
-        left: 52%;
+                .portfolio-top-nav {
+                    font: 700 11px Helvetica, Arial, sans-serif;
+                    top: -20px;
+                }
+                br.hideDTshowBelowSurface {
+                    display: block;
+                }
+                .footnotesSS {
+                    color: #000;
+                    margin-top: 6px;
+                    margin-left: -10px;
+                }
+                .footnotesSS p.tiny-text {
+                    font-size: 10px; 
+                    margin: 5px 0 -5px;
+                }
+                .ipadH3 {
+                    font-size: 18px;
+                }
+
+              .embed-responsive {
+                      top: -162px;
+                      height: 118%;
+              }
+
 }
-  /*
-  .portfolio-top-nav.three {
-          left: 74%;
-  }
-  .portfolio-top-nav.four {
-        left: 86%;
-  }*/
-  .divider-line-one, .divider-line-two, .divider-line-three {
-        height: 565px;
-  }
-  div.progress-bar:after
-   {
-        border-width: 12px !important;
-  }
-  .discover-text {
-    height: 60%;
-  }
-}
+                              /*.hideSP {
+                  display: none;
+                }
+                br.showDTOnly {
+                  display: none;
+                }
+                br.hideDTshowBelowSurface {
+                display: block;
+              }
+                .container-fluid.sd-main h2 {
+                  margin-bottom: 9px;
+                }  
+
+                .container-fluid.sd-main .col-xs-9 {
+                  max-height: 530px;
+                }
+                .sd-main .sd-main-content {
+                  max-height: 384px;
+                }
+
+                .sd-main .chevron-container.btm {     
+                    bottom: 5px;
+                  }
+                .study-design-a1-bg .liaison-box h6,
+                .study-design-a1-bg .liaison-box p {
+                      margin-bottom: 5px;
+                }
+                .container-fluid.sd-main .col-xs-12 {
+                   min-height: 176px;
+                }
+
+                  .targeted-therapies-container {
+                    margin-top: 15px;
+                }
+
+                div.progress {
+                    height: 23px;
+                    margin: 0 0 4px;
+                }
+                .targeted-therapies-container div.col-xs-2 {
+                    height: 293px;
+                }
+                .immuno-therapies-container div.col-xs-2 {
+                    height: 131px;
+                }
+                .non-oncology-container div.col-xs-2 {
+                    height: 23px;
+                }
+                .partnered-container div.col-xs-2 {
+                    height: 77px;
+                }
+                .portfolio-view .col-xs-2 h3 {
+                    font-size: 18px;
+                }
+                .targeted-therapies-container li, .immuno-therapies-container li, .non-oncology-container li, .partnered-container li {
+                      font-size: 15px;
+                      line-height: 18px;
+                      margin-top: 4px;
+                      width: 170px;
+                }
+                .ipadH3 {
+                  font-size: 20px;
+                }
+                .iPad-tiny-text {
+                  font-size: 11px;
+                    line-height: 12px;
+                }
+
+              .portfolio-top-nav.two {
+                      left: 52%;
+              }
+
+                .divider-line-one, .divider-line-two, .divider-line-three {
+                      height: 565px;
+                }
+                div.progress-bar:after
+                 {
+                      border-width: 12px !important;
+                }
+                .discover-text {
+                  height: 60%;
+                }
+
+          }*/
 
 /* IPAD STYLES */
 @media only screen 
@@ -904,6 +954,19 @@ and (orientation : landscape) {
   br.showDTOnly {
     display: none;
   }
+    br.hideDTshowBelowSurface {
+        display: block;
+    }
+    .footnotesSS {
+        color: #000;
+        margin-top: 6px;
+        margin-left: -10px;
+    }
+    .footnotesSS p.tiny-text {
+        font-size: 10px; 
+        margin: 5px 0 -5px;
+    }
+
   .targeted-therapies-container {
       margin-top: 15px;
   }
@@ -966,6 +1029,9 @@ and (orientation : landscape) {
   .container-fluid.sd-main h2 {
     font-size: 16px;
     margin-bottom: 30px;
+  }
+  .container-fluid.sd-main h2.phaseonetwo {
+    margin-bottom: 15px;
   }
 
   .container-fluid.sd-main .col-xs-12 {
