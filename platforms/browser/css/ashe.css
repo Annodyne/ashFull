@@ -855,12 +855,10 @@ li.last {
                     font-size: 18px;
                 }
 
-/*
-              .embed-responsive {
+/*              .embed-responsive {
                       top: -162px;
                       height: 118%;
-              }
-*/
+              }*/
 
 }
                               /*.hideSP {
@@ -956,9 +954,19 @@ and (orientation : landscape) {
   br.showDTOnly {
     display: none;
   }
-  .ipadH3 {
-    font-size: 18px;
-  }
+    br.hideDTshowBelowSurface {
+        display: block;
+    }
+    .footnotesSS {
+        color: #000;
+        margin-top: 6px;
+        margin-left: -10px;
+    }
+    .footnotesSS p.tiny-text {
+        font-size: 10px; 
+        margin: 5px 0 -5px;
+    }
+
   .targeted-therapies-container {
       margin-top: 15px;
   }
@@ -1020,7 +1028,7 @@ and (orientation : landscape) {
   }
   .container-fluid.sd-main h2 {
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
   .container-fluid.sd-main h2.phaseonetwo {
     margin-bottom: 15px;
@@ -1037,7 +1045,7 @@ and (orientation : landscape) {
     max-height: 410px;
   }
   .col-xs-9.primary-obj .liaison-box {
-        padding: 0 14%;
+        padding: 0 11%;
   }
 
   .targeted-therapies-container li:nth-child(2), .immuno-therapies-container li:nth-child(2), .non-oncology-container li:nth-child(2), .partnered-container li:nth-child(2) {
@@ -1047,7 +1055,12 @@ and (orientation : landscape) {
   .targeted-therapies-container li:nth-child(3), .immuno-therapies-container li:nth-child(3), .non-oncology-container li:nth-child(3), .partnered-container li:nth-child(3) {
         margin-left: -15px;
   }
-
+  .liaison-box {
+          bottom: 7%;
+  }
+  .develop-home .well {
+    font-size: 24px;
+  }
 
 }
 
