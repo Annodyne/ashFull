@@ -11,11 +11,6 @@ var sess_intervalID;
 var sess_lastActivity; 
 
 
-$(function() {
-    FastClick.attach(document.body);
-});
-
-
 function initSession()
 {  
 	sessClearInterval();
