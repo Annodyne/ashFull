@@ -454,9 +454,13 @@ $(function () {
 	// hidden reset button
 	$('.pages').on('click', '.home-btn', function () {
 		sessEnd();
+		clear();
+		resetVideo();
+		/*
 		setTimeout(function() {
 			window.location.reload(true);
 		}, 500);
+		*/
 	});
 
 	// Time-out continue button
