@@ -73,7 +73,7 @@
 
             /* scrollbar */
             .data-link-wrapper::-webkit-scrollbar {
-                width: 8px;
+                width: 16px;
             }
              
             /* Track */
