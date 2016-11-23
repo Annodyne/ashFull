@@ -40,6 +40,8 @@
     <allow-intent href="market:*"/>
   </platform>
   <platform name="ios">
+	<preference name="AllowInlineMediaPlayback" value="true" />
+
 	<icon src="icon.png" width="180" height="180" />
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
