@@ -317,35 +317,51 @@ $(function () {
 				if(intentPage == "disease-state-a"){
 					setTimeout(function(){
 						$('video#disease-state-video').get(0).play();
+						videoBarProgress('disease-state-video', 'progressbar2');
+						basicVidControl('video#disease-state-video', '.disease-state-play-pause-btn');
+  						vidEnded('video#disease-state-video', '.disease-state-play-pause-btn');
 					},550);
 				}else{
 						$('video#disease-state-video').get(0).pause();
 						$('video#disease-state-video').get(0).currentTime = 0;
 				}
+
 				if(intentPage == "rationale-a"){
 					setTimeout(function(){
 						$('video#rationale-a-video').get(0).play();
+						videoBarProgress('rationale-a-video', 'progressbar3');
+						basicVidControl('video#rationale-a-video', '.rationale-a-play-pause-btn');
+  						vidEnded('video#rationale-a-video', '.rationale-a-play-pause-btn');
 					},750);
 				}else{
 						$('video#rationale-a-video').get(0).pause();
 						$('video#rationale-a-video').get(0).currentTime = 0;
 				}
+
 				if(intentPage == "disease-state-b"){
 					setTimeout(function(){
 						$('video#disease-state-b-video').get(0).play();
-					},550);
-				}else{
+						videoBarProgress('disease-state-b-video', 'progressbar4');
+						basicVidControl('video#disease-state-b-video', '.disease-state-b-play-pause-btn');
+			  			vidEnded('video#disease-state-b-video', '.disease-state-b-play-pause-btn');
+  					},550);
+				}else {
 						$('video#disease-state-b-video').get(0).pause();
 						$('video#disease-state-b-video').get(0).currentTime = 0;
 				}
+
 				if(intentPage == "rationale-b"){
 					setTimeout(function(){
 						$('video#rationale-b-video').get(0).play();
+						videoBarProgress('rationale-b-video', 'progressbar5');
+						basicVidControl('video#rationale-b-video', '.rationale-b-play-pause-btn');
+  						vidEnded('video#rationale-b-video', '.rationale-b-play-pause-btn');
 					},750);
 				}else{
 						$('video#rationale-b-video').get(0).pause();
 						$('video#rationale-b-video').get(0).currentTime = 0;
 				}
+
 				if (intentPage == "study-design-a1") {
 
 					  	$('.pages').on('click', '.primary-objectives-nav', function() {
@@ -692,38 +708,6 @@ $(function () {
   		}, 2000);
 
 
-/* disease-state-a video */
-		setTimeout(function() {
-			videoBarProgress('disease-state-video', 'progressbar2');
-		}, 500);
-		basicVidControl('video#disease-state-video', '.disease-state-play-pause-btn');
-		setTimeout(function() {
-  			vidEnded('video#disease-state-video', '.disease-state-play-pause-btn');
-  		}, 500);
-/* rational-a-video controls */
-		setTimeout(function() {
-			videoBarProgress('rationale-a-video', 'progressbar3');
-		}, 500);
-		basicVidControl('video#rationale-a-video', '.rationale-a-play-pause-btn');
-		setTimeout(function() {
-  			vidEnded('video#rationale-a-video', '.rationale-a-play-pause-btn');
-  		}, 500);
-/* disease-state-b */
-		setTimeout(function() {
-			videoBarProgress('disease-state-b-video', 'progressbar4');
-		}, 500);
-		basicVidControl('video#disease-state-b-video', '.disease-state-b-play-pause-btn');
-		setTimeout(function() {
-  			vidEnded('video#disease-state-b-video', '.disease-state-b-play-pause-btn');
-  		}, 500);
-/* rational-b-video controls */
-		setTimeout(function() {
-			videoBarProgress('rationale-b-video', 'progressbar5');
-		}, 500);
-		basicVidControl('video#rationale-b-video', '.rationale-b-play-pause-btn');
-		setTimeout(function() {
-  			vidEnded('video#rationale-b-video', '.rationale-b-play-pause-btn');
-  		}, 500);
 
 
 /* discover pop-up controls */
