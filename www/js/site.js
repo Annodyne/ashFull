@@ -325,7 +325,7 @@ $(function () {
 				if(intentPage == "rationale-a"){
 					setTimeout(function(){
 						$('video#rationale-a-video').get(0).play();
-					},550);
+					},750);
 				}else{
 						$('video#rationale-a-video').get(0).pause();
 						$('video#rationale-a-video').get(0).currentTime = 0;
@@ -341,7 +341,7 @@ $(function () {
 				if(intentPage == "rationale-b"){
 					setTimeout(function(){
 						$('video#rationale-b-video').get(0).play();
-					},550);
+					},750);
 				}else{
 						$('video#rationale-b-video').get(0).pause();
 						$('video#rationale-b-video').get(0).currentTime = 0;
@@ -382,8 +382,8 @@ $(function () {
 							    if( $('#sd').inView() ) {
 									navColorChange('.study-design-nav');
 							    }
-							    if( !$('#sd').inView() && !$('#po').inView() ) {
-							   	//if( $('#kiec').inView() ) {
+							    //if( !$('#sd').inView() && !$('#po').inView() ) {
+							   	if( $('#kiec').inView() ) {
 							        navColorChange('.criteria-nav');
 							    }
 							});
@@ -425,7 +425,8 @@ $(function () {
 							    if( $('#sdB').inView() ) {
 									navColorChange('.study-design-nav');
 							    }
-							    if( !$('#sdB').inView() && !$('#poB').inView() ) {
+							    //if( !$('#sdB').inView() && !$('#poB').inView() ) {
+							   	if( $('#kiecB').inView() ) {
 							        navColorChange('.criteria-nav.b');
 							    }	
 							});
