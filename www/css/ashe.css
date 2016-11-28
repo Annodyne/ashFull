@@ -420,7 +420,7 @@ video#discover-screen-video {
       }
 
       progress[value]::-webkit-progress-value::before {
-        content: '80%';
+        content: '';
         position: absolute;
         right: 0;
         top: -125%;
@@ -428,8 +428,8 @@ video#discover-screen-video {
 
       progress[value]::-webkit-progress-value::after {
         content: '';
-        width: 6px;
-        height: 6px;
+        width: 0;
+        height: 0;
         position: absolute;
         border-radius: 100%;
         right: 7px;
@@ -518,7 +518,7 @@ video#discover-screen-video {
         width: 100%;
       }
       .progress-full progress[value]::-webkit-progress-value::before {
-        content: '100%';
+        content: '';
       }
       .progress-full progress[value] {
         width: 100%;
@@ -963,7 +963,7 @@ and (orientation : landscape) {
     }
     .liaison-box h6,
     .liaison-box p {
-      font-size: 18px !important; 
+      font-size: 16px !important; 
     }
 
     .footnotesSS {
