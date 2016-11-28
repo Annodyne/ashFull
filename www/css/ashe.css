@@ -61,14 +61,17 @@ body {
   left: 0;
   right: 0;
   padding: 0px 4%;
+  font-weight: bold;
 }
 
 .liaison-box h6 {
   font-size: 18px;
+  font-weight: bold;
 }
 .liaison-box p {
   font-size: 18px !important; 
   margin: 0 !important;
+  font-weight: bold;
 }
 .study-design-a1-bg .liaison-box h6,
 .study-design-a1-bg .liaison-box p {
@@ -1046,7 +1049,7 @@ and (orientation : landscape) {
     max-height: 410px;
   }
   .col-xs-9.primary-obj .liaison-box {
-        padding: 0 11%;
+        padding: 0;
   }
 
   .targeted-therapies-container li:nth-child(2), .immuno-therapies-container li:nth-child(2), .non-oncology-container li:nth-child(2), .partnered-container li:nth-child(2) {
