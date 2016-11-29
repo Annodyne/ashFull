@@ -398,7 +398,7 @@ $(function () {
 							    if( $('#sd').inView() ) {
 									navColorChange('.study-design-nav');
 							    }
-							    if( !$('#sd').inView() && !$('#po').inView() ) {
+							    if( (!$('#po').inView()) && (!$('#sd').inView()) && (!$('#poExtra').inView())) {
 							   	//if( $('#kiec').inView() ) {
 							        navColorChange('.criteria-nav');
 							    }
@@ -441,7 +441,7 @@ $(function () {
 							    if( $('#sdB').inView() ) {
 									navColorChange('.study-design-nav');
 							    }
-							    if( !$('#sdB').inView() && !$('#poB').inView() ) {
+							    if( (!$('#poB').inView()) && (!$('#sdB').inView()) && (!$('#poBExtra').inView())) {
 							   	//if( $('#kiecB').inView() ) {
 							        navColorChange('.criteria-nav');
 							    }	
