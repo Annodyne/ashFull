@@ -185,7 +185,7 @@ scroll = function(direction, target){
 
 /* BASIC VIDEO CONTROLS */
 function basicVidControl(vid, vidBtn) {
-	$('.pages').on('click', vidBtn, function() {
+	$('.pages').off('click.playpause').on('click.playpause', vidBtn, function() {
 
 		if ( $(vidBtn).hasClass('paused') ) {
 			$(vid).get(0).play();
