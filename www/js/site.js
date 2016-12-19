@@ -324,6 +324,10 @@ $(function () {
 				}else{
 						$('video#disease-state-video').get(0).pause();
 						$('video#disease-state-video').get(0).currentTime = 0;
+						$('.disease-state-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png');
+						if ( $('.disease-state-play-pause-btn').hasClass('paused') ) {
+							$('.disease-state-play-pause-btn').removeClass('paused');
+						}
 				}
 
 				if(intentPage == "rationale-a"){
@@ -336,6 +340,10 @@ $(function () {
 				}else{
 						$('video#rationale-a-video').get(0).pause();
 						$('video#rationale-a-video').get(0).currentTime = 0;
+						$('.rationale-a-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png');
+						if ( $('.rationale-a-play-pause-btn').hasClass('paused') ) {
+							$('.rationale-a-play-pause-btn').removeClass('paused');
+						}
 				}
 
 				if(intentPage == "disease-state-b"){
@@ -348,6 +356,10 @@ $(function () {
 				}else {
 						$('video#disease-state-b-video').get(0).pause();
 						$('video#disease-state-b-video').get(0).currentTime = 0;
+						$('.disease-state-b-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png');
+						if ( $('.disease-state-b-play-pause-btn').hasClass('paused') ) {
+							$('.disease-state-b-play-pause-btn').removeClass('paused');
+						}
 				}
 
 				if(intentPage == "rationale-b"){
@@ -360,7 +372,11 @@ $(function () {
 				}else{
 						$('video#rationale-b-video').get(0).pause();
 						$('video#rationale-b-video').get(0).currentTime = 0;
-				}
+						$('.rationale-b-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png');
+						if ( $('.rationale-b-play-pause-btn').hasClass('paused') ) {
+							$('.rationale-b-play-pause-btn').removeClass('paused');
+						}				
+					}
 
 				if (intentPage == "study-design-a1") {
 
