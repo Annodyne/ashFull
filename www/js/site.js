@@ -671,11 +671,11 @@ $(function () {
 				$('.discover-play-pause-btn').click().attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
 				$('video#discover-screen-video').get(0).play();
 				$('#nav-toggle').removeClass('active').css('visibility', 'visible');
-				$('.embed-responsive.embed-responsive-16by9.ss').fadeOut();
+				$('.bg-placeholder.ss').fadeOut();
 			} else {
 				resetVideo();
 				$('#carousel-home').animate({height:'314px'}, 1000).css('background', 'none');
-				$('.discover-text, .carousel-control, .white-overlay, .embed-responsive.embed-responsive-16by9.ss').fadeIn();
+				$('.discover-text, .carousel-control, .white-overlay, .bg-placeholder.ss').fadeIn();
 				$('.video-on').fadeOut(500);
 				$('#nav-toggle').addClass('active').css('visibility', 'hidden');;
 				$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');

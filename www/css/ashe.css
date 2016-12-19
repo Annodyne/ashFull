@@ -193,11 +193,12 @@ div.start-screen div.container div.row div {
 }
 
 .white-overlay {
-    background-color: rgba(255, 255, 255, 0.75); 
-    height: 100%; 
-    width: 100%;
-/*    background-image: url('../images/ashe-2016-discover-bg.jpg');
-*/}
+        background-color: rgba(255, 255, 255, 0.75);
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+  }
 
 video#discover-screen-video {
         position: absolute;
@@ -212,6 +213,7 @@ video#discover-screen-video {
     height: 67%;
     background: none;
   position: absolute;
+  z-index: 2;
 }
 
 .discover-view h1 {
@@ -232,6 +234,7 @@ video#discover-screen-video {
     right: 0;
     padding: 20px 0 30px 50px;
     margin-right: -50px;
+    z-index: 5;
 }
 
 #carousel-home img.img-responsive {
@@ -834,6 +837,16 @@ li.last {
   margin: 5px 0 0;
 }
 
+.bg-placeholder.ss {
+  width: 100%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    z-index: 0;
+}
               /* SURFACE */
 @media (max-width : 1440px) {            
                 .liaison-box {
