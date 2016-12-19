@@ -675,7 +675,7 @@ $(function () {
 			} else {
 				resetVideo();
 				$('#carousel-home').animate({height:'314px'}, 1000).css('background', 'none');
-				$('.discover-text, .carousel-control, .white-overlay,.embed-responsive.embed-responsive-16by9.ss').fadeIn();
+				$('.discover-text, .carousel-control, .white-overlay, .embed-responsive.embed-responsive-16by9.ss').fadeIn();
 				$('.video-on').fadeOut(500);
 				$('#nav-toggle').addClass('active').css('visibility', 'hidden');;
 				$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');
