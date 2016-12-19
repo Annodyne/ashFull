@@ -1,6 +1,6 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.incyteJakafi.ashFull" version="1.0.0">
-  <name>Incyte - Ash</name>
-  <description>Incyte - Ash</description>
+  <name>Incyte</name>
+  <description>Incyte</description>
   <author>3fx</author>
   <content src="index.html"/>
   <preference name="DisallowOverscroll" value="true"/>
