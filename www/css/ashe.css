@@ -1036,7 +1036,7 @@ and (orientation : landscape) {
   }
 
   .divider-line-one, .divider-line-two, .divider-line-three {
-        height: 565px;
+        height: 573px;
   }
   div.progress-bar:after
    {
