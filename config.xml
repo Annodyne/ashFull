@@ -1,6 +1,6 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.incyteJakafi.ashFull" version="1.0.1">
-  <name>Incyte</name>
-  <description>Incyte</description>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.incyteJakafi.ashFullVTwo" version="1.5.0">
+  <name>INCYTE_MSL Ipad_Update</name>
+  <description>INCYTE_MSL Ipad_Update</description>
   <author>3fx</author>
   <content src="index.html"/>
   <preference name="DisallowOverscroll" value="true"/>
