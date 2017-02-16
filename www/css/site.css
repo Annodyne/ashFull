@@ -773,9 +773,9 @@ div.progress {
     background: none;
     border-radius: 0;
     box-shadow: none;
-    margin: 0 0 8px;
+    margin: 0 0 5px;
     position: relative;
-    height: 28px;
+    height: 27px;
     width: 100%;
 }
 div.progress-bar {
@@ -783,7 +783,7 @@ div.progress-bar {
     background: -moz-linear-gradient(left,  rgba(199,85,26,1) 0%, rgba(223,102,34,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left,  rgba(199,85,26,1) 0%,rgba(223,102,34,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  rgba(199,85,26,1) 0%,rgba(223,102,34,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    line-height: 31px;
+    line-height: 26px;
     text-align: left;
     transition: width .9s ease;
 }
@@ -954,25 +954,34 @@ div.progress-bar.partnered-color:after {
 div.progress-bar.width34:after {
     left: 38% !important;
 }
-div.progress-bar.width42-2:after {
+div.progress-bar.width48:after {
     left: 48% !important;
 }
-div.progress-bar.width42:after {
+div.progress-bar.width52:after {
     left: 52% !important;
 }
-div.progress-bar.width54:after {
+div.progress-bar.width56:after {
+    left: 56% !important;
+}
+div.progress-bar.width58:after {
     left: 58% !important;
 }
-div.progress-bar.width66:after {
+div.progress-bar.width72:after {
     left: 72% !important;
 }
-div.progress-bar.width69:after {
+div.progress-bar.width74:after {
     left: 74% !important;
 }
-div.progress-bar.width72:after {
+div.progress-bar.width76:after {
     left: 76% !important;
 }
-div.progress-bar.width81:after {
+div.progress-bar.width77:after {
+    left: 77% !important;
+}
+div.progress-bar.width79:after {
+    left: 79% !important;
+}
+div.progress-bar.width85:after {
     left: 85% !important;
 }
 div.progress-bar.width97:after {
@@ -1037,14 +1046,14 @@ div.progress-bar.on:after {
     background: -moz-linear-gradient(left,  rgba(199,85,26,1) 0%, rgba(223,102,34,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left,  rgba(199,85,26,1) 0%,rgba(223,102,34,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  rgba(199,85,26,1) 0%,rgba(223,102,34,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    height: 388px;
+    height: 443px;
 }
 .immuno-therapies-container div.col-xs-2 {
     background: rgb(28,19,94); /* Old browsers */
     background: -moz-linear-gradient(left,  rgba(28,19,94,1) 0%, rgba(53,55,147,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left,  rgba(28,19,94,1) 0%,rgba(53,55,147,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  rgba(28,19,94,1) 0%,rgba(53,55,147,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    height: 172px;
+    height: 187px;
 }
 .non-oncology-container div.col-xs-2 {
     background: rgb(101,3,68); /* Old browsers */
@@ -1058,7 +1067,7 @@ div.progress-bar.on:after {
     background: -moz-linear-gradient(left,  rgba(0, 134, 188, 1) 0%, rgba(0, 168, 232, 1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left,  rgba(0, 134, 188, 1) 0%,rgba(0, 168, 232, 1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  rgba(0, 134, 188, 1) 0%,rgba(0, 168, 232, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    height: 100px;
+    height: 124px;
 }
 
 .portfolio-view .col-xs-2 h3 {
@@ -1176,7 +1185,7 @@ div.progress-bar.on:after {
 
 .divider-line-one {
 border-right: 1px solid #c0c1c0;
-    height: 712px;
+    height: 784px;
         position: absolute;
         left: 85%;
         /* top: 178px; */
@@ -1227,7 +1236,7 @@ border-right: 1px solid #c0c1c0;
 */    }
 .divider-line-three {
     border-right: 1px solid #c0c1c0;
-    height: 712px;    
+    height: 784px;    
     position: absolute;
     left: 51%;
     margin-left: 10px;
@@ -1248,7 +1257,7 @@ border-right: 1px solid #c0c1c0;
 
 .footnotesSS {
     color: #000;
-    margin-top: 6px;
+    margin-top: 2px;
     margin-left: -10px;
 }
 
@@ -1508,7 +1517,7 @@ p.abstract-more-details-toggle {
 
 .data-content-html a, .data-content-html p {
     color: #ff6600;
-    font: 20px/28px Helvetica, Arial, sans-serif;
+    font: 18px/25px Helvetica, Arial, sans-serif;
     padding: 15px 0;
     display: block;
     outline: none;

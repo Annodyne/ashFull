@@ -288,13 +288,16 @@ $(function () {
 						/* PORTFOLIO ANIMATIONS */
 						$('div.progress-bar').css('width', '62%');
 						$('div.progress-bar.width34').css('width', '38%');
-						$('div.progress-bar.width42-2').css('width', '48%');
-						$('div.progress-bar.width42').css('width', '52%');
-						$('div.progress-bar.width54').css('width', '58%');
-						$('div.progress-bar.width66').css('width', '72%');
-						$('div.progress-bar.width69').css('width', '74%');
-						$('div.progress-bar.width72').css('width', '76%');
-						$('div.progress-bar.width81').css('width', '85%');
+						$('div.progress-bar.width48').css('width', '48%');
+						$('div.progress-bar.width52').css('width', '52%');
+						$('div.progress-bar.width56').css('width', '56%');
+						$('div.progress-bar.width58').css('width', '58%');
+						$('div.progress-bar.width72').css('width', '72%');
+						$('div.progress-bar.width74').css('width', '74%');
+						$('div.progress-bar.width76').css('width', '76%');
+						$('div.progress-bar.width77').css('width', '77%');
+						$('div.progress-bar.width79').css('width', '79%');
+						$('div.progress-bar.width85').css('width', '85%');
 						$('div.progress-bar.width97').css('width', '97%');
 						setTimeout(function () {
 							$('div.progress-bar').addClass('on');
@@ -304,13 +307,16 @@ $(function () {
 					/* PORTFOLIO ANIMATIONS */
 					$('div.progress-bar').css('width', '0%');
 					$('div.progress-bar.width34').css('width', '0%');
-					$('div.progress-bar.width42-2').css('width', '0%');
-					$('div.progress-bar.width42').css('width', '0%');
-					$('div.progress-bar.width54').css('width', '0%');
-					$('div.progress-bar.width66').css('width', '0%');
-					$('div.progress-bar.width69').css('width', '0%');
+					$('div.progress-bar.width48').css('width', '0%');
+					$('div.progress-bar.width52').css('width', '0%');
+					$('div.progress-bar.width56').css('width', '0%');
+					$('div.progress-bar.width58').css('width', '0%');
 					$('div.progress-bar.width72').css('width', '0%');
-					$('div.progress-bar.width81').css('width', '0%');
+					$('div.progress-bar.width74').css('width', '0%');
+					$('div.progress-bar.width76').css('width', '0%');
+					$('div.progress-bar.width77').css('width', '0%');
+					$('div.progress-bar.width79').css('width', '0%');
+					$('div.progress-bar.width85').css('width', '0%');
 					$('div.progress-bar.width97').css('width', '0%');
 					$('div.progress-bar').removeClass('on');
 				}
