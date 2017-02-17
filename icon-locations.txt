@@ -1,0 +1,8 @@
+// icon locations
+
+INcyte icons
+C:\Web\Github\ashFull\platforms\browser\res\icon\ios
+
+C:\Web\Github\ashFull\platforms\browser
+C:\Web\Github\ashFull\www
+C:\Web\Github\ashFull
