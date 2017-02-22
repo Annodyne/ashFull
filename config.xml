@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.incyteJakafi.ashFullVTwo" version="1.5.3">
-=======
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.incyteJakafi.ashFullVTwo" version="1.5.1">
->>>>>>> parent of 65b3203... Update version in configs
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.incyteJakafi.ashFullVTwo" version="1.5.4">
   <name>Incyte Portfolio</name>
   <description>Incyte Portfolio</description>
   <author>3fx</author>
