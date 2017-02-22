@@ -1,4 +1,8 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.incyteJakafi.ashFullVTwo" version="1.5.2">
+<<<<<<< HEAD
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.incyteJakafi.ashFullVTwo" version="1.5.3">
+=======
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.incyteJakafi.ashFullVTwo" version="1.5.1">
+>>>>>>> parent of 65b3203... Update version in configs
   <name>Incyte Portfolio</name>
   <description>Incyte Portfolio</description>
   <author>3fx</author>
@@ -25,7 +29,7 @@
   <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2"/>
   <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0"/>
   <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1"/>
-  <icon src="icon.png"/>
+  <icon src="res/icon.png"/>
   <preference name="EnableViewportScale" value="true"/>
   <preference name="Orientation" value="landscape" />
   <preference name="AllowInlineMediaPlayback" value="true" />
@@ -41,7 +45,12 @@
     <allow-intent href="market:*"/>
   </platform>
   <platform name="ios">
-	  <icon src="icon.png" width="180" height="180" />
+	  <icon src="res/icon.png" width="180" height="180" />
+    <icon src="icon-72.png" platform="ios" width="72" height="72" />
+    <icon src="icon-72@2x.png" platform="ios" width="144" height="144" />
+    <icon src="icon-76.png" platform="ios" width="76" height="76" />
+    <icon src="icon-76@2x.png" platform="ios" width="152" height="152" />
+    <icon src="icon-83.5@2x.png" platform="ios" width="167" height="167" />    
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
     <splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
