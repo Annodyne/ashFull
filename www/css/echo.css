@@ -1,0 +1,251 @@
+/*************
+ECHO Trial
+**************/
+.develop-home.echo.view {
+    background: #006699;
+    padding: 0;
+}
+
+.echo-container {
+    background: url('../images/echol-bg-main.jpg') no-repeat center center;
+    background-size: cover;
+    /*margin-right: 550px;*/
+    height: 100%;
+}
+
+.echo-container h1 {
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: center;
+    padding-top: 55px;
+    padding-left: 20px;
+}
+.echo-container img.logo {
+    margin-bottom: 20px;
+}
+
+#echo-display {
+    height: 100%;
+    width: 650px;
+    position: absolute;
+        right: 0;
+        top: 0;
+}
+    #echo-display img {
+        position: absolute;
+    }
+    #echo-display span {
+        height: 100%;
+        width: 100%;
+    }
+    #echo-display div {
+        /*border: 1px solid rgba(255, 255, 255, 0.1);*/
+        /*border-width: 0 0 1px 1px;*/
+        /*height: 25%;*/
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding: 30px 0 0 165px;
+    }
+
+    /*#echo-display div:hover  {
+        background: #006699;
+        background: -moz-linear-gradient(left,  #006699 0%, #006699 27%, #036797 49%, #126f8f 67%, #227885 100%); 
+        background: -webkit-linear-gradient(left,  #006699 0%,#006699 27%,#036797 49%,#126f8f 67%,#227885 100%); 
+        background: linear-gradient(to right,  #006699 0%,#006699 27%,#036797 49%,#126f8f 67%,#227885 100%);
+    }*/
+
+    #echo-display div:last-child {
+        border-bottom: 0;
+    }
+    #echo-display .display-content {
+        color: #11689b;
+        display: block;
+        font-family: "Helvetica", sans-serif;
+        font-size: 22px;
+        margin: 0;
+        padding: 0 0 5px 15px;
+        opacity: 1;
+        transition: all .75s ease;
+   }
+   #echo-display .display-content h3,
+   #echo-display .display-content p {
+       font-size: inherit;
+       font-family: "Helvetica", sans-serif;
+       line-height: 1.6;
+       margin: 0;
+       padding: 0;
+       padding-left: 24px;
+   }
+   #echo-display .display-content h3 {
+       color: #fff;
+       font-weight: bold;
+        border-top-left-radius: 29px;
+        border-bottom-left-radius: 29px;
+        padding: 10px 0 10px 20px;
+        font-style: italic;
+}
+
+   }
+   #echo-display .display-content p {
+       margin-bottom: 10px;
+       width: 100%;
+       padding-left: 20px;
+   }
+
+
+   /*#echo-display .display-content a,*/
+   .button-container {
+       height: auto;
+       width: auto;
+   }
+   .button-container a {
+        font-size: 20px;
+        font-family: "Helvetica";
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        line-height: inherit;
+        text-align: left;
+        padding: 14px 24px;
+        border-radius: 29px;
+        /*background-color: rgb(255, 255, 255);*/
+        text-decoration: none;
+        display: inline-block;
+        transition: all .35s ease;
+}
+.display-content a {
+    display: block;
+    /*font-size: 20px;*/
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 0 30px 24px;
+}
+    .button-container a {
+        margin: 0 20px;
+    }
+    .btnone, .echo202Head {
+        background: -moz-linear-gradient( -90deg, rgb(194,216,45) 0%, rgb(110,179,43) 100%);
+        background: -webkit-linear-gradient( -90deg, rgb(194,216,45) 0%, rgb(110,179,43) 100%);
+        background: -ms-linear-gradient( -90deg, rgb(194,216,45) 0%, rgb(110,179,43) 100%);
+    }
+
+    .btntwo, .echo203Head {
+        background: -moz-linear-gradient( -93deg, rgb(250,169,49) 0%, rgb(204,114,9) 100%);
+        background: -webkit-linear-gradient( -93deg, rgb(250,169,49) 0%, rgb(204,114,9) 100%);
+        background: -ms-linear-gradient( -93deg, rgb(250,169,49) 0%, rgb(204,114,9) 100%);
+    }
+    .btnthree, .echo110Head {
+        background: -moz-linear-gradient( -90deg, rgb(75,191,171) 0%, rgb(13,94,112) 100%);
+        background: -webkit-linear-gradient( -90deg, rgb(75,191,171) 0%, rgb(13,94,112) 100%);
+        background: -ms-linear-gradient( -90deg, rgb(75,191,171) 0%, rgb(13,94,112) 100%);
+    }
+    .btnfour, .echo301Head {
+        background: -moz-linear-gradient( -93deg, rgb(221,65,131) 0%, rgb(180,24,40) 100%);
+        background: -webkit-linear-gradient( -93deg, rgb(221,65,131) 0%, rgb(180,24,40) 100%);
+        background: -ms-linear-gradient( -93deg, rgb(221,65,131) 0%, rgb(180,24,40) 100%);
+    }
+    .btnfive, .echo204Head {
+        background: -moz-linear-gradient( -90deg, rgb(34,160,218) 0%, rgb(43,90,184) 100%);
+        background: -webkit-linear-gradient( -90deg, rgb(34,160,218) 0%, rgb(43,90,184) 100%);
+        background: -ms-linear-gradient( -90deg, rgb(34,160,218) 0%, rgb(43,90,184) 100%);
+    }
+    .btnsix, .echo206Head {
+        background: -moz-linear-gradient(-90deg, rgb(76, 79, 133) 0%, rgb(27,31,102) 100%);
+        background: -webkit-linear-gradient(-90deg, rgb(76, 79, 133) 0%,rgb(27,31,102) 100%); 
+        background: linear-gradient(-90deg,  rgb(76, 79, 133) 0%,rgb(27,31,102) 100%); 
+    }
+#echo-display .display-content a:hover,
+.button-container a:hover {
+        text-decoration: none;
+}
+.changeButtonBG {
+    background: #c1cedf !important;
+}
+
+.echo-container .echo-row {
+    position: relative;
+}
+.echo-container div.clear {
+    padding: 25px 0;
+}
+.echo-container div div:first-child {
+    padding: 20px 0 0 0;
+}
+.echo-container div div:nth-child(3) {
+    padding: 1px 0 150px;
+}
+
+.icon1 {
+    margin: 0 85px 0 68px;   
+    padding-bottom: 40px;  
+}
+img.icon2 {
+    margin-left: 300px;
+    margin-top: -8px;
+}
+.icon12, .icon9 {
+    margin-left: 295px;
+}
+.icon3 {
+    margin-right: 150px;
+}
+.icon11, .icon10 {
+    margin-left: 150px;
+}
+.icon4 {
+    margin-right: 150px;
+}
+.icon5 {
+    margin-right: 260px;
+}
+.icon8, .icon7,.icon6 {
+    margin: 0 40px;
+}
+.icon7 {
+    margin-bottom: -25px;
+}
+
+.button-container span {
+    display: block;
+    margin: 35px 0;
+}
+
+.echo-container .echo-row span {
+    color: #e5de16;
+
+}
+
+/* echo pop-up text */
+.echo-container .echo-row span {
+        color: rgba(20, 102, 163, .75);
+        font-size: 20px;
+        font-weight: bold;
+        position: absolute;
+        transition: all .35s ease;
+        opacity: .6;
+}
+
+    span.text1 { margin-left: -245px; top: -20px; }
+    span.text2 { top: 40px;; }
+    span.text14 { top: 80px; }
+    span.text3 { margin-left: 535px; top: 42px; }
+    span.text4 { margin-left: 525px; top: 13px; width: 100px; }
+    span.text5 { margin-left: 400px; top: 75px; }
+    span.text6 { margin-left: -50px; top: 40px; width: 130px; }
+    span.text7 { margin-left: -172px; top: 144px; width: 134px;}
+    span.text8 { margin-left: -40px; top: 51px; }
+    span.text9 { margin-left: -540px; top: 70px; width: 134px; }
+    span.text10 { margin-left: -653px; top: 55px; width: 110px;  }
+    span.text11 { margin-left: -620px; top: 40px; width: 75px;  }
+    span.text12 { margin-left: -490px; top: 30px; }
+    span.text13 { margin-left: -78px; top: 82px; width: 98px; }
+
+.echo-row span { opacity: 1; }
+/* GENERAL STYLES */
+em { font-style: italic; }
+.clear { clear: both; }
+.font20 { font-size: 20px; }

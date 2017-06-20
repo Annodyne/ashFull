@@ -48,8 +48,8 @@ body {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-/*    width: 100%;
-*/}
+    width: 100%;
+}
 
 .blue-text {
   color: #006699;
@@ -57,25 +57,28 @@ body {
 
 .liaison-box {
   position: absolute;
-  bottom: 7%;
+  bottom: 45px;
   left: 0;
   right: 0;
-  padding: 0px 4%;
+  padding: 0px 5%;
 }
 
 .liaison-box h6 {
   font-size: 18px;
+  font-weight: bold;
 }
 .liaison-box p {
   font-size: 18px !important; 
   margin: 0 !important;
+  font-weight: bold;
 }
 .study-design-a1-bg .liaison-box h6,
 .study-design-a1-bg .liaison-box p {
-      font-size: 11px !important;
-      line-height: normal;
-      margin-bottom: 5px;
-      font-weight: bold;
+        font-size: 16px !important;
+        line-height: 18px !important;
+        line-height: normal;
+        margin-bottom: 8px;
+        font-weight: bold;
 }
 
 .incyte-ref {
@@ -93,6 +96,10 @@ body {
 
 br.hideDTshowBelowSurface {
   display: none;
+}
+
+#bold {
+  font-weight: bold;
 }
 /* START SCREEN */
 .start-screen div.container {
@@ -534,7 +541,8 @@ video#discover-screen-video {
         cursor: pointer;
         position: absolute;
         top: 3px;
-        left: 115px;
+        /*left: 115px;*/
+        left: 22px;
 }
 /*********************
 DEVELOP
@@ -542,6 +550,9 @@ DEVELOP
 .develop-view {
   background: url('../images/ashe-2016-develop-start-screen.jpg') no-repeat center center;
   background-size: cover;
+}
+.develop-view.main {
+  background: url('../images/develop-home-bg.jpg') no-repeat center center;
 }
 
 .develop-view .container {
@@ -637,6 +648,11 @@ DEVELOP
       transition: 1s all ease-in-out;    
 }
 
+.container-fluid.sd-main .col-xs-12.study-rationale-nav {
+  background-color: #57a19f;
+  color: #fff;
+}
+
 #my-popover {
     left: -169px!important;
 }
@@ -654,11 +670,11 @@ DEVELOP
         position: absolute;
           bottom: 25%;
           right: 5%;
-            width: 45%;
+            width: 50%;
 }
 
 .pop-up-div.studydesign {
-        bottom: 15%;
+        bottom: 3%;
         right: 9%;
         z-index: 9999999998;
 }
@@ -685,23 +701,25 @@ DEVELOP
   padding-right: 1px;
   }
   .container-fluid.sd-main .col-xs-12 {
-       background: rgba(255, 255, 255, .85);
+       background: rgba(255, 255, 255, 1);
        padding: 25% 0;
        margin-bottom: 1px;
-       min-height: 200px;
+       /*min-height: 200px;*/
+       min-height: 188px;
 }
    .container-fluid.sd-main .col-xs-12:nth-child(1) {
        border-top-left-radius: 20px;
   }
-   .container-fluid.sd-main .col-xs-12:nth-child(3) {
+   .container-fluid.sd-main .col-xs-12:nth-child(4) {
        border-bottom-left-radius: 20px;
        margin-bottom: 0;
   }
 
   .container-fluid.sd-main .col-xs-9 {
-    background: rgba(255, 255, 255, .85);
+    background: rgba(255, 255, 255, 1);
     border-radius: 0px 20px 20px 0;
-    max-height: 602px;
+    /*max-height: 602px;*/
+    max-height: 755px;
     position: relative;
     overflow: hidden;
   }
@@ -712,7 +730,16 @@ DEVELOP
     line-height: 1.5;
   }
 
-  .sd-main-content {
+  .sd-main-content, 
+  .sd-main-content1, 
+  .sd-main-content2, 
+  .sd-main-content3, 
+  .sd-main-content4, 
+  .sd-main-content5, 
+  .sd-main-content6, 
+  .sd-main-content7,
+  .sd-main-content8
+  {
     margin-left: 20px;
     padding-right: 100px;
     width: 108%;
@@ -732,24 +759,33 @@ DEVELOP
     .sd-main .chevron-container.top {     
       text-align: center;
           position: absolute;
-          top: 10px;
+          top: 5px;
         }
 
   .sd-main .chevron-container.btm {     
       text-align: center;
       position: absolute;
-      bottom: 10px;
+              bottom: 5px;
       -webkit-transform: rotate(180deg);
       transform: rotate(180deg);
       z-index: 999999999999;
     }
 
 
-.sd-main .sd-main-content {
+.sd-main .sd-main-content,
+.sd-main .sd-main-content1, 
+.sd-main .sd-main-content2, 
+.sd-main .sd-main-content3, 
+.sd-main .sd-main-content4,
+.sd-main .sd-main-content5, 
+.sd-main .sd-main-content6, 
+.sd-main .sd-main-content7, 
+.sd-main .sd-main-content8 
+{
     overflow: hidden;
     overflow-y: scroll;
-    max-height: 455px;
-    margin: 50px 0 97px;
+  min-height: 523px;
+      margin: 100px 0 132px;
 }
 /*.sd-main .sd-main-content {
     -ms-overflow-style: none;  // IE 10+
@@ -773,8 +809,21 @@ DEVELOP
 
 .scroll-wrapper {
     max-height: 500px;
+    margin: 0 40px;
+}
+.scroll-wrapper > div{
+    position: relative;
+    /*min-height: 550px;*/
+    margin-bottom: 200px;
 }
 
+.scroll-wrapper div div.absolute-cen {
+        /*position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        left: 0;*/
+}
 /* new portfolio css */
 .portfolio-top-nav {
         font: 700 14px Helvetica, Arial, sans-serif;
@@ -812,7 +861,7 @@ li.last {
   overflow-y: auto;
   vertical-align: top;
   width: 40%;
-  max-height: 478px;
+  max-height: 545px;
   padding-right: 10px;
 }
 
@@ -831,9 +880,19 @@ li.last {
 }
 
               /* SURFACE */
-@media (max-width : 1440px) {            
+@media (max-width : 1440px) {     
+  .surface-center       {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  } 
+  .surface-overflow {
+    overflow: hidden;
+  }
                 .liaison-box {
-                  bottom: 6%;
+                  bottom: 4%;
                 }
 
                 .portfolio-top-nav {
@@ -845,7 +904,7 @@ li.last {
                 }
                 .footnotesSS {
                     color: #000;
-                    margin-top: 6px;
+                    margin-top: 5px;
                     margin-left: -10px;
                 }
                 .footnotesSS p.tiny-text {
@@ -856,13 +915,13 @@ li.last {
                     font-size: 18px;
                 }
 
-/*              .embed-responsive {
+              .embed-responsive {
                       top: -162px;
                       height: 118%;
-              }*/
+              }
 
-}
-                              /*.hideSP {
+
+                              .hideSP {
                   display: none;
                 }
                 br.showDTOnly {
@@ -872,15 +931,24 @@ li.last {
                 display: block;
               }
                 .container-fluid.sd-main h2 {
-                  margin-bottom: 9px;
+                  margin-bottom: 30px;
                 }  
 
-                .container-fluid.sd-main .col-xs-9 {
+                /*.container-fluid.sd-main .col-xs-9 {
                   max-height: 530px;
-                }
-                .sd-main .sd-main-content {
+                }*/
+                /*.sd-main .sd-main-content,
+                .sd-main .sd-main-content1,
+                .sd-main .sd-main-content2,
+                .sd-main .sd-main-content3,
+                .sd-main .sd-main-content4,
+                .sd-main .sd-main-content5,
+                .sd-main .sd-main-content6,
+                .sd-main .sd-main-content7,
+                .sd-main .sd-main-content8
+                {
                   max-height: 384px;
-                }
+                }*/
 
                 .sd-main .chevron-container.btm {     
                     bottom: 5px;
@@ -889,9 +957,9 @@ li.last {
                 .study-design-a1-bg .liaison-box p {
                       margin-bottom: 5px;
                 }
-                .container-fluid.sd-main .col-xs-12 {
+                /*.container-fluid.sd-main .col-xs-12 {
                    min-height: 176px;
-                }
+                }*/
 
                   .targeted-therapies-container {
                     margin-top: 15px;
@@ -899,19 +967,19 @@ li.last {
 
                 div.progress {
                     height: 23px;
-                    margin: 0 0 4px;
+                    margin: 0 0 2px;
                 }
                 .targeted-therapies-container div.col-xs-2 {
-                    height: 293px;
+                    height: 348px;
                 }
                 .immuno-therapies-container div.col-xs-2 {
-                    height: 131px;
+                    height: 173px;
                 }
                 .non-oncology-container div.col-xs-2 {
                     height: 23px;
                 }
                 .partnered-container div.col-xs-2 {
-                    height: 77px;
+                    height: 98px;
                 }
                 .portfolio-view .col-xs-2 h3 {
                     font-size: 18px;
@@ -926,7 +994,7 @@ li.last {
                   font-size: 20px;
                 }
                 .iPad-tiny-text {
-                  font-size: 11px;
+                  font-size: 11px !important;
                     line-height: 12px;
                 }
 
@@ -935,7 +1003,7 @@ li.last {
               }
 
                 .divider-line-one, .divider-line-two, .divider-line-three {
-                      height: 565px;
+                      height: 650px;
                 }
                 div.progress-bar:after
                  {
@@ -945,8 +1013,46 @@ li.last {
                   height: 60%;
                 }
 
-          }*/
+                /* echo */
+                .echo-container div.clear { padding: 5px 0 !important; }
+                .button-container { padding-top: 25px; margin: 0 auto 0; margin-left: 25px !important; }
+                .button-container a { font-size: 16px !important; padding: 14px 22px !important; margin: 0 8px !important; }
 
+                .icon1 { margin: 0 20px !important; padding-bottom: 0 !important; }
+                .icon3, .icon4 { margin-right: 35px !important; }
+                .icon5 { margin-right: 105px !important; }
+                .icon8, .icon6 { margin: -25px 0 0 !important; }
+                .icon7 {  margin: 0 20px !important; }
+                .icon11, .icon10 { margin-left: 95px !important; }
+                .icon12, .icon9 { margin-left: 140px !important; }
+
+
+                span.text1 { margin-left: -175px !important; }
+                span.text3 { margin-left: 380px !important; }
+                span.text4 { margin-left: 378px !important; top: 28px !important; }
+                span.text5 { margin-left: 315px !important; }
+                span.text6 { margin-left: -5px !important; top: 50px !important; }
+                span.text7 { top: 115px !important; }
+                span.text8 { margin-left: -75px !important; ; top: 65px !important; ; }
+                span.text9 { margin-left: -445px !important; }
+                span.text10 { margin-left: -455px !important; }
+                span.text11 { margin-left: -440px !important; }
+                span.text12 { margin-left: -335px !important; }
+
+                .echo-container img.logo { width: 85%; }
+
+                footer.liaison-box { width: 100% !important; bottom: 0 !important; padding: 0 !important; background: rgba(255,255,255,0.5); }
+                footer.liaison-box p:first-child { padding-top: 5px; }
+                footer.liaison-box p:last-child { padding-bottom: 5px; }
+
+                /* develop */
+                span.rotate img { width: 80%; }
+                .develop .col-xs-offset-1 { margin-left: 0; }
+                .develop .col-xs-2 { width: 20%; }
+                .label-link-container { font-size: 22px; }
+                .develop-main-container h1 { margin: 40px 0 15px; }
+                .develop-disclaimer-copy { left: 100px; bottom: 90px;  }
+}
 /* IPAD STYLES */
 @media only screen 
 and (min-device-width : 768px) 
@@ -955,38 +1061,28 @@ and (orientation : landscape) {
   br.showDTOnly {
     display: none;
   }
-    br.hideDTshowBelowSurface {
-        display: block;
-    }
-    .footnotesSS {
-        color: #000;
-        margin-top: 6px;
-        margin-left: -10px;
-    }
-    .footnotesSS p.tiny-text {
-        font-size: 10px; 
-        margin: 5px 0 -5px;
-    }
-
+  .ipadH3 {
+    font-size: 18px;
+  }
   .targeted-therapies-container {
-      margin-top: 15px;
+      margin-top: 0;
   }
 
   div.progress {
-      height: 23px;
-      margin: 0 0 4px;
+      height: 20px;
+      margin: 0 0 2px;
   }
   .targeted-therapies-container div.col-xs-2 {
-      height: 293px;
+      height: 306px;
   }
   .immuno-therapies-container div.col-xs-2 {
-      height: 131px;
+      height: 152px;
   }
   .non-oncology-container div.col-xs-2 {
-      height: 23px;
+      height: 20px;
   }
   .partnered-container div.col-xs-2 {
-      height: 77px;
+      height: 86px;
   }
   .portfolio-view .col-xs-2 h3 {
       font-size: 18px;
@@ -994,7 +1090,7 @@ and (orientation : landscape) {
   .targeted-therapies-container li, .immuno-therapies-container li, .non-oncology-container li, .partnered-container li {
         font-size: 13px;
         line-height: 16px;
-        margin-top: 7px;
+        margin-top: 5px;
         width: 170px;
         margin-left: -7px;
   }
@@ -1005,12 +1101,12 @@ and (orientation : landscape) {
     font-size: 20px;
   }
   .iPad-tiny-text {
-    font-size: 11px;
+      font-size: 10px;
       line-height: 12px;
   }
   .portfolio-top-nav {
         font: 700 11px Helvetica, Arial, sans-serif;
-        top: -20px;
+        top: -14px;
   }
 
   .divider-line-one, .divider-line-two, .divider-line-three {
@@ -1029,25 +1125,51 @@ and (orientation : landscape) {
   }
   .container-fluid.sd-main h2 {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   .container-fluid.sd-main h2.phaseonetwo {
     margin-bottom: 15px;
   }
 
   .container-fluid.sd-main .col-xs-12 {
-    min-height: 185px;
+    min-height: 138px;
   }
   .container-fluid.sd-main .col-xs-9 {
-    max-height: 557px;
+    max-height: 555px;
     width: 73%;
   }
-  .sd-main .sd-main-content {
-    max-height: 410px;
+  .sd-main .sd-main-content, 
+  .sd-main .sd-main-content1, 
+  .sd-main .sd-main-content2, 
+  .sd-main .sd-main-content3,
+  .sd-main .sd-main-content4,
+  .sd-main .sd-main-content5, 
+  .sd-main .sd-main-content6,
+  .sd-main .sd-main-content7, 
+  .sd-main .sd-main-content8
+  {
+    min-height: 323px;
+    max-height: 323px;
   }
   .col-xs-9.primary-obj .liaison-box {
-        padding: 0 11%;
+        padding: 0 3%;
   }
+        .scroll-wrapper > div {
+                position: relative;
+                /*min-height: 350px;*/
+                height: auto;
+                /*margin-top: -15px;
+                padding-top: 30px;*/
+        }
+     .scroll-wrapper > div.target {
+          margin: 200px 0;
+      }        
+      
+      .scroll-wrapper > div.target2 {
+          margin-bottom: 0;
+          /*margin-top: 200px;*/
+      }
+ 
 
   .targeted-therapies-container li:nth-child(2), .immuno-therapies-container li:nth-child(2), .non-oncology-container li:nth-child(2), .partnered-container li:nth-child(2) {
         width: 95px;
@@ -1056,14 +1178,56 @@ and (orientation : landscape) {
   .targeted-therapies-container li:nth-child(3), .immuno-therapies-container li:nth-child(3), .non-oncology-container li:nth-child(3), .partnered-container li:nth-child(3) {
         margin-left: -15px;
   }
-  .liaison-box {
-          bottom: 7%;
-  }
-  .develop-home .well {
-    font-size: 24px;
+  div.progress-bar {
+        line-height: 25px;
   }
 
-}
+    /* ASCO PHONEGAP UPDATES */
+  .white-fade {
+      font-size: 30px;
+      height: 52px;
+      line-height: 60px;
+  }
+  /* develop */
+  .label-link-container { font-size: 15px; }
+  .label-link-container h5 { font-size: 27px; line-height: 40px; }
+  img.fight-class { width: 50%; }
+  .develop-disclaimer-copy { font-size: 22px; left: 70px; bottom: 45px; }
+  .develop-code { bottom: 2px; right: 32px; }
+  /* portfolio */
+  .portfolio-wrapper { margin: 2px 42px; }
+  /* echo */
+  #echo-display { width: 380px; }
+  #echo-display img { height: 100%; right: -50px; }
+  footer.liaison-box p { font-size: 15px !important; }
+  .echo-container .echo-row span { font-size: 15px !important; }
+  .echo-row img { width: 85px; }
+  .button-container { width: 50%; }
+  .button-container a { padding: 5px !important; }
+  .echo-container-inside {margin-right: 315px !important ; left: -20px !important; top: 60px !important; }
+
+  span.text1 { margin-left: -130px !important; top: -12px !important; }
+  span.text2 { top: 20px !important; }
+  span.text3 { margin-left: 285px !important; top: 30px !important; }
+  span.text4 { margin-left: 282px !important; top: 12px !important; }
+  span.text5 { margin-left: 230px !important; top: 40px !important; }
+  span.text6 { top: 25px !important; }
+  span.text7 { margin-left: -140px !important; top: 80px !important; }
+  span.text8 { margin-left: -60px !important; top: 35px !important; }
+  span.text9 { margin-left: -355px !important; top: 35px !important; }
+  span.text10 { margin-left: -370px !important; top: 25px !important; }
+  span.text11 { margin-left: -340px !important; top: 30px !important; }
+  span.text12 { margin-left: -205px !important; top: 15px !important; }
+  span.text13 { top: 45px !important; }  
+  span.text14 { top: 45px !important; }
+
+  #echo-display { width: 470px !important; }
+  #echo-display div { padding: 10px 0px 0 165px !important; }
+  .font20 { font-size: 16px !important; }
+  #echo-display .display-content { font-size: 15px !important; }
+  .display-content a { padding: 0 0 5px 24px !important; }
+  footer.liaison-box { width: 73% !important; background: none; }
+} /* close min768px max1024px*/
 
 
 
@@ -1168,5 +1332,10 @@ and (orientation : landscape) {
             transform: translate3d(0, 0, 0);
     left: 0;
   }
+  
+
+
+
+
 }
 

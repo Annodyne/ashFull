@@ -10,7 +10,6 @@ var sess_navNotifSeconds = 60; //60 *CHANGE BACK
 var sess_intervalID;
 var sess_lastActivity; 
 
-
 function initSession()
 {  
 	sessClearInterval();
@@ -82,43 +81,28 @@ function ClearPages ()
 			$(".home").load("page-snippets/home.html", function(){
 			//$(".home").load("page-snippets/discover.html", function(){
 			//$(".home").load("page-snippets/portfolio.html", function(){
-			//$(".home").load("page-snippets/portfolio-v2.html", function(){
 			//$(".home").load("page-snippets/develop.html", function(){
-			//$(".home").load("page-snippets/study-design-b1.html", function(){
+				
 				$(".pg-discover").load("page-snippets/discover.html", function(){
 					$(".pg-portfolio").load("page-snippets/portfolio.html",function(){
 						$(".pg-develop").load("page-snippets/develop.html", function(){
-							$(".pg-develop-home").load("page-snippets/develop-home.html", function(){
-									$(".pg-study-home-a").load("page-snippets/study-home-a.html", function(){
-									$(".pg-disease-state-a").load("page-snippets/disease-state-a.html", function(){
-									$(".pg-rationale-a").load("page-snippets/rationale-a.html", function(){
-									$(".pg-study-design-a1").load("page-snippets/study-design-a1.html", function(){
-										$(".pg-study-home-b").load("page-snippets/study-home-b.html", function(){
-											$(".pg-disease-state-b").load("page-snippets/disease-state-b.html", function(){
-											$(".pg-rationale-b").load("page-snippets/rationale-b.html", function(){
-											$(".pg-study-design-b1").load("page-snippets/study-design-b1.html", function() {
-											// $(".side-nav").load("page-snippets/navigation.html", function(){
-											// 	$(".pg-abstract .side-nav .abstract, .pg-portfolio .side-nav .portfolio").addClass("active");
-											// 	$(".pg-abstract .side-nav .abstract img").attr("src", "images/3fx_echo_video_kiosk_ui_v1.png");
-											// 	$(".pg-portfolio .side-nav .portfolio img").attr("src", "images/incyte-nav-2-portfolio-active-symbol.png");
-											// 	ThreeFXanalytics.Init();
-											// 	ThreeFXanalytics.Tracking();
-											// });
-											});
-											});
-											});
-										});
-									});
-									});
-									});
-							});
+							$(".pg-study-design-a1").load("page-snippets/study-design-a1.html", function(){
+							$(".pg-study-design-a2").load("page-snippets/study-design-a2.html", function(){
+							$(".pg-study-design-a3").load("page-snippets/study-design-a3.html", function(){
+							$(".pg-study-design-a4").load("page-snippets/study-design-a4.html", function(){
+							$(".pg-study-design-a5").load("page-snippets/study-design-a5.html", function(){
+							$(".pg-study-design-a6").load("page-snippets/study-design-a6.html", function(){
+							$(".pg-study-design-a7").load("page-snippets/study-design-a7.html", function(){
+							$(".pg-study-design-a8").load("page-snippets/study-design-a8.html", function(){
+							$(".pg-echo").load("page-snippets/echo.html", function(){
+							});});});});});});});});});
 						});
 					});
 				});
-			});
-		}).addClass('visible');
-	})();
-}
+				
+			}).addClass('visible');
+		})();
+	}
 
 //page animation functions
 var pageAnimating = false;
@@ -185,7 +169,7 @@ scroll = function(direction, target){
 
 /* BASIC VIDEO CONTROLS */
 function basicVidControl(vid, vidBtn) {
-	$('.pages').off('click.playpause').on('click.playpause', vidBtn, function() {
+	$('.pages').on('click', vidBtn, function() {
 
 		if ( $(vidBtn).hasClass('paused') ) {
 			$(vid).get(0).play();
@@ -242,8 +226,9 @@ function navColorChange(navItem) {
 }
 
 
-function scrollToF(id) {
-	$('.sd-main-content').animate( {scrollTop: $(id).position().top }, 500 );	
+function scrollToF(number, id) {
+	$('.sd-main-content' + number).animate( {scrollTop: $(id).position().top }, 500 );	
+	console.log('.sd-main-content' + number);
 	//var currentPos = $(id).position().top;
 	//console.log(currentPos);
 }
@@ -282,7 +267,6 @@ $(function () {
 				activePage = $('.visible').attr('data-page');
 				if(intentPage!=activePage)
 				changePage(intentPage);
-				
 				if(intentPage == "portfolio"){
 					setTimeout(function(){
 						/* PORTFOLIO ANIMATIONS */
@@ -320,156 +304,330 @@ $(function () {
 					$('div.progress-bar.width97').css('width', '0%');
 					$('div.progress-bar').removeClass('on');
 				}
-				if(intentPage == "disease-state-a"){
-					setTimeout(function(){
-						$('video#disease-state-video').get(0).play();
-						videoBarProgress('disease-state-video', 'progressbar2');
-						basicVidControl('video#disease-state-video', '.disease-state-play-pause-btn');
-  						vidEnded('video#disease-state-video', '.disease-state-play-pause-btn');
-					},550);
-				}else{
-						$('video#disease-state-video').get(0).pause();
-						$('video#disease-state-video').get(0).currentTime = 0;
-						$('.disease-state-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png');
-						if ( $('.disease-state-play-pause-btn').hasClass('paused') ) {
-							$('.disease-state-play-pause-btn').removeClass('paused');
-						}
-				}
-
-				if(intentPage == "rationale-a"){
-					setTimeout(function(){
-						$('video#rationale-a-video').get(0).play();
-						videoBarProgress('rationale-a-video', 'progressbar3');
-						basicVidControl('video#rationale-a-video', '.rationale-a-play-pause-btn');
-  						vidEnded('video#rationale-a-video', '.rationale-a-play-pause-btn');
-					},750);
-				}else{
-						$('video#rationale-a-video').get(0).pause();
-						$('video#rationale-a-video').get(0).currentTime = 0;
-						$('.rationale-a-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png');
-						if ( $('.rationale-a-play-pause-btn').hasClass('paused') ) {
-							$('.rationale-a-play-pause-btn').removeClass('paused');
-						}
-				}
-
-				if(intentPage == "disease-state-b"){
-					setTimeout(function(){
-						$('video#disease-state-b-video').get(0).play();
-						videoBarProgress('disease-state-b-video', 'progressbar4');
-						basicVidControl('video#disease-state-b-video', '.disease-state-b-play-pause-btn');
-			  			vidEnded('video#disease-state-b-video', '.disease-state-b-play-pause-btn');
-  					},550);
-				}else {
-						$('video#disease-state-b-video').get(0).pause();
-						$('video#disease-state-b-video').get(0).currentTime = 0;
-						$('.disease-state-b-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png');
-						if ( $('.disease-state-b-play-pause-btn').hasClass('paused') ) {
-							$('.disease-state-b-play-pause-btn').removeClass('paused');
-						}
-				}
-
-				if(intentPage == "rationale-b"){
-					setTimeout(function(){
-						$('video#rationale-b-video').get(0).play();
-						videoBarProgress('rationale-b-video', 'progressbar5');
-						basicVidControl('video#rationale-b-video', '.rationale-b-play-pause-btn');
-  						vidEnded('video#rationale-b-video', '.rationale-b-play-pause-btn');
-					},750);
-				}else{
-						$('video#rationale-b-video').get(0).pause();
-						$('video#rationale-b-video').get(0).currentTime = 0;
-						$('.rationale-b-play-pause-btn').attr('src', 'images/ashe-incyte-pause-btn.png');
-						if ( $('.rationale-b-play-pause-btn').hasClass('paused') ) {
-							$('.rationale-b-play-pause-btn').removeClass('paused');
-						}				
-					}
-
-				if (intentPage == "study-design-a1") {
-
-					  	$('.pages').on('click', '.primary-objectives-nav', function() {
-							//navColorChange('.primary-objectives-nav');
-							scrollToF('#po');
+				if (intentPage == "study-design-a2") {
+					$('.primary-objectives-nav1').addClass('bg-blue');
+					$('.sd-main-content1').animate( {scrollTop: 0 });
+					  	$('.pages').on('click', '.primary-objectives-nav1', function() {
+							scrollToF('1', '#po1');
 					  	});
-
-					  	$('.pages').on('click', '.study-design-nav', function() {
-							//navColorChange('.study-design-nav');
-							scrollToF('#sd');
+					  	$('.pages').on('click', '.study-design-nav1', function() {
+							scrollToF('1', '#sd1');
 						});
-
-					  	$('.pages').on('click', '.criteria-nav', function() {
-							//navColorChange('.criteria-nav');
-							scrollToF('#kiec');
+					  	$('.pages').on('click', '.criteria-nav1', function() {
+							scrollToF('1', '#kiec1');
 					  	});
-
-
 					 //  	/* scroll within box via chevrons*/
-					  	$('.pages').on('click', '.chevron-top', function() {
-						  $(".sd-main-content").animate({ scrollTop: '-=100px' }, 600);
+					  	$('.pages').on('click', '.chevron-top1', function() {
+						  $(".sd-main-content1").animate({ scrollTop: '-=100px' }, 600);
 						});
-						$('.pages').on('click', '.chevron-btm', function() {
-						  $(".sd-main-content").animate({ scrollTop: '+=100px' }, 600);
+						$('.pages').on('click', '.chevron-btm1', function() {
+						  $(".sd-main-content1").animate({ scrollTop: '+=100px' }, 600);
 						});
-
 
 						setTimeout(function() {
 							scrollInView();
-							$('.sd-main-content').on('scroll', function(){ 
-							    if( $('#po').inView() ) {
-									navColorChange('.primary-objectives-nav');
+							$('.sd-main-content1').on('scroll', function(){ 
+							    if( $('#po1').inView() ) {
+									navColorChange('.primary-objectives-nav1');
 							    }
-							    if( $('#sd').inView() ) {
-									navColorChange('.study-design-nav');
+							    //if( $('#sd1').inView() && !$('#po1').inView() ) {
+							    if( $('#sd1').inView() ) {
+									navColorChange('.study-design-nav1');
 							    }
-							    if( (!$('#po').inView()) && (!$('#sd').inView()) && (!$('#poExtra').inView())) {
-							   	//if( $('#kiec').inView() ) {
-							        navColorChange('.criteria-nav');
+							    //if( $('#kiec1').inView() && !$('#sd1').inView() ) {
+							    if( !$('#sd1').inView() && !$('#po1').inView() ) {
+							        navColorChange('.criteria-nav1');
 							    }
 							});
 						}, 500);
 				}
-				if (intentPage == "study-design-b1") {
-						setTimeout(function() {
-
-					  	$('.pages').on('click', '.primary-objectives-nav', function() {
-							//navColorChange('.primary-objectives-nav');
-							scrollToF('#poB');
+				if (intentPage == "study-design-a1") {
+					$('.primary-objectives-nav2').addClass('bg-blue');
+					$('.sd-main-content2').animate( {scrollTop: 0 });					  	
+					$('.pages').on('click', '.primary-objectives-nav2', function() {
+							scrollToF('2', '#po2');
 					  	});
-
-					  	$('.pages').on('click', '.study-design-nav', function() {
-							//navColorChange('.study-design-nav');
-							scrollToF('#sdB');
+					  	$('.pages').on('click', '.study-design-nav2', function() {
+							scrollToF('2', '#sd2');
 						});
-
-					  	$('.pages').on('click', '.criteria-nav', function() {
-							//navColorChange('.criteria-nav');
-							scrollToF('#kiecB');
+					  	$('.pages').on('click', '.criteria-nav2', function() {
+							scrollToF('2', '#kiec2');
 					  	});
-
-
 					 //  	/* scroll within box via chevrons*/
-					  	$('.pages').on('click', '.chevron-top', function() {
-						  $(".sd-main-content").animate({ scrollTop: '-=100px' }, 600);
+					  	$('.pages').on('click', '.chevron-top2', function() {
+						  $(".sd-main-content2").animate({ scrollTop: '-=100px' }, 600);
 						});
-						$('.pages').on('click', '.chevron-btm', function() {
-						  $(".sd-main-content").animate({ scrollTop: '+=100px' }, 600);
+						$('.pages').on('click', '.chevron-btm2', function() {
+						  $(".sd-main-content2").animate({ scrollTop: '+=100px' }, 600);
 						});
+
+						setTimeout(function() {
+							scrollInView();
+							$('.sd-main-content2').on('scroll', function(){ 
+							    if( $('#po2').inView() ) {
+									navColorChange('.primary-objectives-nav2');
+							    }
+							    if( $('#sd2').inView() ) {
+									navColorChange('.study-design-nav2');
+							    }
+							    if( !$('#po2').inView() && !$('#sd2').inView() ) {
+							        navColorChange('.criteria-nav2');
+							    }
+							});
+						}, 500);
+				} 
+				if (intentPage == "study-design-a3") {
+					$('.primary-objectives-nav3').addClass('bg-blue');
+					$('.sd-main-content3').animate( {scrollTop: 0 });					  	
+					$('.pages').on('click', '.primary-objectives-nav3', function() {
+							scrollToF('3', '#po3');
+					  	});
+					  	$('.pages').on('click', '.study-design-nav3', function() {
+							scrollToF('3', '#sd3');
+						});
+					  	$('.pages').on('click', '.criteria-nav3', function() {
+							scrollToF('3', '#kiec3');
+					  	});
+					 //  	/* scroll within box via chevrons*/
+					  	$('.pages').on('click', '.chevron-top3', function() {
+						  $(".sd-main-content3").animate({ scrollTop: '-=100px' }, 600);
+						});
+						$('.pages').on('click', '.chevron-btm3', function() {
+						  $(".sd-main-content3").animate({ scrollTop: '+=100px' }, 600);
+						});
+
+						setTimeout(function() {
+							scrollInView();
+							$('.sd-main-content3').on('scroll', function(){ 
+							    if( $('#po3').inView() ) {
+									navColorChange('.primary-objectives-nav3');
+							    }
+							    if( $('#sd3').inView() ) {
+									navColorChange('.study-design-nav3');
+							    }
+							    if( !$('#po3').inView() && !$('#sd3').inView() ) {
+							        navColorChange('.criteria-nav3');
+							    }
+							});
+						}, 500);
+				}
+				if (intentPage == "study-design-a4") {
+						$('.primary-objectives-nav4').addClass('bg-blue');
+						$('.sd-main-content4').animate( {scrollTop: 0 });
+					  	$('.pages').on('click', '.primary-objectives-nav4', function() {
+							scrollToF('4', '#po4');
+					  	});
+					  	$('.pages').on('click', '.study-design-nav4', function() {
+							scrollToF('4', '#sd4');
+						});
+					  	$('.pages').on('click', '.criteria-nav4', function() {
+							scrollToF('4', '#kiec4');
+					  	});
+					 //  	/* scroll within box via chevrons*/
+					  	$('.pages').on('click', '.chevron-top4', function() {
+						  $(".sd-main-content4").animate({ scrollTop: '-=100px' }, 600);
+						});
+						$('.pages').on('click', '.chevron-btm4', function() {
+						  $(".sd-main-content4").animate({ scrollTop: '+=100px' }, 600);
+						});
+
+						setTimeout(function() {
+							scrollInView();
+							$('.sd-main-content4').on('scroll', function(){ 
+							    if( $('#po4').inView() ) {
+									navColorChange('.primary-objectives-nav4');
+							    }
+							    if( $('#sd4').inView() ) {
+									navColorChange('.study-design-nav4');
+							    }
+							    if( !$('#po4').inView() && !$('#sd4').inView() ) {
+							        navColorChange('.criteria-nav4');
+							    }
+							});
+						}, 500);
+				}
+				if (intentPage == "study-design-a5") {
+					$('.primary-objectives-nav5').addClass('bg-blue');
+					$('.sd-main-content5').animate( {scrollTop: 0 });
+					  	$('.pages').on('click', '.primary-objectives-nav5', function() {
+							scrollToF('5', '#po5');
+					  	});
+					  	$('.pages').on('click', '.study-design-nav5', function() {
+							scrollToF('5', '#sd5');
+						});
+					  	$('.pages').on('click', '.criteria-nav5', function() {
+							scrollToF('5', '#kiec5');
+					  	});
+					 //  	/* scroll within box via chevrons*/
+					  	$('.pages').on('click', '.chevron-top5', function() {
+						  $(".sd-main-content5").animate({ scrollTop: '-=100px' }, 600);
+						});
+						$('.pages').on('click', '.chevron-btm5', function() {
+						  $(".sd-main-content5").animate({ scrollTop: '+=100px' }, 600);
+						});
+
+						setTimeout(function() {
+							scrollInView();
+							$('.sd-main-content5').on('scroll', function(){ 
+							    if( $('#po5').inView() ) {
+									navColorChange('.primary-objectives-nav5');
+							    }
+							    if( $('#sd5').inView() ) {
+									navColorChange('.study-design-nav5');
+							    }
+							    if( !$('#po5').inView() && !$('#sd5').inView() ) {
+							        navColorChange('.criteria-nav5');
+							    }
+							});
+						}, 500);
+				}
+				if (intentPage == "study-design-a6") {
+					$('.primary-objectives-nav6').addClass('bg-blue');
+					$('.sd-main-content6').animate( {scrollTop: 0 });
+					  	$('.pages').on('click', '.primary-objectives-nav6', function() {
+							scrollToF('6', '#po6');
+					  	});
+					  	$('.pages').on('click', '.study-design-nav6', function() {
+							scrollToF('6', '#sd6');
+						});
+					  	$('.pages').on('click', '.criteria-nav6', function() {
+							scrollToF('6', '#kiec6');
+					  	});
+					 //  	/* scroll within box via chevrons*/
+					  	$('.pages').on('click', '.chevron-top6', function() {
+						  $(".sd-main-content6").animate({ scrollTop: '-=100px' }, 600);
+						});
+						$('.pages').on('click', '.chevron-btm6', function() {
+						  $(".sd-main-content6").animate({ scrollTop: '+=100px' }, 600);
+						});
+
+						setTimeout(function() {
+							scrollInView();
+							$('.sd-main-content6').on('scroll', function(){ 
+							    if( $('#po6').inView() ) {
+									navColorChange('.primary-objectives-nav6');
+							    }
+							    if( $('#sd6').inView() ) {
+									navColorChange('.study-design-nav6');
+							    }
+							    if( !$('#po6').inView() && !$('#sd6').inView() ) {
+							        navColorChange('.criteria-nav6');
+							    }
+							});
+						}, 500);
+				}
+				if (intentPage == "study-design-a7") {
+					$('.primary-objectives-nav7').addClass('bg-blue');
+					$('.sd-main-content7').animate( {scrollTop: 0 });
+					  	$('.pages').on('click', '.primary-objectives-nav7', function() {
+							scrollToF('7', '#po7');
+					  	});
+					  	$('.pages').on('click', '.study-design-nav7', function() {
+							scrollToF('7', '#sd7');
+						});
+					  	$('.pages').on('click', '.criteria-nav7', function() {
+							scrollToF('7', '#kiec7');
+					  	});
+					 //  	/* scroll within box via chevrons*/
+					  	$('.pages').on('click', '.chevron-top7', function() {
+						  $(".sd-main-content7").animate({ scrollTop: '-=100px' }, 600);
+						});
+						$('.pages').on('click', '.chevron-btm7', function() {
+						  $(".sd-main-content7").animate({ scrollTop: '+=100px' }, 600);
+						});
+
+						setTimeout(function() {
+							scrollInView();
+							$('.sd-main-content7').on('scroll', function(){ 
+							    if( $('#po7').inView() ) {
+									navColorChange('.primary-objectives-nav7');
+							    }
+							    if( $('#sd7').inView() ) {
+									navColorChange('.study-design-nav7');
+							    }
+							    if( !$('#po7').inView() && !$('#sd7').inView() ) {
+							        navColorChange('.criteria-nav7');
+							    }
+							});
+						}, 500);
+				}
+				if (intentPage == "study-design-a8") {
+					$('.primary-objectives-nav8').addClass('bg-blue');
+					$('.sd-main-content8').animate( {scrollTop: 0 });
+					  	$('.pages').on('click', '.primary-objectives-nav8', function() {
+							scrollToF('8', '#po8');
+					  	});
+					  	$('.pages').on('click', '.study-design-nav8', function() {
+							scrollToF('8', '#sd8');
+						});
+					  	$('.pages').on('click', '.criteria-nav8', function() {
+							scrollToF('8', '#kiec8');
+					  	});
+					 //  	/* scroll within box via chevrons*/
+					  	$('.pages').on('click', '.chevron-top8', function() {
+						  $(".sd-main-content8").animate({ scrollTop: '-=100px' }, 600);
+						});
+						$('.pages').on('click', '.chevron-btm8', function() {
+						  $(".sd-main-content8").animate({ scrollTop: '+=100px' }, 600);
+						});
+
+						setTimeout(function() {
+							scrollInView();
+							$('.sd-main-content8').on('scroll', function(){ 
+							    if( $('#po8').inView() ) {
+									navColorChange('.primary-objectives-nav8');
+							    }
+							    if( $('#sd8').inView() ) {
+									navColorChange('.study-design-nav8');
+							    }
+							    if( !$('#po8').inView() && !$('#sd8').inView() ) {
+							        navColorChange('.criteria-nav8');
+							    }
+							});
+						}, 500);
+				}
+				// if (intentPage == "study-design-b1") {
+				// 		setTimeout(function() {
+
+				// 	  	$('.pages').on('click', '.primary-objectives-nav', function() {
+				// 			//navColorChange('.primary-objectives-nav');
+				// 			scrollToF('#poB');
+				// 	  	});
+
+				// 	  	$('.pages').on('click', '.study-design-nav', function() {
+				// 			//navColorChange('.study-design-nav');
+				// 			scrollToF('#sdB');
+				// 		});
+
+				// 	  	$('.pages').on('click', '.criteria-nav', function() {
+				// 			//navColorChange('.criteria-nav');
+				// 			scrollToF('#kiecB');
+				// 	  	});
+
+
+				// 	 //  	/* scroll within box via chevrons*/
+				// 	  	$('.pages').on('click', '.chevron-top', function() {
+				// 		  $(".sd-main-content").animate({ scrollTop: '-=100px' }, 600);
+				// 		});
+				// 		$('.pages').on('click', '.chevron-btm', function() {
+				// 		  $(".sd-main-content").animate({ scrollTop: '+=100px' }, 600);
+				// 		});
  
 
-							scrollInView();
-							$('.sd-main-content').on('scroll', function(){ 
-								if( $('#poB').inView() ) {
-									navColorChange('.primary-objectives-nav');
-							    }
-							    if( $('#sdB').inView() ) {
-									navColorChange('.study-design-nav');
-							    }
-							    if( (!$('#poB').inView()) && (!$('#sdB').inView()) && (!$('#poBExtra').inView())) {
-							   	//if( $('#kiecB').inView() ) {
-							        navColorChange('.criteria-nav');
-							    }	
-							});
-						}, 500);
-				}
+				// 			scrollInView();
+				// 			$('.sd-main-content').on('scroll', function(){ 
+				// 				if( $('#poB').inView() ) {
+				// 					navColorChange('.primary-objectives-nav');
+				// 			    }
+				// 			    if( $('#sdB').inView() && !$('#poB').inView() ) {
+				// 					navColorChange('.study-design-nav');
+				// 			    }
+				// 			    if( !$('#sdB').inView() && !$('#poB').inView() ) {
+				// 			        navColorChange('.criteria-nav.b');
+				// 			    }	
+				// 			});
+				// 		}, 500);
+				// }
 				if (intentPage !== "home") {
 					setTimeout(function() {
 						$('.pop-up-div').hide();
@@ -492,13 +650,9 @@ $(function () {
 	// hidden reset button
 	$('.pages').on('click', '.home-btn', function () {
 		sessEnd();
-		clear();
-		resetVideo();
-		
 		setTimeout(function() {
 			window.location.reload(true);
 		}, 500);
-		
 	});
 
 	// Time-out continue button
@@ -539,6 +693,35 @@ $(function () {
         });
         return false;
     });
+
+    $('.pages').on('click', '.modal-show2', function () {
+		var winW = $(window).width();
+		var winH = $(window).height();
+		
+
+		
+		$('#static-dialog img').attr('src', $(this).attr('href'));
+
+		$('.modal-close').show();
+		$('#static-dialog').dialog({
+            width: winW,
+            height: winH,
+            modal: true,
+            show: {
+	            effect: 'fade',
+	            duration: 1000
+	        },
+	        hide: {
+	            effect: 'fade',
+	            duration: 100
+	        },
+            close: function () {
+               $('#static-dialog img').attr('src', '');
+               $('#static-dialog').fadeOut();
+            }
+        });
+        return false;
+  });
 
 	// click x to trigger click on modal-website popup
 	$('.modal-close').on('mousedown touchstart', function () {
@@ -663,6 +846,8 @@ $(function () {
 			var content = $(this).attr('data-content');
 			//alert(content);
 			$('.data-content-html').html(content);
+				var disclaimerCopy = 'The efficacy and safety of the investigational compounds discussed have not been established. There is no guarantee that these compounds will become commercially available for the use(s) under investigation.'
+				$('.disclaimer-copy').text(disclaimerCopy);
 			if ( !$(this).hasClass('stopClick') ) {
 				$('.popover-bg, .popover-close').fadeIn();
 			}
@@ -693,11 +878,11 @@ $(function () {
 				$('.discover-play-pause-btn').click().attr('src', 'images/ashe-incyte-pause-btn.png').removeClass('paused');
 				$('video#discover-screen-video').get(0).play();
 				$('#nav-toggle').removeClass('active').css('visibility', 'visible');
-				$('.bg-placeholder.ss').fadeOut();
+				$('.embed-responsive.embed-responsive-16by9.ss').fadeOut();
 			} else {
 				resetVideo();
 				$('#carousel-home').animate({height:'314px'}, 1000).css('background', 'none');
-				$('.discover-text, .carousel-control, .white-overlay, .bg-placeholder.ss').fadeIn();
+				$('.discover-text, .carousel-control, .white-overlay,.embed-responsive.embed-responsive-16by9.ss').fadeIn();
 				$('.video-on').fadeOut(500);
 				$('#nav-toggle').addClass('active').css('visibility', 'hidden');;
 				$('.discover-play-pause-btn').attr('src', 'images/ashe-incyte-play-btn.png').addClass('paused');
@@ -730,6 +915,38 @@ $(function () {
   		}, 2000);
 
 
+/* disease-state-a video */
+		setTimeout(function() {
+			videoBarProgress('disease-state-video', 'progressbar2');
+		}, 500);
+		basicVidControl('video#disease-state-video', '.disease-state-play-pause-btn');
+		setTimeout(function() {
+  			vidEnded('video#disease-state-video', '.disease-state-play-pause-btn');
+  		}, 500);
+/* rational-a-video controls */
+		setTimeout(function() {
+			videoBarProgress('rationale-a-video', 'progressbar3');
+		}, 500);
+		basicVidControl('video#rationale-a-video', '.rationale-a-play-pause-btn');
+		setTimeout(function() {
+  			vidEnded('video#rationale-a-video', '.rationale-a-play-pause-btn');
+  		}, 500);
+/* disease-state-b */
+		setTimeout(function() {
+			videoBarProgress('disease-state-b-video', 'progressbar4');
+		}, 500);
+		basicVidControl('video#disease-state-b-video', '.disease-state-b-play-pause-btn');
+		setTimeout(function() {
+  			vidEnded('video#disease-state-b-video', '.disease-state-b-play-pause-btn');
+  		}, 500);
+/* rational-b-video controls */
+		setTimeout(function() {
+			videoBarProgress('rationale-b-video', 'progressbar5');
+		}, 500);
+		basicVidControl('video#rationale-b-video', '.rationale-b-play-pause-btn');
+		setTimeout(function() {
+  			vidEnded('video#rationale-b-video', '.rationale-b-play-pause-btn');
+  		}, 500);
 
 
 /* discover pop-up controls */
@@ -755,5 +972,347 @@ $('.pages').on('click', '.popup-btn.on', function() {
 	$('.popup-btn').attr('src', 'images/ashe-incyte-popup-btn.png').removeClass('on');
 });
 
+/**********
+ECHO TRIAL
+**********/
+function resetEcho() {
+	// reset icons and text
+	for (var i = 1; i < 15; i++) {
+		$('.icon' + i).attr('src', 'images/echo-icons/'+ i + '.png');
+		$('.text' + i).css('opacity', '.4');
+	}
+	// rest echo # buttons
+	for (var i = 1; i < 5; i++) {
+		$('#echo-display .box' + i).html('');
+	}
+	// reset icon BG
+	$('.echo').removeClass('changeButtonBG');
+}
+function btnOneBG() { $('.btnone').addClass('changeButtonBG'); }
+function btnTwoBG() { $('.btntwo').addClass('changeButtonBG'); }
+function btnThreeBG() { $('.btnthree').addClass('changeButtonBG'); }
+function btnFourBG() { $('.btnfour').addClass('changeButtonBG'); }
+function btnFiveBG() { $('.btnfive').addClass('changeButtonBG'); }
+function btnSixBG() { $('.btnsix').addClass('changeButtonBG'); }
 
+function imgSwap(number) {
+	$('.icon' + number).attr('src', 'images/echo-icons/' + number + 'b.png');
+}
+function textSwap(number) {
+	$('.text' + number).css('opacity', '1');
+}
+
+function echoAside(study) { 
+	$('#echo-display .box1').append(study); 
+}
+function swapBG() {
+	$('#echo-display img').attr('src', 'images/echo-bg-logo-bw.png');
+}
+
+$('.echo-view').on('click', function() {
+	swapBG();
+});
+
+var echo202 = '<span class="display-content">' +
+                '<h3 class="echo202Head">ECHO-202/KEYNOTE-037</h3>' +
+                '<p>' +
+                    '<span class="font20">(collaboration with Merck Sharp &amp; Dohme Corp.)</span>' +
+                    '<br>NCT02178722' +
+                    '<br><strong>Epacadostat &#43; pembrolizumab</strong>' +
+                    '<br>Phase: <b>1/2</b>' +
+                '</p>' +
+                '<a href="https://clinicaltrials.gov/show/NCT02178722" class="modal-show">VIEW TRIAL &rarr;</a>' +
+            '</span>'
+
+var echo202v2 = '<span class="display-content">' +
+                '<h3 class="echo202Head">ECHO-202/KEYNOTE-037*</h3>' +
+                '<p>' +
+                    '<span class="font20">(collaboration with Merck Sharp &amp; Dohme Corp.)</span>' +
+                    '<br>NCT02178722' +
+                    '<br><strong>Epacadostat &#43; pembrolizumab</strong>' +
+                    '<br>Phase: <b>1/2' + 
+					'<br>*Microsatellite-instability (MSI) high colorectal cancer only.</b>' +
+                '</p>' +
+                '<a href="https://clinicaltrials.gov/show/NCT02178722" class="modal-show">VIEW TRIAL &rarr;</a>' +
+            '</span>'
+
+var echo202v3 = '<span class="display-content">' +
+                '<h3 class="echo202Head">ECHO-202/KEYNOTE-037*</h3>' +
+                '<p>' +
+                    '<span class="font20">(collaboration with Merck Sharp & Dohme Corp.)</span>' +
+                    '<br>NCT02178722' +
+                    '<br><strong>Epacadostat &#43; pembrolizumab</strong>' +
+                    '<br>Phase: <b>1/2' +
+					'<br>*Diffuse large B-cell lymphoma only.</b>' +
+                '</p>' +
+                '<a href="https://clinicaltrials.gov/show/NCT02178722" class="modal-show">VIEW TRIAL &rarr;</a>' +
+            '</span>'
+
+var echo203 = '<span class="display-content">' +
+                '<h3 class="echo203Head">ECHO-203</h3>' +
+                '<p>' +
+                    '<span class="font20">(collaboration with MedImmune, LLC)</span>' +
+                    '<br>NCT02318277' +
+                    '<br><strong>Epacadostat &#43; durvalumab</strong>' +
+                    '<br>Phase: <b>1/2</b>' +
+                '</p>' +
+                '<a href="https://clinicaltrials.gov/show/NCT02318277" class="modal-show">VIEW TRIAL &rarr;</a>' +
+              '</span>'
+
+var echo110 = '<span class="display-content">' +
+                '<h3 class="echo110Head">ECHO-110</h3>' +
+                '<p>' +
+                    '<span class="font20">(collaboration with Hoffmann-La Roche/Genentech, Inc.)</span>' +
+                    '<br>NCT02298153' +
+                    '<br><strong>Epacadostat &#43; atezolizumab</strong>' +
+                    '<br>Phase: <b>1</b>' +
+                '</p>' +
+                '<a href="https://clinicaltrials.gov/ct2/show/NCT02298153" class="modal-show">VIEW TRIAL &rarr;</a>' +
+              '</span>'
+
+var echo204 = '<span class="display-content">' +
+                '<h3 class="echo204Head">ECHO-204</h3>' +
+                '<p>' +
+                    '<span class="font20">(collaboration with Bristol-Myers Squibb)</span>' +
+                    '<br>NCT02327078' +
+                    '<br><strong>Epacadostat &#43; nivolumab</strong>' +
+                    '<br>Phase: <b>1/2</b>' +
+                '</p>' +
+                '<a href="https://clinicaltrials.gov/show/NCT02327078" class="modal-show">VIEW TRIAL &rarr;</a>' +
+              '</span>'
+
+var echo206 = '<span class="display-content">' +
+                '<h3 class="echo206Head">ECHO-206</h3>' +
+                '<p>' +
+                    '<br>NCT02959437' +
+                    '<br><strong>Epacadostat+pembrolizumab+azacitidine</strong>' +
+                    '<br>Phase: <b>1/2</b>' +
+                '</p>' +
+                '<a href="https://clinicaltrials.gov/ct2/show/NCT02959437?term=NCT02959437&rank=1" class="modal-show">VIEW TRIAL &rarr;</a>' +
+              '</span>'
+
+
+var echo301 = '<span class="display-content">' +
+                '<h3 class="echo301Head">ECHO 301/KEYNOTE&ndash;252</h3>' +
+                '<p>' +
+                    '<span class="font20">(collaboration with Merck Sharp &amp; Dohme Corp.)</span>' +
+                    '<br>NCT02752074' +
+                    '<br><strong>Epacadostat &#43; pembrolizumab</strong>' +
+                    '<br>Phase: <b>3</b>' +
+                '</p>' +
+                '<a href="images/Final PDF_ECHO 301.png" class="modal-show">VIEW TRIAL &rarr;</a>' +
+              '</span>'
+
+
+
+
+/* ECHO TRIAL STATES */
+	// INDIVIDUAL ICONS
+	$('.pages').on('mousedown touchstart', '.icon1', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();
+		btnTwoBG();btnThreeBG();btnFourBG();btnFiveBG();btnSixBG();
+		imgSwap('1');
+		textSwap('1');
+		echoAside(echo202);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon2', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();btnTwoBG();	
+		btnThreeBG();btnFourBG();btnFiveBG();btnSixBG();
+		imgSwap('2');
+		textSwap('2');
+		echoAside(echo202);echoAside(echo203);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon3', function() {
+		resetEcho();
+		// btnFiveBG();	
+		swapBG();
+		btnTwoBG();btnThreeBG();btnFourBG();btnSixBG();
+		imgSwap('3');
+		textSwap('3');
+		echoAside(echo202v2);echoAside(echo204);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon4', function() {
+		resetEcho();
+		swapBG();
+		// btnTwoBG();	
+		btnThreeBG();btnFourBG();btnFiveBG();btnSixBG();
+		imgSwap('4');
+		textSwap('4');
+		echoAside(echo202);echoAside(echo203);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon5', function() {
+		resetEcho();
+		swapBG();
+		// btnFiveBG();		
+		btnOneBG();btnTwoBG();btnThreeBG();btnFourBG();btnSixBG();
+		imgSwap('5');
+		textSwap('5');
+		echoAside(echo204);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon6', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();btnTwoBG();btnFiveBG();	
+		btnThreeBG();btnFourBG();btnSixBG();
+		imgSwap('6');
+		textSwap('6');
+		echoAside(echo202);echoAside(echo203);echoAside(echo204);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon7', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();
+		btnTwoBG();btnThreeBG();btnFourBG();btnFiveBG();btnSixBG();
+		imgSwap('7');
+		textSwap('7');
+		echoAside(echo202);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon8', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();btnTwoBG();btnFourBG();btnFiveBG();
+		btnThreeBG();btnSixBG();
+		imgSwap('8');
+		textSwap('8');
+		echoAside(echo202);echoAside(echo203);echoAside(echo204);echoAside(echo301);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon9', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();btnFiveBG();	
+		btnTwoBG();btnThreeBG();btnFourBG();btnSixBG();
+		imgSwap('9');
+		textSwap('9');
+		echoAside(echo202v3);echoAside(echo204);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon10', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();btnTwoBG();btnThreeBG();btnFiveBG();	
+		btnFourBG();btnSixBG();
+		imgSwap('10');
+		textSwap('10');
+		echoAside(echo110);echoAside(echo202);echoAside(echo203);echoAside(echo204);		
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon11', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();btnFiveBG();	
+		btnTwoBG();btnThreeBG();btnFourBG();btnSixBG();
+		imgSwap('11');
+		textSwap('11');
+		echoAside(echo202);echoAside(echo204);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon12', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();
+		btnTwoBG();btnThreeBG();btnFourBG();btnFiveBG();btnSixBG();
+		imgSwap('12');
+		textSwap('12');
+		echoAside(echo202);
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon13', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();btnTwoBG();	
+		btnFourBG();btnFiveBG();btnSixBG();
+		imgSwap('13');
+		textSwap('13');
+		echoAside(echo110);echoAside(echo202);echoAside(echo203);		
+		return false;
+	});
+	$('.pages').on('mousedown touchstart', '.icon14', function() {
+		resetEcho();
+		swapBG();
+		// btnOneBG();btnTwoBG();	
+		btnOneBG();btnTwoBG();btnThreeBG();btnFourBG();btnFiveBG();
+		imgSwap('14');
+		textSwap('14');
+		echoAside(echo206);		
+		return false;
+	});
+	// ECHO #ICONS
+	// 202
+	$('.pages').on('mousedown touchstart', '.btnone', function() {
+		resetEcho();
+		// btnOneBG();	
+		btnTwoBG();btnThreeBG();btnFourBG();btnFiveBG();btnSixBG();
+		imgSwap('1');imgSwap('2');imgSwap('3');imgSwap('4');imgSwap('6');imgSwap('7');imgSwap('8');imgSwap('9');imgSwap('10');imgSwap('11');imgSwap('12');imgSwap('13');
+		textSwap('1');textSwap('2');textSwap('3');textSwap('4');textSwap('6');textSwap('7');textSwap('8');textSwap('9');textSwap('10');textSwap('11');textSwap('12');textSwap('13');
+		echoAside(echo202);
+		swapBG();
+		return false;
+	});
+	// 203
+	$('.pages').on('mousedown touchstart', '.btntwo', function() {
+		resetEcho();
+		// btnTwoBG();	
+		btnOneBG();btnThreeBG();btnFourBG();btnFiveBG();btnSixBG();
+		imgSwap('2');imgSwap('4');imgSwap('6');imgSwap('8');imgSwap('10');imgSwap('13');		
+		textSwap('2');textSwap('4');textSwap('6');textSwap('8');textSwap('10');textSwap('13');
+		echoAside(echo203);
+		swapBG();
+		return false;
+	});
+	// 110
+	$('.pages').on('mousedown touchstart', '.btnthree', function() {
+		resetEcho();
+		// btnThreeBG();		
+		btnOneBG();btnTwoBG();btnFourBG();btnFiveBG();btnSixBG();
+		imgSwap('10');imgSwap('13');
+		textSwap('10');textSwap('13');
+		echoAside(echo110);
+		swapBG();
+		return false;
+	});
+	// 301
+	$('.pages').on('mousedown touchstart', '.btnfour', function() {
+		resetEcho();
+		// btnFourBG();
+		btnOneBG();btnTwoBG();btnThreeBG();btnFiveBG();btnSixBG();
+		imgSwap('8');
+		textSwap('8');
+		echoAside(echo301);
+		swapBG();
+		return false;
+	});
+	// 204
+	$('.pages').on('mousedown touchstart', '.btnfive', function() {
+		resetEcho();
+		// btnFiveBG();	
+		btnOneBG();btnTwoBG();btnThreeBG();btnFourBG();btnSixBG();
+		imgSwap('3');imgSwap('5');imgSwap('6');imgSwap('7');imgSwap('8');imgSwap('9');imgSwap('10');imgSwap('11');
+		textSwap('3');textSwap('5');textSwap('6');textSwap('7');textSwap('8');textSwap('9');textSwap('10');textSwap('11');
+		echoAside(echo204);
+		swapBG();
+		return false;
+	});
+	// 206
+	$('.pages').on('mousedown touchstart', '.btnsix', function() {
+		resetEcho();
+		// btnSixBG();	
+		btnOneBG();btnTwoBG();btnThreeBG();btnFourBG();btnFiveBG();	
+		imgSwap('14');
+		textSwap('14');
+		echoAside(echo206);
+		swapBG();
+		return false;
+	});
 }); 
