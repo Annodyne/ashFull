@@ -668,7 +668,7 @@ $(function () {
 	// });
 
     /* MODAL POP-UP */
-    $('.pages').on('click', '.modal-show', function () {
+    $('.pages').on('click', '.modal-showx', function () {
     	var winW = $(window).width();
 		var winH = $(window).height();
 
@@ -694,7 +694,7 @@ $(function () {
         return false;
     });
 
-    $('.pages').on('click', '.modal-show2', function () {
+    $('.pages').on('click', '.modal-showx2', function () {
 		var winW = $(window).width();
 		var winH = $(window).height();
 		
@@ -1021,7 +1021,7 @@ var echo202 = '<span class="display-content">' +
                     '<br><strong>Epacadostat &#43; pembrolizumab</strong>' +
                     '<br>Phase: <b>1/2</b>' +
                 '</p>' +
-                '<a href="https://clinicaltrials.gov/show/NCT02178722" class="modal-show">VIEW TRIAL &rarr;</a>' +
+                '<a href="https://clinicaltrials.gov/show/NCT02178722" class="modal-showx">VIEW TRIAL &rarr;</a>' +
             '</span>'
 
 var echo202v2 = '<span class="display-content">' +
@@ -1033,7 +1033,7 @@ var echo202v2 = '<span class="display-content">' +
                     '<br>Phase: <b>1/2' + 
 					'<br>*Microsatellite-instability (MSI) high colorectal cancer only.</b>' +
                 '</p>' +
-                '<a href="https://clinicaltrials.gov/show/NCT02178722" class="modal-show">VIEW TRIAL &rarr;</a>' +
+                '<a href="https://clinicaltrials.gov/show/NCT02178722" class="modal-showx">VIEW TRIAL &rarr;</a>' +
             '</span>'
 
 var echo202v3 = '<span class="display-content">' +
@@ -1045,7 +1045,7 @@ var echo202v3 = '<span class="display-content">' +
                     '<br>Phase: <b>1/2' +
 					'<br>*Diffuse large B-cell lymphoma only.</b>' +
                 '</p>' +
-                '<a href="https://clinicaltrials.gov/show/NCT02178722" class="modal-show">VIEW TRIAL &rarr;</a>' +
+                '<a href="https://clinicaltrials.gov/show/NCT02178722" class="modal-showx">VIEW TRIAL &rarr;</a>' +
             '</span>'
 
 var echo203 = '<span class="display-content">' +
@@ -1056,7 +1056,7 @@ var echo203 = '<span class="display-content">' +
                     '<br><strong>Epacadostat &#43; durvalumab</strong>' +
                     '<br>Phase: <b>1/2</b>' +
                 '</p>' +
-                '<a href="https://clinicaltrials.gov/show/NCT02318277" class="modal-show">VIEW TRIAL &rarr;</a>' +
+                '<a href="https://clinicaltrials.gov/show/NCT02318277" class="modal-showx">VIEW TRIAL &rarr;</a>' +
               '</span>'
 
 var echo110 = '<span class="display-content">' +
@@ -1067,7 +1067,7 @@ var echo110 = '<span class="display-content">' +
                     '<br><strong>Epacadostat &#43; atezolizumab</strong>' +
                     '<br>Phase: <b>1</b>' +
                 '</p>' +
-                '<a href="https://clinicaltrials.gov/ct2/show/NCT02298153" class="modal-show">VIEW TRIAL &rarr;</a>' +
+                '<a href="https://clinicaltrials.gov/ct2/show/NCT02298153" class="modal-showx">VIEW TRIAL &rarr;</a>' +
               '</span>'
 
 var echo204 = '<span class="display-content">' +
@@ -1078,7 +1078,7 @@ var echo204 = '<span class="display-content">' +
                     '<br><strong>Epacadostat &#43; nivolumab</strong>' +
                     '<br>Phase: <b>1/2</b>' +
                 '</p>' +
-                '<a href="https://clinicaltrials.gov/show/NCT02327078" class="modal-show">VIEW TRIAL &rarr;</a>' +
+                '<a href="https://clinicaltrials.gov/show/NCT02327078" class="modal-showx">VIEW TRIAL &rarr;</a>' +
               '</span>'
 
 var echo206 = '<span class="display-content">' +
@@ -1088,7 +1088,7 @@ var echo206 = '<span class="display-content">' +
                     '<br><strong>Epacadostat+pembrolizumab+azacitidine</strong>' +
                     '<br>Phase: <b>1/2</b>' +
                 '</p>' +
-                '<a href="https://clinicaltrials.gov/ct2/show/NCT02959437?term=NCT02959437&rank=1" class="modal-show">VIEW TRIAL &rarr;</a>' +
+                '<a href="https://clinicaltrials.gov/ct2/show/NCT02959437?term=NCT02959437&rank=1" class="modal-showx">VIEW TRIAL &rarr;</a>' +
               '</span>'
 
 
@@ -1100,7 +1100,7 @@ var echo301 = '<span class="display-content">' +
                     '<br><strong>Epacadostat &#43; pembrolizumab</strong>' +
                     '<br>Phase: <b>3</b>' +
                 '</p>' +
-                '<a href="images/Final PDF_ECHO 301.png" class="modal-show">VIEW TRIAL &rarr;</a>' +
+                '<a href="images/Final PDF_ECHO 301.png" class="modal-showx">VIEW TRIAL &rarr;</a>' +
               '</span>'
 
 

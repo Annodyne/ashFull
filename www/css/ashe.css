@@ -1199,8 +1199,8 @@ and (orientation : landscape) {
   /* echo */
   #echo-display { width: 380px; }
   #echo-display img { height: 100%; right: -50px; }
-  footer.liaison-box p { font-size: 15px !important; }
-  .echo-container .echo-row span { font-size: 15px !important; }
+  footer.liaison-box p { font-size: 14px !important; }
+  .echo-container .echo-row span { font-size: 14px !important; }
   .echo-row img { width: 85px; }
   .button-container { width: 50%; }
   .button-container a { padding: 5px !important; }
@@ -1215,9 +1215,9 @@ and (orientation : landscape) {
   span.text7 { margin-left: -140px !important; top: 80px !important; }
   span.text8 { margin-left: -60px !important; top: 35px !important; }
   span.text9 { margin-left: -355px !important; top: 35px !important; }
-  span.text10 { margin-left: -370px !important; top: 25px !important; }
+  span.text10 { margin-left: -363px !important; top: 25px !important; }
   span.text11 { margin-left: -340px !important; top: 30px !important; }
-  span.text12 { margin-left: -205px !important; top: 15px !important; }
+  span.text12 { margin-left: -215px !important; top: 15px !important; }
   span.text13 { top: 45px !important; }  
   span.text14 { top: 45px !important; }
 
