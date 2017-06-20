@@ -8,28 +8,30 @@
         <meta name="author" content="">
     
         <!-- BEGIN: Metadata -->
-		<title>3FX Ashe</title>
+		<title>3FX ASCO</title>
 		<meta name="description" content="3FX Video Wall Panel">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,
-width=device-width, target-densitydpi=device-dpi" />
+        <!--
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+		-->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
 			<meta name="msapplication-tap-highlight" content="no" />
 		    <meta name="format-detection" content="telephone=no" /> 
         <!-- END: Metadata -->
-        <!-- END: Metadata -->
 
-        <!-- Bootstrap CSS -->
+        <!-- CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/jquery-ui.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/site.css">
 		<link rel="stylesheet" href="css/ashe.css">
+		<link rel="stylesheet" href="css/echo.css">
 		
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>  
 		
+        <script type="text/javascript" src="cordova.js"></script>
+
 		<script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
@@ -44,13 +46,10 @@ width=device-width, target-densitydpi=device-dpi" />
 
 		  ga('create', 'UA-77295748-1', 'auto');
 		  ga('send', 'pageview');
-
 		</script>
 		<script src="js/analyticsShenanigans.js" ></script>
-
-
     </head>
-    <body>
+    <body class="surface-overflow">
 
 		<img class="home-temp" src="images/ashe-2016-home-bg.jpg" style="position: absolute; top: 0; left: 0; z-index: 0; max-width: 1920px; max-height: 1080px; width: 100%; height: 100%;">
 
@@ -60,28 +59,33 @@ width=device-width, target-densitydpi=device-dpi" />
 			<article class="pg pg-discover" data-page="discover"></article>
 			<article class="pg pg-portfolio" data-page="portfolio"></article>
 			<article class="pg pg-develop" data-page="develop"></article>
-			<article class="pg pg-develop-home" data-page="develop-home"></article>
-			<article class="pg pg-study-home-a" data-page="study-home-a"></article>
-				<article class="pg pg-disease-state-a" data-page="disease-state-a"></article>
-				<article class="pg pg-rationale-a" data-page="rationale-a"></article>
+			<!--<article class="pg pg-develop-home" data-page="develop-home"></article>-->
+			<!--<article class="pg pg-study-home-a" data-page="study-home-a"></article>-->
+				<!--<article class="pg pg-disease-state-a" data-page="disease-state-a"></article>
+				<article class="pg pg-rationale-a" data-page="rationale-a"></article>-->
 				<article class="pg pg-study-design-a1" data-page="study-design-a1"></article>
+				<article class="pg pg-study-design-a2" data-page="study-design-a2"></article>
+				<article class="pg pg-study-design-a3" data-page="study-design-a3"></article>
+				<article class="pg pg-study-design-a4" data-page="study-design-a4"></article>
+				<article class="pg pg-study-design-a5" data-page="study-design-a5"></article>
+				<article class="pg pg-study-design-a6" data-page="study-design-a6"></article>
+				<article class="pg pg-study-design-a7" data-page="study-design-a7"></article>
+				<article class="pg pg-study-design-a8" data-page="study-design-a8"></article>
+				<article class="pg pg-echo" data-page="echo"></article>
 			<article class="pg pg-study-home-b" data-page="study-home-b"></article>
-				<article class="pg pg-disease-state-b" data-page="disease-state-b"></article>
-				<article class="pg pg-rationale-b" data-page="rationale-b"></article>
+				<!--<article class="pg pg-disease-state-b" data-page="disease-state-b"></article>
+				<article class="pg pg-rationale-b" data-page="rationale-b"></article>-->
 				<article class="pg pg-study-design-b1" data-page="study-design-b1"></article>
 
-			<section class="mod mod-video"></section>
-			<!-- <article class="mod mod-web-view"></article> -->
-
-			<!--TODO: Add Timeout Styles-->
-<!-- 			<div class="timer-warning">
+			<!--Timeout -->
+			<div class="timer-warning">
 				<div class="timer-warning-wrapper">
 					<h2>Need More <br>Time?</h2>
 				    <div class="timer-button-container">
 						<div class="continue-button"><img src="images/yes_btn.png"></div>
 			        </div>
 		        </div>
-			</div>  -->
+			</div> 
 		</div>
 					
 		<img class="modal-close" src="images/close-btn.png" alt="Close">
@@ -90,11 +94,16 @@ width=device-width, target-densitydpi=device-dpi" />
 		<div class="modal-close" style="width: 90%; height: 100%; margin-left: 10%; position: absolute; display: block; border: 1px solid blue;"></div> 
 		-->
 		
+		<!-- Link Modal -->
 		<div id="modal-dialog" class="modal-container" title="" style="display:none;">
 		    <iframe id="modal-frame" width="100%" height="100%" sandbox="allow-same-origin"></iframe>
 		</div>
 
-				<script type="text/javascript" src="cordova.js"></script>
+		<!-- Study Rationale Modal -->
+		<div id="static-dialog" title="" style="overflow: hidden; display: none;">
+			<img src="" style="width: 100%;" class="surface-center" >
+		</div>
+		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
 			app.initialize();
