@@ -668,7 +668,7 @@ $(function () {
 	// });
 
     /* MODAL POP-UP */
-    $('.pages').on('click', '.modal-showx', function () {
+    $('.pages').on('click', '.modal-show', function () {
     	var winW = $(window).width();
 		var winH = $(window).height();
 
@@ -694,7 +694,7 @@ $(function () {
         return false;
     });
 
-    $('.pages').on('click', '.modal-showx2', function () {
+    $('.pages').on('click', '.modal-show2', function () {
 		var winW = $(window).width();
 		var winH = $(window).height();
 		
