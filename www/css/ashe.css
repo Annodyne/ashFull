@@ -1187,6 +1187,7 @@ and (orientation : landscape) {
       font-size: 30px;
       height: 52px;
       line-height: 60px;
+      margin: 5px 0 0;
   }
   /* develop */
   .label-link-container { font-size: 15px; }
@@ -1228,6 +1229,8 @@ and (orientation : landscape) {
   #echo-display .display-content { font-size: 15px !important; }
   .display-content a { padding: 0 0 5px 24px !important; }
   footer.liaison-box { width: 73% !important; background: none; width: 57% !important; margin-left: 3%;}
+
+  .data-content-html p.disclaimer-copy { font-size: 13px; line-height: 18px; }
 } /* close min768px max1024px*/
 
 
