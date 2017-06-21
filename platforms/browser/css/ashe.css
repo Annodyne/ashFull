@@ -1227,6 +1227,8 @@ and (orientation : landscape) {
   #echo-display .display-content { font-size: 15px !important; }
   .display-content a { padding: 0 0 5px 24px !important; }
   footer.liaison-box { width: 73% !important; background: none; }
+
+  .data-content-html p.disclaimer-copy { font-size: 13px; }
 } /* close min768px max1024px*/
 
 
