@@ -1220,6 +1220,7 @@ and (orientation : landscape) {
   span.text12 { margin-left: -215px !important; top: 15px !important; }
   span.text13 { top: 45px !important; }  
   span.text14 { top: 45px !important; }
+  .icon3, .icon4 { margin-right: 45px !important; }
 
   #echo-display { width: 470px !important; }
   #echo-display div { padding: 10px 0px 0 165px !important; }
