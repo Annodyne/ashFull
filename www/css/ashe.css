@@ -155,12 +155,12 @@ div.start-screen div.container div.row div {
 }
 .data-video-overlay img {
         position: absolute;
-        top: 50%;
-        left: 505;
+        top: 28%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         z-index: 99999999999999;
+        max-width: 75px;
 }
 .data-video-overlay {
         height: 100%;
@@ -1226,7 +1226,7 @@ and (orientation : landscape) {
   .font20 { font-size: 16px !important; }
   #echo-display .display-content { font-size: 15px !important; }
   .display-content a { padding: 0 0 5px 24px !important; }
-  footer.liaison-box { width: 73% !important; background: none; }
+  footer.liaison-box { width: 73% !important; background: none; width: 57% !important; margin-left: 3%;}
 } /* close min768px max1024px*/
 
 
