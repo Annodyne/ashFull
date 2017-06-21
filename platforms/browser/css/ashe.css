@@ -1228,7 +1228,7 @@ and (orientation : landscape) {
   .display-content a { padding: 0 0 5px 24px !important; }
   footer.liaison-box { width: 73% !important; background: none; }
 
-  .data-content-html p.disclaimer-copy { font-size: 13px; }
+  .data-content-html p.disclaimer-copy { font-size: 13px; line-height: 18px; }
 } /* close min768px max1024px*/
 
 
